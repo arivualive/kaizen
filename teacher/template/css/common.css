@@ -1,0 +1,327 @@
+@charset "UTF-8";
+
+/* common=============================================================== */
+
+*{
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box ;
+}
+html, body {
+    height: 100%;
+}
+html{
+    font-size: 62.5% ;
+}
+body{
+    color: #5a6875 ;
+    line-height: 1 ;
+    font-family: YuGothic , 'Yu Gothic' , sans-serif ;
+    font-weight: 500 ;
+    font-size: 1.4rem ;
+}
+a,
+button,
+label{
+    transition: all 0.2s ;
+}
+a:hover,
+button:hover{
+    text-decoration: none ;
+    cursor: pointer ;
+}
+ul , li{
+    list-style-type: none ;
+    margin-bottom: 0 ;
+}
+p{
+    margin-bottom: 0 ;
+}
+
+#wrap{
+    background-color: #f1f1f1 ;
+    min-width: 100% ;
+    min-height: 100% ;
+}
+
+@media (max-width: 767px){
+    html{
+        font-size: 50% ;
+    }
+}
+
+/* header =================================================================== */
+
+#header-bar{   
+    background-color: #61a5cc ; /* brand color */
+    height: 100px ;
+    width: 100% ;
+}
+#header{
+    max-width: 1140px ;
+    margin: 0 auto ;
+}
+
+/* header left ================================================= */
+
+.header-left{
+    float: left ;
+    height: 100px ;
+}
+.h1{
+    background-color: #fff ;
+    height: 100% ;
+    float: left ;
+}
+.h1 a{
+    display: block ;
+    width: 100% ;
+    height: 100% ;
+    padding: 10px ;
+    max-width: 200px ;
+}
+.h1 a img{
+    margin: 0 auto ;
+    max-width: 100% ;
+}
+.header-submenu{
+    float: left ;
+    padding: 25px 10px 0 10px ;
+}
+.btn-userinfomation{
+    float: left ;
+    padding-left: 5px ;
+}
+.btn-userinfomation a{
+    height: 50px ;
+    border-radius: 25px ;
+    background-color: rgba( 0, 0, 0, 0.10) ;
+    display: block ;
+    padding: 5px ;
+    color: #fff ;
+}
+.btn-userinfomation .erea-icon{
+    float: left ;
+    height: 40px ;
+    width: 40px ;
+    border-radius: 50% ;
+    background-color: rgba( 0, 0, 0, 0.10) ;
+    text-align: center ;
+    padding-top: 10px ;
+    font-size: 2.5rem ;
+}
+.btn-userinfomation a .erea-username{
+    float: left ;
+    padding: 15px 40px 0 10px ;
+    font-weight: 600 ;
+    position: relative ;
+}
+.btn-userinfomation a .erea-username::after{
+    position: absolute ;
+    content: "▼" ;
+    top: 15px ;
+    right: 10px ;
+}
+.btn-userinfomation a:hover{
+    background-color: rgba(255, 255, 255, 0.1) ;
+}
+.btn-userinfomation .dropdown-menu{
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2) ;
+    border: 0 ;
+    border-radius: 5px ;
+    padding: 10px ;
+}
+.btn-userinfomation .dropdown-menu a{
+    color: #5a6875 ;
+    padding: 10px ;
+    height: auto ;
+    border-radius: 3px ;
+    font-size: 1.3rem ;
+    background-color: #fff ;
+    margin-bottom: 5px ;
+    font-weight: 600 ;
+    transition: all 0.2s ;
+}
+.btn-userinfomation .dropdown-menu a:hover{
+    background-color: rgba( 0, 0, 0, 0.10) ;
+}
+.btn-help{
+    float: left ;
+    padding-left: 5px ;
+}
+.btn-help a{
+    display: block ;
+    padding: 20px 10px ;
+    color: #fff ;
+    height: 50px ;
+}
+.btn-help a::before{
+    content: "?" ;
+    display: block ;
+    float: left ;
+    width: 20px ;
+    height: 20px ;
+    border-radius: 50% ;
+    padding: 5px ;
+    background-color: rgba(255, 255, 255, 0.5) ;
+    margin-right: 5px ;
+    margin-top: -5px ;
+    color: #61a5cc ; /* brand color */
+}
+
+/* header right ================================================= */
+
+.header-right{
+    float: right ;
+    height: 100px ;
+    background-color: #61a5cc ; /* brand color */
+}
+.nav-mainmenu ul li{
+    float: left ;
+    height: 100px ;
+    border-left:  rgba(255, 255, 255, 0.3) 1px solid ;
+    min-width: 100px ;
+}
+.nav-mainmenu ul li:last-child{
+    border-right: rgba(255, 255, 255, 0.3) 1px solid ;
+}
+.nav-mainmenu ul li a{
+    color: #fff ;
+    padding: 60px 20px 0 20px ;
+    text-align: center ;
+    height: 100% ;
+    display: block ;
+    position: relative ;
+    font-weight: 600 ;
+}
+.nav-mainmenu ul li a:hover,
+.nav-mainmenu ul li a:focus,
+.nav-mainmenu ul li.active a{
+    background-color: rgba(0, 0, 0, 0.15) ;
+}
+.nav-mainmenu ul li a:hover::before,
+.nav-mainmenu ul li.active a::before{
+    color: #fff ;
+}
+.nav-mainmenu ul li.active a::after{
+    position: absolute ;
+    content: "▲" ;
+    left: 0 ;
+    bottom: -10px ;
+    display: block ;
+    width: 100% ;
+    font-size: 2.5rem ;
+    color: #f1f1f1 ;
+}
+/* icon指定 */
+.nav-mainmenu ul li a:before{
+    position: absolute ;
+    top: 15px ;
+    left: 0 ;
+    display: block ;
+    width: 100% ;
+    font-family: 'icomoon';
+    font-size: 3.5rem ;
+    font-weight: normal ;
+    color: rgba( 0, 0, 0, 0.15) ;
+    transition: all 0.2s ;
+}
+.nav-mainmenu ul li:nth-child(1) a::before{
+    content: "\e903";
+}
+.nav-mainmenu ul li:nth-child(2) a::before{
+    content: "\e905";
+}
+.nav-mainmenu ul li:nth-child(3) a::before{
+    content: "\e904";
+}
+
+@media (max-width: 800px){
+    #header-bar{
+        height: auto ;
+        height: 140px ;
+    }
+    .header-left{
+        width: 100% ;
+        background-color: #fff ;
+        height: 70px ;
+    }
+    .h1{
+        width: 50% ;
+    }
+    .header-submenu{
+        float: right ;
+        padding-top: 15px ;
+    }
+    .btn-userinfomation a{
+        background-color: #61a5cc ; /* brand color */
+        height: 40px ;
+        border-radius: 20px ;
+        display: block ;
+        padding: 5px ;
+        color: #fff ;
+    }
+    .btn-userinfomation a .erea-icon{
+        display: none ;
+    }
+    .btn-userinfomation a .erea-username{
+        padding-top: 10px ;
+        padding-right: 30px ;
+    }
+    .btn-userinfomation a .erea-username::after{
+        top: 10px ;
+    }
+    .btn-help a{
+        display: block ;
+        padding: 15px 5px ;
+        color: #5a6875 ;
+        height: 40px ;
+    }
+    .btn-help a::before{
+        color: #fff ;
+        background-color: #5a6875 ;
+    }
+    .btn-help a span{
+        display: none ;
+    }
+    .header-right{
+        float: left ;
+        width: 100% ;
+        height: 70px ;
+    }
+    .nav-mainmenu ul li{
+        width: 33% ;
+        border: none ;
+        height: 70px ;
+    }
+    .nav-mainmenu ul li:last-child{
+        width: 34% ;
+        border: none; 
+    }
+    .nav-mainmenu ul li a span{
+        display: none ;
+    }
+    .nav-mainmenu ul li a:before{
+        top: 20px ;
+    }
+}
+
+/* main============================================================== */
+
+.container-maincontents{
+    max-width: 1140px ;
+    width: 100% ;
+    margin: 0 auto ;
+    padding: 30px 10px ;
+}
+
+.scrol::-webkit-scrollbar {
+    width: 8px ;
+}
+.scrol::-webkit-scrollbar-track {
+    border-radius: 4px;
+}
+.scrol::-webkit-scrollbar-thumb {
+    background-color: #61a5cc ; /* brand color */
+    border-radius: 4px;
+}

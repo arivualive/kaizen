@@ -1,0 +1,49 @@
+<?php
+$database = 'f04d7-6';
+if($database) { list($check) = string_to_array($database); }
+list($csvTree01,,, $csvRowD01) = load_csv($_POST['csvfile'], 0); //CSVファイルを処理
+
+for($current = count($csvTree01); $current >= 1; $current--) {
+	foreach($csvTree01[$current] as $value) {
+		foreach($value as $line) {
+			//フォルダと項目を判別（真はフォルダ、否は項目）
+			$order = ($csvTree01[$current + 1][$line]) ? 1 : 0;
+
+			//（-）で value値を分割し一時保存の配列に格納
+			$temp = explode('-', $line);
+			//配列の底を2とする対数のキーが空でなければ $select01 に追加
+			if($check[$temp[0]][log(hexdec($temp[1]), 2)]) {
+				//選択された項目を生成（フォルダは上に、項目は下に追加）
+				if($order) {
+					$select01 = $csvRowD[$line] . '（' . $line . '）' . "\n" . $select01;
+					$selectFolder01[] = $line;
+				} else {
+					$select01 .= $csvRowD[$line] . '（' . $line . '）' . "\n";
+					$selectItem01[] = $line;
+				}
+				$selectAll01[] = $line;
+				$selectALLtree01[$csvRowA[$line]][] = $line;
+			}
+		}
+	}
+}
+
+foreach($csvRowD01 as  $key => $value) {
+	if(search_value((array)$key, 0, $select01)) { $selectData .= $csvRowD[$key]; }
+	$selectData .=  ',';
+}
+
+echo $selectData . '<br>';
+/*
+echo '<pre>';
+print_r($selectFolder01);
+echo '</pre>';
+
+//CSV照合
+if(search_multi($csvpath . 'contents.csv', '1-0x4', $csvTree, $select)) {
+	echo '<br><span class="true">照合結果:TRUE（選択カテゴリーは含まれています）</span>';
+} else {
+	echo '<br><span class="false">照合結果:FALSE（選択カテゴリーは含まれていません）</span>';
+}
+*/
+?>

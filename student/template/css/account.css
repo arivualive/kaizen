@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+/* sheet 
+   => account
+=============================================================== */
+
+
+.account-main{
+    max-width: 400px ;
+    margin: 0 auto ;
+    padding: 20px 0 ;
+    font-weight: 600 ;
+}
+
+.account-main h2{
+    font-weight: 600 ;
+    font-size: 2.3rem ;
+    margin-bottom: 20px ;
+    padding: 10px 0 ;
+}
+
+.account-main dl{
+    margin-bottom: 15px ;
+}
+
+.account-main dl dt{
+    margin-bottom: 10px ;
+}
+
+.account-main dl dd{
+    width: 100% ;
+}
+
+.account-main dl dd input{
+    border: 0 ;
+    border-radius: 5px ;
+    padding: 10px ;
+    width: 100% ;
+}
+.account-main dl dd input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
+
+.account-main p.btn-submit{
+    padding: 20px 0 ;
+}
+
+.account-main p.btn-submit button{
+    background-color: #354e65 ;
+    border-radius: 5px ;
+    width: 200px ;
+    max-width: 100% ;
+    color: #fff ;
+    padding: 15px ;
+    font-weight: 600 ;
+    margin: 0 auto ;
+    display: block ;
+    border: 0 ;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) ;
+}
+.account-main p.btn-submit button.disabled{
+    background-color: rgba(0, 0, 0, 0.05) ;
+    box-shadow: none ;
+}

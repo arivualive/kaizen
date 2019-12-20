@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ThinkBoard LMS 受講者</title>
+	<meta name="Author" content=""/>
+	<!-- viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- favicon -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="css/icon-font.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/contents.css">
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+    <!-- modal(コンテンツ詳細) -->
+    <div class="modal fade contentsinfo tb" id="Modal-contentsinfo" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="icon"></p>
+                    <p class="contents-type">動画授業</p>
+                    <p class="contents-title">コンテンツのタイトル</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body contentsinfo">
+                    <div class="body-left">
+                        <div class="btngroup">
+                            <ul>
+                                <li class="play"><a>再生する</a></li>
+                                <li class="file"><a>添付ファイル</a></li>
+                            </ul>
+                        </div>
+                        <div class="contents-position">
+                            <div class="head">カテゴリー・フォルダー</div>
+                            <div class="subject">
+                                <ol>
+                                   <li><span><img src="images/icon_subjectlist.png"></span>大カテゴリー</li>
+                                   <li>中カテゴリー</li>
+                                   <li>小カテゴリー</li> 
+                                </ol>
+                            </div>
+                            <div class="contentsgroup">
+                                <p><span><img src="images/icon_contentsgroup.png">講義グループ</span></p>
+                            </div>
+                        </div>
+                        <!-- <div class="contents-relation">
+                            <div class="head">関連コンテンツ</div>
+                            <ul>
+                                <li>TB</li>
+                                <li>MP4</li>
+                                <li>テスト</li>
+                                <li>アンケート</li>
+                                <li>レポート</li>
+                            </ul>
+                        </div> -->
+                    </div>
+                    <div class="body-right">
+                        <div class="other-detail">
+                            <table>
+                                <tr>
+                                    <th>受講状況</th>
+                                    <td>70％</td>
+                                </tr>
+                                <tr>
+                                    <th>最終受講日</th>
+                                    <td>2017 / 11 / 09 / 15:30:40</td>
+                                </tr>
+                                <tr>
+                                    <th>掲載期間</th>
+                                    <td>2017 / 11 / 09 ～ 2017 / 12 / 01</td>
+                                </tr>
+                                <tr>
+                                    <th>受講回数</th>
+                                    <td>5回</td>
+                                </tr>
+                                <tr>
+                                    <th>容量</th>
+                                    <td>20MB</td>
+                                </tr>
+                                <tr class="message">
+                                    <th>投稿者</th>
+                                    <td><div class="linkbtn"><a>KJS先生</a></div></td>
+                                </tr>
+                                <tr class="message">
+                                    <th>関連スレッド</th>
+                                    <td>
+                                        <div class="linkbtn"><a>スレッド01</a></div>
+                                        <div class="linkbtn"><a>スレッド02</a></div>
+                                        <div class="linkbtn"><a>スレッド03</a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>点数</th>
+                                    <td>10点</td>
+                                </tr>
+                                <tr>
+                                    <th>合格点</th>
+                                    <td>50点</td>
+                                </tr>
+                                <tr>
+                                    <th>偏差値</th>
+                                    <td>40</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal(コンテンツ詳細) -->
+    <div class="modal fade contentsinfo test" id="Modal-testcount" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="icon"></p>
+                    <p class="contents-type">テスト</p>
+                    <p class="contents-title">コンテンツのタイトル</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body contentsinfo">
+                    <div class="body-left">
+                        <div class="btngroup">
+                            <ul>
+                                <li class="write"><a>テストを受ける</a></li>
+                            </ul>
+                        </div>
+                        <div class="test-count">
+                            <div class="head">詳細結果を見る</div>
+                            <ul class="test-count-select">
+                                <li><a>第１回<span class="">合格</span></a></li>
+                                <li><a>第２回<span>不合格</span></a></li>
+                                <li><a>第３回<span>合格</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="contents-position">
+                            <div class="head">カテゴリー・フォルダー</div>
+                            <div class="subject">
+                                <ol>
+                                   <li><span><img src="images/icon_subjectlist.png"></span>大カテゴリー</li>
+                                   <li>中カテゴリー</li>
+                                   <li>小カテゴリー</li> 
+                                </ol>
+                            </div>
+                            <div class="contentsgroup">
+                                <p><span><img src="images/icon_contentsgroup.png">講義グループ</span></p>
+                            </div>
+                        </div>
+                        <!-- <div class="contents-relation">
+                            <div class="head">関連コンテンツ</div>
+                            <ul>
+                                <li>TB</li>
+                                <li>MP4</li>
+                                <li>テスト</li>
+                                <li>アンケート</li>
+                                <li>レポート</li>
+                            </ul>
+                        </div> -->
+                    </div>
+                    <div class="body-right">
+                        <div class="other-detail">
+                            <table>
+                                <tr>
+                                    <th>受講状況</th>
+                                    <td>70％</td>
+                                </tr>
+                                <tr>
+                                    <th>最終受講日</th>
+                                    <td>2017 / 11 / 09 / 15:30:40</td>
+                                </tr>
+                                <tr>
+                                    <th>掲載期間</th>
+                                    <td>2017 / 11 / 09 ～ 2017 / 12 / 01</td>
+                                </tr>
+                                <tr>
+                                    <th>受講回数</th>
+                                    <td>5回</td>
+                                </tr>
+                                <tr>
+                                    <th>容量</th>
+                                    <td>20MB</td>
+                                </tr>
+                                <tr class="message">
+                                    <th>投稿者</th>
+                                    <td><div class="linkbtn"><a>KJS先生</a></div></td>
+                                </tr>
+                                <tr class="message">
+                                    <th>関連スレッド</th>
+                                    <td>
+                                        <div class="linkbtn"><a>スレッド01</a></div>
+                                        <div class="linkbtn"><a>スレッド02</a></div>
+                                        <div class="linkbtn"><a>スレッド03</a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>点数</th>
+                                    <td>10点</td>
+                                </tr>
+                                <tr>
+                                    <th>合格点</th>
+                                    <td>50点</td>
+                                </tr>
+                                <tr>
+                                    <th>偏差値</th>
+                                    <td>40</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header -->
+    <div id="header-bar">
+        <div id="header">
+            <!-- left -->
+            <div class="header-left">
+                <!-- h1 -->
+                <div class="h1">
+                    <a href="#">
+                        <h1><img src="images/logo.jpg" alt="ThinkBoard LMS"></h1>
+                    </a>
+                </div>
+                <!-- sub menu -->
+                <div class="header-submenu">
+                    <div class="btn-userinfomation dropdown">
+                        <a href="#" id="dropdownMenu-userinfo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <p class="erea-icon"><span class="icon-user-student"></span></p>
+                            <p class="erea-username">KJS 太郎</p> <!-- ここにユーザーの名前が入ります -->
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu-userinfo">
+                            <li class="PW">
+                                <a href="#">パスワード変更</a>
+                            </li>
+                            <li class="loguot">
+                                <a href="#">ログアウト</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-help">
+                        <a href="#"><span>ヘルプ</span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- right -->
+            <div class="header-right">
+                <nav class="nav-mainmenu">
+                    <ul>
+                        <li>
+                            <a href=""><span>TOP</span></a>
+                        </li>
+                        <li class="active">
+                            <a href=""><span>講義受講</span></a>
+                        </li>
+                        <li>
+                            <a href=""><span>メッセージ</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- main container -->
+    <div id="container-maincontents" class="container-maincontents clearfix">
+        <!-- subject-list -->
+        <div class="erea-subject-list">
+            <div id="subject-list" class="subject-list navbar-expand-lg">
+                <!-- head -->
+                <div class="subject-list-head">
+                    <p><span><img src="images/icon_subjectlist.png"></span>科目・講義を選択する</p>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- body -->
+                <div class="subject-list-body collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="subject-list-accordion" class="subject-list-accordion">
+                        <li>
+                            <a class="togglebtn">カテゴリー大01</a>
+                            <ul class="togglemenu">
+                                <li><a href="">カテゴリー中01</a></li>
+                                <li><a href="">カテゴリー中02</a></li>
+                                <li><a href="">カテゴリー中03</a></li>
+                                <li><a href="">カテゴリー中04</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="togglebtn">カテゴリー大02</a>
+                            <ul class="togglemenu">
+                                <li><a href="">カテゴリー中01</a></li>
+                                <li><a href="">カテゴリー中02</a></li>
+                                <li><a href="">カテゴリー中03</a></li>
+                                <li><a href="">カテゴリー中04</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="togglebtn">カテゴリー大03</a>
+                            <ul class="togglemenu">
+                                <li><a href="">カテゴリー中01</a></li>
+                                <li><a href="">カテゴリー中02</a></li>
+                                <li><a href="">カテゴリー中03</a></li>
+                                <li><a href="">カテゴリー中04</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="togglebtn">カテゴリー大04</a>
+                            <ul class="togglemenu">
+                                <li><a href="">カテゴリー中01</a></li>
+                                <li><a href="">カテゴリー中02</a></li>
+                                <li><a href="">カテゴリー中03</a></li>
+                                <li><a href="">カテゴリー中04</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- contents list -->
+        <div id="contents-list" class="contents-list">
+            <!-- subject not select(科目・講義未選択時に表示) -->
+            <!-- <div class="contents-list-notselect">
+                <p>科目・講義を選んでください。</p>
+            </div> -->
+            <!-- title -->
+            <div class="contents-list-head">
+                <div class="subject-selecttitle">
+                    <span>カテゴリー大</span>
+                    <span>カテゴリー中</span>
+                </div>
+                <div class="btn-sort dropdown-contentssort">
+                    <div id="dropdownMenu-contentssort" data-toggle="dropdown" class="dropdown">絞り込み</div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu-contentssort">
+                        <ul>
+                            <li class="all-sort"><a>全て</a></li>
+                            <li class="contents"><a>動画授業</a></li>
+                            <li class="test"><a>テスト</a></li>
+                            <li class="questionnaire"><a>アンケート</a></li>
+                            <li class="report"><a>レポート</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- body -->
+            <div class="contents-list-body">
+                <div class="contentsgroup">
+                    <!-- contents group title -->
+                    <div class="contentsgroup-title">
+                        <p>講義グループタイトル</p>
+                    </div>
+                    <!-- contents item = TB -->
+                    <div class="contents-item tb">
+                        <div class="in">
+                            <div class="title">TBコンテンツ</div>
+                            <div class="detail-info">
+                                <div class="important-info">
+                                    <span class="count">2回</span>
+                                    <span class="contents-time">12:34</span>
+                                </div>
+                                <div class="others">
+                                    <div class="progress complete">100%</div>
+                                    <ul class="btns">
+                                        <li class="play"><a href=""></a></li><!-- 再生 -->
+                                        <li class="file"><a href=""></a></li><!-- 添付ファイル -->
+                                        <li class="info"><a data-toggle="modal" data-target="#Modal-contentsinfo"></a></li><!-- 詳細 -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- contents item = MP4 -->
+                    <div class="contents-item mp4">
+                        <div class="in">
+                            <div class="title">MP4コンテンツMP4コンテンツMP4コンテンツMP4コンテンツMP4コンテンツMP4コンテンツ</div>
+                            <div class="detail-info">
+                                <div class="important-info">
+                                    <span class="count">2回</span>
+                                    <span class="contents-time">12:34</span>
+                                </div>
+                                <div class="others">
+                                    <div class="progress midstream">50%</div>
+                                    <ul class="btns">
+                                        <li class="play"><a href=""></a></li><!-- 再生 -->
+                                        <li class="info"><a href=""></a></li><!-- 詳細 -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- contents item = test(合格) -->
+                    <div class="contents-item test">
+                        <div class="in">
+                            <div class="title">テスト(合格)</div>
+                            <div class="detail-info">
+                                <div class="important-info">
+                                    <span class="count">あと2回</span>
+                                    <span class="limit">～2017-12-31</span>
+                                </div>
+                                <div class="others">
+                                    <div class="progress complete">合格</div>
+                                    <ul class="btns">
+                                        <li class="write"><a href=""></a></li><!-- テストを受ける -->
+                                        <li class="info"><a href="" data-toggle="modal" data-target="#Modal-testcount"></a></li><!-- 詳細 -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- contents item = test(不合格) -->
+                    <div class="contents-item test">
+                        <div class="in">
+                            <div class="title">テスト(不合格)</div>
+                            <div class="detail-info">
+                                <div class="important-info">
+                                    <span class="count">あと2回</span>
+                                    <span class="limit">～2017-12-31</span>
+                                </div>
+                                <div class="others">
+                                    <div class="progress failure">不合格</div>
+                                    <ul class="btns">
+                                        <li class="write"><a href=""></a></li><!-- テストを受ける -->
+                                        <li class="info"><a href=""></a></li><!-- 詳細 -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- contents item = questionnaire -->
+                    <div class="contents-item questionnaire">
+                        <div class="in">
+                            <div class="title">アンケート</div>
+                            <div class="detail-info">
+                                <div class="important-info">
+                                    <span class="limit">～2017-12-31</span>
+                                </div>
+                                <div class="others">
+                                    <div class="progress incomplete">未提出</div>
+                                    <ul class="btns">
+                                        <li class="write"><a href=""></a></li><!-- 書く -->
+                                        <li class="info"><a href=""></a></li><!-- 詳細 -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- contents item = report -->
+                    <div class="contents-item report">
+                        <div class="in">
+                            <div class="title">レポート</div>
+                            <div class="detail-info">
+                                <div class="important-info">
+                                    <span class="limit">～2017-12-31</span>
+                                </div>
+                                <div class="others">
+                                    <div class="progress incomplete">未提出</div>
+                                    <ul class="btns">
+                                        <li class="write"><a href=""></a></li><!-- 書く -->
+                                        <li class="info"><a href=""></a></li><!-- 詳細 -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <!-- contents item = TB -->
+                    <div class="contents-item tb">
+                        <div class="in">
+                            <div class="title">TBコンテンツ</div>
+                            <div class="detail-info">
+                                <div class="important-info">
+                                    <span class="count">2回</span>
+                                    <span class="contents-time">12:34</span>
+                                </div>
+                                <div class="others">
+                                    <div class="progress incomplete">0%</div>
+                                    <ul class="btns">
+                                        <li class="play"><a href=""></a></li><!-- 再生 -->
+                                        <li class="file"><a href=""></a></li><!-- 添付ファイル -->
+                                        <li class="info"><a data-toggle="modal" data-target="#Modal-contentsinfo"></a></li><!-- 詳細 -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <!-- contents item = MP4 -->
+                    <div class="contents-item mp4">
+                        <div class="in">
+                            <div class="title">MP4コンテンツ</div>
+                            <div class="detail-info">
+                                <div class="important-info">
+                                    <span class="count">2回</span>
+                                    <span class="contents-time">12:34</span>
+                                </div>
+                                <div class="others">
+                                    <div class="progress complete">100%</div>
+                                    <ul class="btns">
+                                        <li class="play"><a href=""></a></li><!-- 再生 -->
+                                        <li class="info"><a href=""></a></li><!-- 詳細 -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

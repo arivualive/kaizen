@@ -1,0 +1,832 @@
+@charset "UTF-8";
+
+/* common=============================================================== */
+
+*{
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box ;
+}
+html, body {
+    height: 100%;
+}
+html{
+    font-size: 62.5% ;
+}
+body{
+    color: #2b547c ;
+    line-height: 1 ;
+    font-family: "游ゴシック Medium" , "Yu Gothic Medium" , "游ゴシック体", YuGothic, 'Hiragino Kaku Gothic Pro', Meiryo , sans-serif ;
+    font-size: 1.3rem ;
+}
+a,
+button,
+label,
+a:hover{
+    transition: all 0.2s ;
+    color: #2b547c ;
+}
+input,
+textarea,
+select{
+
+}
+a:hover,
+button:hover,
+input[type="submit"]:hover,
+label:hover{
+    text-decoration: none ;
+    cursor: pointer ;
+}
+
+ul , li{
+    list-style-type: none ;
+    margin-bottom: 0 ;
+}
+p{
+    margin-bottom: 0 ;
+}
+#wrap{
+    background-color: #f1f1f1 ;
+    min-width: 100% ;
+    min-height: 100% ;
+    padding-left: 210px ;
+    min-width: 1000px ;
+    position: relative ;
+}
+
+/* side nav=============================================================== */
+
+#nav-fixed{
+    width: 210px ;
+    position: fixed ;
+    top: 0 ;
+    left: 0 ;
+    height: 100% ;
+    background-color: #2b547c ;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) ;
+    z-index: 100 ;
+}
+
+/* h1=============================== */
+
+.brand a{
+    background-color: #fff ;
+    width: 100% ;
+    padding: 20px ;
+    height: 130px ;
+    display: block ;
+}
+.brand a h1 .img_h1{
+    text-align: center ;
+    margin-bottom: 10px ;
+}
+.brand a h1 .img_h1 img{
+    max-width: 100% ;
+}
+.brand a h1 p.authority{
+    background-color: #eee ;
+    padding-top: 5px ;
+    font-size: 12px ;
+    margin: 0 auto ;
+    height: 26px ;
+    text-align: center ;
+    border-radius: 13px ;
+    letter-spacing: 0.2em ;
+    font-weight: 600 ;
+}
+.brand a:hover h1 p.authority,
+.brand a:visited h1 p.authority{
+    color: #2b547c ;
+}
+
+/* scroll nav======================== */
+
+#scrollerea{
+    width: 100% ;
+    position: relative ;
+    overflow-y: auto ;
+    height: calc(100vh - 130px);
+}
+#scrollerea::-webkit-scrollbar,
+.scrollerea::-webkit-scrollbar{
+    width: 8px ;
+}
+#scrollerea::-webkit-scrollbar-track,
+.scrollerea::-webkit-scrollbar-track{
+    border-radius: 4px;
+}
+#scrollerea::-webkit-scrollbar-thumb,
+.scrollerea::-webkit-scrollbar-thumb{
+    background-color: #4eb0e7 ;
+    border-radius: 4px;
+}
+#mainnav ul.accordion{
+    margin-bottom: 0 ;
+}
+#mainnav ul.accordion li{
+    height: auto ;
+    margin-bottom: 1px ;
+}
+#mainnav ul.accordion li a{
+    display: block ;
+    width: 100% ;
+    padding: 20px 15px ;
+    transition: all 0.2s ;
+    color: #fff ;
+    font-size: 1.3rem ;
+    cursor: pointer ;
+    user-select: none ;
+    -moz-user-select: none ;
+    -webkit-user-select: none ;
+    -ms-user-select: none ;
+    height: 60px ;
+    font-weight: 600 ;
+}
+#mainnav ul.accordion li a span{
+    margin-right: 8px ;
+    font-size: 1.4em ;
+    vertical-align: text-top ;
+    font-weight: normal ;
+}
+#mainnav ul.accordion li a:hover{
+    color: #4eb0e7 ;
+    background-color: rgba(0, 0, 0, 0.15) ;
+}
+#mainnav ul.accordion li.open a{
+    text-decoration: none ;
+    color: #4eb0e7 ;
+    background-color: rgba(0, 0, 0, 0.15) ;
+}
+#mainnav ul.accordion a.togglebtn{
+	position: relative;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+#mainnav ul.accordion a.togglebtn::after{
+    position: absolute ;
+    right: 15px ;
+    top: 23px ;
+    content: "\e705" ;
+    font-family: icomoon ;
+    font-size: 1.0rem ;
+    transition: all 0.2s ;
+    font-weight: normal ;
+}
+#mainnav ul.accordion li.open a.togglebtn::after{
+    transform: rotate(-90deg) ;
+}
+#mainnav ul.accordion li ul.togglemenu{
+    display: none ;
+}
+#mainnav ul.accordion li ul.togglemenu.open{
+    display: block ;
+}
+#mainnav ul.accordion li ul.togglemenu li{
+    margin-bottom: 0 ;
+}
+#mainnav ul.accordion li ul.togglemenu li a{
+    display: block ;
+    font-size: 1.3rem ;
+    padding: 13px 10px 13px 40px ;
+    height: 40px ;
+    font-weight: normal ;
+}
+#mainnav ul.accordion li.open ul.togglemenu li a{
+    color: #fff ;
+}
+#mainnav ul.accordion li ul.togglemenu li a:hover,
+#mainnav ul.accordion li ul.togglemenu li a.active{
+    background-color: #4eb0e7 ;
+    color: #fff ;
+}
+
+/* header========================================================= */
+
+#header{
+    height: 60px ;
+    width: 100% ;
+    background-color: #fff ;
+    padding: 10px ;
+}
+
+/* topicpath==================== */
+
+#topicpath ol{
+    padding-left: 10px ;
+    padding-right: 10px ;
+    float: left ;
+    list-style-type: none ;
+    height: 40px ;
+    margin-bottom: 0 ;
+}
+#topicpath ol li{
+    float: left ;
+    height: 40px ;
+    margin-right: 20px ;
+    position: relative ;
+    padding: 15px 10px 0 10px ;
+}
+#topicpath ol li::after{
+    position: absolute ;
+    content: "\e706" ;
+    font-family: icomoon ;
+    right: -15px ;
+    top: 17px ;
+    color: #ccc ;
+    font-size: 0.8em ;
+    font-weight: normal ;
+}
+#topicpath ol li a{
+    display: block ;
+    height: 100% ;
+    text-decoration: underline ;
+}
+#topicpath ol li:last-child::after{
+    content: none ;
+}
+#topicpath ol li.active a,
+#topicpath ol li a:hover{
+    color: #4eb0e7 ;
+}
+
+/* userinfo========================== */
+
+#userinfo{
+    float: right ;
+    border-left: 1px #ddd solid ;
+    position: relative ;
+    height: 40px ;
+}
+#userinfo a.link{
+    display: block ;
+    height: 40px ;
+    padding: 0 30px 0 20px ;
+    transition: all 0.2s ;
+    position: relative ;
+}
+#userinfo a.link::after{
+    position: absolute ;
+    right: 10px ;
+    top: 15px ;
+    content: "\e704" ;
+    font-family: icomoon ;
+}
+#userinfo a.link:hover{
+    color: #4eb0e7 ;
+}
+#userinfo .erea-image{
+    float: left ;
+    width: 40px ;
+    height: 40px ;
+    border-radius: 50% ;
+    background-color: rgba(0, 0, 0, 0.05) ;
+    background-image: url(../images/icon-admin-userinfo.png) ;
+    background-position: center ;
+    background-repeat: no-repeat ;
+}
+#userinfo .erea-name{
+    float: left ;
+    min-width: 120px ;
+    padding: 5px 10px ;
+}
+#userinfo .erea-name .authority{
+    font-size: 1.1rem ;
+    margin-bottom: 5px ;
+}
+#userinfo .erea-name .username{
+    font-size: 1.4rem ;
+    font-weight: 600 ;
+}
+#userinfo .button-dropdown{
+    position: relative;
+}
+.button-dropdown .submenu{
+    position: absolute ;
+    display: none ;
+    list-style-type: none ;
+}
+#userinfo .submenu{
+    background-color: #fff ;
+    border-radius: 5px ;
+    left: 60px ;
+    top: 45px ;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15) ;
+    z-index: 1 ;
+    overflow: hidden ;
+}
+#userinfo .submenu li a{
+    transition: all 0.2s ;
+    display: block ;
+    width: 100% ;
+    height: 35px ;
+    border-radius: 0 ;
+    padding: 10px 15px 0 15px ;
+    border-bottom: #f1f1f1 1px solid ;
+}
+#userinfo .submenu li a span{
+    margin-right: 5px ;
+}
+#userinfo .submenu li a:hover{
+    text-decoration: none ;
+    color: #4eb0e7 ;
+    background-color: #f1f1f1 ;
+}
+
+/* main contents============================================- */
+
+#maincontents{
+    width: 100% ;
+    padding: 30px ;
+}
+#maincontents .h2{
+    margin-bottom: 20px ;
+    border-bottom: 1px solid #ddd ;
+	height: 35px ;
+}
+#maincontents .h2 h2{
+    font-weight: 600 ;
+    font-size: 2.5rem ;
+	display: inline-block ;
+}
+
+
+/* modal ============================================================ */
+
+.modal-backdrop.show{
+    opacity: 0.15 ;
+}
+.modal-content{
+    border-radius: 10px ;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) ;
+    border: 0 ;
+}
+.modal-header{
+    padding: 20px ;
+    background-color: #f1f1f1 ;
+    border-radius: 10px 10px 0 0 ;
+    position: relative ;
+}
+.modal-header .modal-title{
+    font-size: 1.5rem ;
+}
+.modal-header .close{
+    position: absolute ;
+    height: 40px ;
+    width: 40px ;
+    color: #fff ;
+    background-color: #2b547c ;
+    border-radius: 50% ;
+    top: -10px ;
+    right: -10px ;
+    opacity: 1 ;
+    margin: 0 ;
+    font-size: 12px ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+}
+
+/* input group */
+
+dl.input-group{
+    margin-bottom: 0 ;
+}
+dl.input-group.border-top{
+    border-top: #ddd 1px solid !important ;
+    margin-top: 10px ;
+    padding-top: 15px ;
+}
+/* 公開日 */
+dl.input-group.day-start{
+    float: left ;
+    width: 250px ;
+    padding-right: 10px ;
+    position: relative ;
+}
+dl.input-group.day-start dd input{
+    width: 180px !important ;
+}
+dl.input-group.day-start::after{
+    content: "～" ;
+    position: absolute ;
+    right: 20px ;
+    top: 40px ;
+}
+/* 期限日 */
+dl.input-group.day-limit{
+    float: left ;
+    width: 250px ;
+}
+dl.input-group.day-limit dd input{
+    width: 180px !important ;
+}
+
+dl.input-group dt{
+    width: 100% ;
+    padding: 5px 0 ;
+}
+dl.input-group .text_limit{
+    float: right;
+    color: #aaa ;
+}
+dl.input-group dd{
+    padding: 5px 0 ;
+    width: 100% ;
+}
+dl.input-group p.attention{
+    font-size: 1.1rem ;
+    padding-top: 0px ;
+    margin-bottom: 10px ;
+    color: #eb3131 ;
+}
+/*
+dl.input-group p.attention{
+    font-size: 1.1rem ;
+    padding: 5px ;
+	background-color: #eb3131 ;
+	border-radius: 3px ;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) ;
+    margin-bottom: 10px ;
+    color: #eb3131 ;
+	position: relative ;
+	color: #fff ;
+	z-index: 1 ;
+	margin-top: -5px ;
+	display: inline-block ;
+}
+dl.input-group p.attention::before{
+	content: "!" ;
+	color: #eb3131 ;
+	height: 14px ;
+	width: 14px ;
+	background-color: #fff ;
+	border-radius: 50% ;
+	padding-top: 2px ;
+	font-size: 1.1rem ;
+	display: inline-block ;
+	font-weight: bold ;
+	text-align: center ;
+	margin-right: 3px ;
+}
+dl.input-group p.attention::after{
+	position: absolute ;
+	top: -5px ;
+	left: 10px ;
+	height: 17px ;
+	width: 17px ;
+	transform: rotate(45deg) ;
+	background-color: #eb3131 ;
+	content: " " ;
+	z-index: -1 ;
+	border-radius: 2px ;
+}
+*/
+dl.input-group dd input[type="text"],
+dl.input-group dd input[type="password"]{
+    border: #ddd solid 1px ;
+    border-radius: 3px ;
+    padding: 5px ;
+    width: 100% ;
+    color: #2b547c ;
+}
+dl.input-group dd.set-btn input[type="text"]{
+    float: left ;
+    border-radius: 3px 0 0 3px ;
+    border-right: 0 ;
+}
+dl.input-group dd.set-btn button{
+    float: left ;
+    background-color: #2b547c ;
+    color: #fff ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+    padding: 10px ;
+    border-radius: 0 3px 3px 0 ;
+    margin-left: 0 ;
+}
+dl.input-group dd input[type="file"]{
+    font-weight: 600 ;
+}
+dl.input-group dd input[type="date"]{
+    border: #ddd solid 1px ;
+    border-radius: 3px ;
+    padding: 5px ;
+    width: 100% ;
+    max-width: 300px ;
+    color: #2b547c ;
+}
+dl.input-group dd input[type="number"]{
+    border: #ddd solid 1px ;
+    border-radius: 3px ;
+    padding: 5px ;
+    color: #2b547c ;
+    min-width: 100px ;
+}
+dl.input-group dd textarea{
+    border: #ddd solid 1px ;
+    border-radius: 3px ;
+    padding: 5px ;
+    width: 100% ;
+    color: #2b547c ;
+    line-height: 1.5em ;
+}
+dl.input-group dd input[type="submit"]{
+    float: right ;
+    padding: 10px 15px ;
+    margin-left: 5px ;
+    border-radius: 3px ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+    border: 0 ;
+}
+dl.input-group dd button{
+    float: right ;
+    padding: 10px 15px ;
+    margin-left: 5px ;
+    border-radius: 3px ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+    border: 0 ;
+}
+dl.input-group dd select{
+    border: #ddd solid 1px ;
+    border-radius: 3px ;
+    padding: 5px ;
+    color: #2b547c ;
+    line-height: 1.5em ;
+}
+dl.input-group dd select option{
+    font-weight: 600 ;
+}
+
+label.checkbox{
+	margin-bottom: 0 ;
+	line-height: 1.3em ;
+}
+.checkbox input[type="checkbox"],
+.checkbox input[type="radio"]{
+    display: none ;
+}
+.checkbox input[type="checkbox"] + .icon,
+.checkbox input[type="radio"] + .icon{
+    position: relative;
+    vertical-align: middle ;
+    display: block ;
+    height: 15px ;
+    width: 15px ;
+    float: left ;
+    margin-right: 3px ;
+	line-height: 1 ;
+}
+.checkbox input[type="checkbox"] + .icon:before,
+.checkbox input[type="radio"] + .icon:before{
+    content: " ";
+    background-color: #fff ;
+    border: #ccc 1px solid ;
+    font-size: 9px ;
+    padding: 2px ;
+    border-radius:3px ;
+    height: 15px ;
+    width: 15px ;
+    margin-right: 5px ;
+    font-family: icomoon ;
+    position: absolute ;
+    top: 0 ;
+	left: 0 ;
+}
+.checkbox input[type="checkbox"]:checked + .icon:before,
+.checkbox input[type="radio"]:checked + .icon:before{
+    content: "\ea10";
+    color: #fff ;
+    background-color: #4eb0e7 ;
+    border-color: #4eb0e7 ;
+}
+
+/* subject list(button)
+==============================================*/
+
+.subject-group ul.accordion li{
+    width: 100% ;
+}
+.subject-group ul.accordion li a{
+    padding: 13px 13px 13px 28px ;
+    position: relative ;
+	transition: all 0.4s ease;
+    font-weight: bold ;
+	display: block ;
+}
+.subject-group ul.accordion li a::before{
+    position: absolute ;
+    left: 5px ;
+    top: 10px ;
+    content: "\f02d" ;
+    font-family: icomoon ;
+	color: #2b547c ;
+    transition: all 0.2s ;
+	font-weight: normal ;
+	font-size: 1.8rem ;
+	z-index: 10 ;
+}
+.subject-group ul.accordion li.open a::before,
+.subject-group ul.accordion li a:hover::before,
+.subject-group ul.accordion li a:hover{
+	color: #4eb0e7 ;
+}
+.subject-group ul.accordion li ul.togglemenu{
+    display: none ;
+	padding-left: 18px ;
+}
+.subject-group ul.accordion li.open a::after{
+	position: absolute ;
+	border-left: 1px solid rgba(0, 0, 0, 0.08) ;
+	height: 100% ;
+	width: 1px ;
+	left: 13px ;
+	bottom: -50% ;
+	content: " " ;
+	z-index: 0 ;
+}
+.subject-group ul.accordion li ul.togglemenu li{
+	padding: 1px 0 ;
+	position: relative
+}
+.subject-group ul.accordion li ul.togglemenu li::after{
+	position: absolute ;
+	border-left: 1px solid rgba(0, 0, 0, 0.08) ;
+	height: 100% ;
+	width: 1px ;
+	left: -5px ;
+	top: 20px ;
+	content: " " ;
+}
+.subject-group ul.accordion li ul.togglemenu li a{
+    display: block ;
+    color: #2b547c ;
+	position: relative ;
+	z-index: 0 ;
+	padding: 10px ;
+}
+.subject-group ul.accordion li ul.togglemenu li a::after,
+.subject-group ul.accordion li ul.togglemenu li:last-child::after{
+	content: none ;
+}
+.subject-group ul.accordion li ul.togglemenu li.active a,
+.subject-group ul.accordion li ul.togglemenu li a:hover{
+	z-index: 2 ;
+	/* background-color: rgba(78, 176, 231, 0.18) ; */
+	border-radius: 3px ;
+	color: #4eb0e7 ;
+}
+.subject-group ul.accordion li ul.togglemenu li.active a::before{
+	content: "\ea10" ;
+	background-color: #4eb0e7 ;
+	height: 13px ;
+	width: 13px ;
+	color: #fff ;
+	text-align: center ;
+	border-radius: 50% ;
+	font-family: icomoon ;
+	left: -11px ;
+	top: 50% ;
+	transform: translateY(-50%) ;
+	position: absolute ;
+	font-size: 9px ;
+	padding-top: 1px ;
+}
+.subject-group ul.accordion li ul.togglemenu li a::before{
+	content: none ;
+}
+.subject-group ul.accordion li ul.togglemenu.open{
+    display: block ;
+}
+
+/* datepicker==================================================== */
+
+.ui-datepicker{
+    z-index: 10 ;
+    background-color: #fff ;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15) ;
+    padding: 0 ;
+    width: 280px !important ;
+    border-radius: 5px ;
+    overflow: hidden ;
+}
+.ui-datepicker-header{
+    padding: 10px !important ;
+    background-color: #f1f1f1 ;
+}
+a.ui-datepicker-prev,
+a.ui-datepicker-next{
+    text-align: center ;
+    top: auto !important ;
+    top: 12px !important ;
+    padding-top: 3px ;
+}
+a.ui-datepicker-prev::before{
+    content: "\e705" ;
+    font-family: icomoon ;
+}
+a.ui-datepicker-next::before{
+    content: "\e706" ;
+    font-family: icomoon ;
+}
+a.ui-datepicker-prev-hover::before,
+a.ui-datepicker-next-hover::before{
+    color: #4eb0e7 ;
+}
+.ui-datepicker-calendar{
+    margin-bottom: 0 !important ;
+    border-radius: 0 0 5px 5px ;
+    overflow: hidden ;
+}
+.ui-datepicker th{
+    background-color: #f1f1f1 ;
+}
+.ui-datepicker td{
+    padding: 0px !important ;
+    border: #f1f1f1 2px solid !important ;
+}
+a.ui-state-default{
+    padding: 10px !important ;
+}
+a.ui-state-default:hover{
+    background-color: #f1f1f1 ;
+}
+a.ui-state-default.ui-state-active{
+    background-color: #4eb0e7 ;
+    color: #fff ;
+}
+
+
+/* 後削除============================================================- */
+/*
+#mainnav ul.accordion li:nth-child(2) ul.togglemenu li:nth-child(2), /* ナビから講師ID管理非表示
+#mainnav ul.accordion li:nth-child(5) ul.togglemenu li:nth-child(2) /* ナビから講師受講状況(動画授業)を非表示
+{
+    display: none ;
+}
+*/
+.attachment_hidden {
+    background-color: #fff;
+    box-shadow: none !important;
+    position: relative;;
+}
+.attachment_hidden::before,
+.attachment_hidden::after {
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  opacity: 0;
+}
+.attachment_hidden::before {
+  content: "";
+  border: 10px solid transparent;
+  border-bottom-color: #f7f7f7;
+  top: 10px;
+  left: 10px;
+}
+.attachment_hidden::after {
+  content: attr(data-tooltip);
+  display: block;
+  padding: 20px;
+  background: #f7f7f7;
+  color: #000;
+  border-radius: 5px;
+  top: 30px;
+  left: 0;
+  width: 250px;
+}
+.attachment_hidden:hover::before {
+  top: 16px;
+  opacity: 1;
+}
+.attachment_hidden:hover::after {
+  top: 36px;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attachment {
+    color: #0000FF;
+}
+.attachment_hidden:hover {
+    color: #0000FF;
+}

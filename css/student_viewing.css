@@ -1,0 +1,128 @@
+
+#stop-speed {
+    width: 224px;
+    display: inline-block;
+}
+#normal-speed {
+    width: 224px;
+    display: inline-block;
+
+}
+#double-speed {
+    width: 224px;
+    display: inline-block;
+
+}
+#triple-speed {
+    width: 224px;
+    display: inline-block;
+
+}
+#quadruple-speed {
+    width: 224px;
+    display: inline-block;
+    text-align: right;
+}
+.speed {
+    width: 32px;
+    height: 5px;
+    display: inline-block;
+    float: left;
+}
+.speed-x0 {
+    background-color: #444444;
+    margin-right: 96px;
+}
+.speed-x1-0 {
+    background-color: #03A9F4;
+}
+.speed-x1-1 {
+    background-color: #07AAE6;
+}
+.speed-x1-2 {
+    background-color: #0BABD8;
+}
+.speed-x1-3 {
+    background-color: #0EACCA;
+}
+.speed-x1-4 {
+    background-color: #12ADBC;
+}
+.speed-x1-5 {
+    background-color: #16AEAF;
+}
+.speed-x1-6 {
+    background-color: #1AAEA1;
+}
+.speed-x1-7 {
+    background-color: #1EAF93;
+}
+.speed-x1-8 {
+    background-color: #21B085;
+}
+.speed-x1-9 {
+    background-color: #25B177;
+}
+.speed-x2-0 {
+    background-color: #29B269;
+}
+.speed-x2-1 {
+    background-color: #3EB565;
+}
+.speed-x2-2 {
+    background-color: #54B761;
+}
+.speed-x2-3 {
+    background-color: #69BA5D;
+}
+.speed-x2-4 {
+    background-color: #7FBD59;
+}
+.speed-x2-5 {
+    background-color: #94C055;
+}
+.speed-x2-6 {
+    background-color: #A9C250;
+}
+.speed-x2-7 {
+    background-color: #BFC54C;
+}
+.speed-x2-8 {
+    background-color: #D4C848;
+}
+.speed-x2-9 {
+    background-color: #EACA44;
+}
+.speed-x3-0 {
+    background-color: #FFCD40;
+}
+.speed-x3-1 {
+    background-color: #FFBF47;
+}
+.speed-x3-2 {
+    background-color: #FFB14D;
+}
+.speed-x3-3 {
+    background-color: #FFA354;
+}
+.speed-x3-4 {
+    background-color: #FF955A;
+}
+.speed-x3-5 {
+    background-color: #FF8761;
+}
+.speed-x3-6 {
+    background-color: #FF7867;
+}
+.speed-x3-7 {
+    background-color: #FF6A6E;
+}
+.speed-x3-8 {
+    background-color: #FF5C74;
+}
+.speed-x3-9 {
+    background-color: #FF4E7B;
+}
+.speed-x4-0 {
+    background-color: #FF4081;
+}

@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+/*==========================================================
+
+sheet=>
+HOME
+
+============================================================= */
+
+
+/* 使用状況======================================================== */
+
+#status{
+    width: 100% ;
+    max-width: 1200px ;
+    margin-left: auto ;
+    margin-right: auto ;
+    margin-bottom: 20px ;
+    padding-top: 20px ;
+}
+.status-group{
+    float: left ;
+    padding-right: 20px ;
+}
+.status-group p.title{
+    width: 100% ;
+    font-weight: bold ;
+    margin-bottom: 20px ;
+    position: relative ;
+    padding-left: 30px ;
+}
+.status-group p.title::before{
+    font-family: icomoon ;
+    font-size: 2.5rem ;
+    font-weight: normal ;
+    position: absolute ;
+    left: 0 ;
+    top: -5px ;
+}
+.status-group p.title.users::before{
+    content: "\e90d"
+}
+.status-group p.title.user-group::before{
+    content: "\e911"
+}
+.status-group p.title.contents::before{
+    content: "\e908"
+}
+.status-group dl{
+    float: left ;
+    padding: 0 10px ;
+}
+.status-group dl dd{
+    margin-bottom: 10px ;
+    font-size: 3.3rem ;
+    font-weight: bold ;
+}
+.status-group dl dd.o{
+    color: #f5b123 ;
+}
+.status-group dl dd span{
+    font-size: 1.3rem ;
+    color: #2b547c ;
+}
+.status-group dl dt{
+    color: #aaa ;
+}
+.status-group dl dt::before{
+    font-family: icomoon ;
+    margin-right: 3px ;
+}
+.status-group dl dt.movie::before{
+    content: "\e908" ;
+    color: #439adb ;
+}
+.status-group dl dt.quiz::before{
+    content: "\e909" ;
+    color: #6fba41 ;
+}
+.status-group dl dt.questionnaire::before{
+    content: "\e909" ;
+    color: #e26775 ;
+}
+.status-group dl dt.report::before{
+    content: "\e909" ;
+    color: #e6a03b ;
+}
+
+/* 機能一覧======================================================== */
+
+#mainmenu{
+    width: 100% ;
+    max-width: 1200px ;
+    margin-left: auto ;
+    margin-right: auto ;
+}
+.group{
+    width: 33% ;
+    float: left ;
+    padding: 30px 10px 20px 10px ;
+    margin-bottom: 10px ;
+}
+#mainmenu .clearfix .group:first-child{
+    padding-left: 0 ;
+}
+#mainmenu .clearfix .group:last-child{
+    padding-right: 0 ;
+}
+.group .in{
+    width: 100% ;
+    background-color: #fff ;
+    border-radius: 5px ;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) ;
+    position: relative ;
+	transition: all 0.5s ;
+}
+.group .in:hover{
+    box-shadow: 0px 3px 18px rgba(0, 0, 0, 0.20) ;
+}
+.group .in p.icon{
+    position: absolute ;
+    height: 60px ;
+    width: 60px ;
+    border-radius: 50% ;
+    top: -30px ;
+    left: 50% ;
+    transform: translateX(-50%) ;
+    background-color: #fff ;
+    text-align: center ;
+    padding-top: 15px ;
+}
+.group .in p.title{
+    width: 100% ;
+    line-height: 1.3em ;
+    margin-bottom: 10px ;
+    padding-top: 30px ;
+    text-align: center ;
+    font-size: 1.8rem ;
+    font-weight: bold ;
+}
+.group .in p.method{
+    width: 100% ;
+    line-height: 1.5em ;
+    margin-bottom: 20px ;
+    padding: 0 20px ;
+    text-align: left ;
+}
+.group .in ul{
+    width: 100% ;
+    border-radius: 0 0 5px 5px ;
+    overflow: hidden ;
+}
+.group .in ul li{
+    width: 100% ;
+    float: left ;
+    border-top: #eee 1px solid ;
+}
+.group .in ul li.w-50{
+    width: 50% ;
+}
+.group .in ul li.w-50.b-r{
+    border-right: #eee 1px solid ;
+}
+.group .in ul li a{
+    display: block ;
+    height: 45px ;
+    padding: 15px ;
+    font-weight: bold ;
+}
+.group .in ul li a::before{
+    font-family: icomoon ;
+	font-size: 0.9rem ;
+    content: "\e706" ;
+    color: #fff ;
+	height: 15px ;
+	width: 15px ;
+	border-radius: 50% ;
+	background-color: #2b547c ;
+    margin-right: 5px ;
+    font-weight: normal ;
+	display: inline-block ;
+	padding-top: 3px ;
+	text-align: center ;
+	margin-top: -3px ;
+	transition: all 0.2s ;
+}
+.group .in ul li a:hover{
+    background-color: #f1f1f1 ;
+    color: #4eb0e7 ;
+}
+.group .in ul li a:hover::before{
+	background-color: #4eb0e7 ;
+	color: #f1f1f1 ;
+}
+
+.group .in p.title2{
+    width: 100% ;
+    line-height: 1.3em ;
+    margin-bottom: 10px ;
+    padding-top: 20px ;
+    text-align: center ;
+    font-size: 1.8rem ;
+    font-weight: bold ;
+}
+.group .in table {
+    margin: 0 auto 20px auto;
+}
+.group .in table td {
+    padding: 2px;
+}
+.group .in table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.maru::before{
+    font-family: icomoon;
+    content: "\e70a";
+    color: #318dd0;
+}
+.batu::before{
+    font-family: icomoon;
+    content: "\ea0f";
+    color: #e33b3b;
+}
+
+/* 後削除==================================================== */
+
+#status /* ステータスリスト非表示 */
+{
+    display: none ;
+}

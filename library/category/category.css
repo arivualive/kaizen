@@ -1,0 +1,71 @@
+/* @import url('items/yugothic.min.css'); */
+label{font-family:'游ゴシック体',YuGothic,'游ゴシック Medium','Yu Gothic Medium','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','YuGothic WEB','メイリオ',Meiryo,sans-serif;margin-bottom:0px}
+body{-webkit-text-size-adjust:100%}
+input[name='folder'],input[name='category[]'],.toggle{display:none}
+button,.border{user-select:none;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none}
+label,button{font-size:14px;cursor:pointer}
+label:focus{outline:3px solid #bfdff7}
+button{padding:13px;font-size:1.3rem;color:#fff;background-color:#4eb0e7;min-width:100px;height:40px;border:0px;border-radius:3px;box-shadow:0px 2px 0px rgba(0,0,0,0.15);}
+input[name='folder']:checked + .angle{color:#bbb;transform:rotate(-90deg)}
+input[name='category[]']:checked + .label1{color:#80397b;border-left-color:#9e5499;background:#ffeeff;font-weight:bold}
+input[name='category[]']:checked + .label2{color:#2b579a;border-left-color:#3c65a4;background:#eeeeff;font-weight:bold}
+input[name='category[]']:checked + .label3{color:#217346;border-left-color:#3f8159;background:#eeffee;font-weight:bold}
+input[name='category[]']:checked + .label4{color:#b7472a;border-left-color:#c75033;border-right-color:#ffeeee;background:#ffeeee;font-weight:bold}
+input[name='category[]']:checked + .shadow{box-shadow:2px 1px 0px 0px #e6e6e6,3px 2px 0px 0px #dadada,5px 3px 0px 0px #e6e6e6,6px 4px 0px 0px #dadada}
+input[name='permission[]']{display:none}
+input[name='permission[]']:checked + .label1{color:#80397b;border-left-color:#9e5499;background:#ffeeff;font-weight:bold}
+input[name='permission[]']:checked + .label2{color:#2b579a;border-left-color:#3c65a4;background:#eeeeff;font-weight:bold}
+input[name='permission[]']:checked + .label3{color:#217346;border-left-color:#3f8159;background:#eeffee;font-weight:bold}
+input[name='permission[]']:checked + .label4{color:#b7472a;border-left-color:#c75033;border-right-color:#ffeeee;background:#ffeeee;font-weight:bold}
+input[name='permission[]']:checked + .shadow{box-shadow:2px 1px 0px 0px #e6e6e6,3px 2px 0px 0px #dadada,5px 3px 0px 0px #e6e6e6,6px 4px 0px 0px #dadada}
+.border{padding:1px;background:#ffffee;border-radius:4px;box-shadow:1px 1px 2px rgba(0,0,0,0.1)}
+.padding{padding-left:30px;overflow:hidden}
+.padding1{padding-left:0px;margin:14px 0px}
+.padding2{padding-left:30px}
+.item1{white-space:nowrap;display:inline-block}
+.item2{white-space:nowrap;display:block}
+.select{user-select:text;-moz-user-select:text;-webkit-user-select:text;-ms-user-select:text;cursor:text}
+.button{background:#1664a7}
+.button:hover{background:#106ebe;border-color:#0078d7}
+.button:focus{box-shadow:0px 0px 0px 4px rgba(0,120,215,0.5)}
+.back{color:#2b547c;background-color:#fff}
+.space{margin-top:14px}
+/* ラベル */
+.label{margin:1px 2px 1px 0px;padding:10px 3px 9px 4px;color:#b0b0b0;background:whitesmoke;border-left:10px solid #dadada;border-right:1px solid #dadada;border-bottom:1px solid #dadada;white-space:normal}
+.label{transition-property:margin,font-size;transition-duration:.2s;transition-timing-function:ease-out}
+.label1{min-width:210px}
+.label2{min-width:180px}
+.label3{min-width:150px}
+.label4{min-width:124px;border-left:6px solid #dadada;border-right:1px solid whitesmoke;border-radius:4px}
+.shadow{margin:1px 2px 5px 0px;border-radius:0px 2px 2px 0px;box-shadow:2px 1px 0px 0px #eee,3px 2px 0px 0px #dadada,5px 3px 0px 0px #eee,6px 4px 0px 0px #dadada}
+.view1{padding:5px 3px 4px 4px;cursor:default}
+.view1:hover{cursor:default}
+.view2{color:#777;cursor:default}
+.view2:hover{cursor:default}
+/* 編集マーク */
+.mark,.label{font-size:13px;line-height:1;vertical-align:middle;display:inline-block}
+.mark{font-family:'Font Awesome 5 Free';font-weight:900;padding:0px;line-height:33px;width:30px;height:33px;color:#666;text-align:center;background-color:rgba(0,0,0,0)}
+.add1,.add2,.del1,.del2,.up1,.up2,.down1,.down2{font-size:14px;display:none}
+.up1,.up2{text-align:right;text-indent:6px;direction:rtl}
+.down1,.down2{text-align:left;text-indent:6px}
+.add1{color:#009900}.add1:hover{color:#33cc33}
+.add2{color:#003300}.add2:hover{color:#339933}
+.del1{color:#cc0000}.del1:hover{color:#ff6666}
+.del2{color:#990000}.del2:hover{color:#ff3333}
+/*.up1,.up2,.down1,.down2,.angle{font-size:13px}*/
+.up1:hover,.up2:hover,.down1:hover,.down2:hover,.angle:hover{color:#bbb}
+.up1d,.up2d,.down1d,.down2d{cursor:default;display:none}
+.up1d:hover,.up2d:hover,.down1d:hover,.down2d:hover{cursor:default}
+/*.add1,.add2,.del1,.del2,.up1,.up2,.down1,.down2,.angle{background:#66cc66}.up1d,.down1d{background:#ff6666}.up2d,.down2d{background:#6666ff}*/
+.view3{line-height:23px;height:23px}
+/* トグルスイッチ */
+.mode{margin:3px 4px;font-size:13px;color:#217346;line-height:1.9;font-weight:bold}
+.switch{width:40px;height:24px;background:#ccc;border-radius:20px;border:2px solid #bbb;position:relative;display:block;float:right}
+.switch:after,.switch:before{content:'';width:60%;height:100%;position:relative;display:block}
+.switch:after{left:0px}
+.switch:before{display:none}
+.switch:after{background:#fff;border-radius:50%;transition:.2s linear}
+.toggle:checked+.switch{background:#4cd864;border:2px solid #4cd864}
+.toggle:checked+.switch:after{left:40%}
+/* スマホ用レイアウト */
+@media(max-width:736px){label:focus{outline:0px}button{font-size:13px}.label,.up1,.up2,.down1,.down2,.angle{font-size:12px}.mark{line-height:32px;height:32px}.view3{line-height:22px;height:22px}.mode{font-size:13px;line-height:2}}

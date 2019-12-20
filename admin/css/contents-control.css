@@ -1,0 +1,804 @@
+@charset "UTF-8";
+
+/*==========================================================
+
+sheet=>
+contents-control(コンテンツ管理)
+
+============================================================= */
+
+
+/* column control
+============================================= */
+
+#col-contentscontrol{
+    width: 100% ;
+}
+#col-contentscontrol #subject-group{
+    width: 22% ;
+    padding-right: 20px ;
+    float: left ;
+}
+#col-contentscontrol #contentslist{
+    width: 78% ;
+    float: right ;
+}
+
+/* subject list
+==============================================*/
+
+.subject-group ul.accordion li{
+    width: 100% ;
+    padding: 5px 0 ;
+}
+.subject-group ul.accordion li a{
+    padding: 8px 15px 8px 25px ;
+    min-height: 30px ;
+    border-radius: 18px ;
+    display: inline-block ;
+    position: relative ;
+    -webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+.subject-group ul.accordion li a::before{
+    position: absolute ;
+    left: 10px ;
+    top: 10px ;
+    content: "\e706" ;
+    font-family: icomoon ;
+    color: rgba(0, 0, 0, 0.2) ;
+    font-size: 0.7em ;
+    transition: all 0.2s ;
+}
+.subject-group ul.accordion li.open a::before{
+    transform: rotate(90deg) ;
+}
+.subject-group ul.accordion li a:hover{
+    background-color: rgba(0, 0, 0, 0.07) ;
+}
+.subject-group ul.accordion li a:hover,
+.subject-group ul.accordion li.open a{
+    color: #4eb0e7 ;
+}
+.subject-group ul.accordion li ul.togglemenu{
+    display: none ;
+    padding-left: 20px ;
+}
+.subject-group ul.accordion li ul.togglemenu li a{
+    display: inline-block ;
+    padding-left: 15px ;
+    background-color: rgba(0, 0, 0, 0) ;
+    color: #2b547c ;
+}
+.subject-group ul.accordion li ul.togglemenu li a:hover{
+    background-color: rgba(0, 0, 0, 0.07) ;
+}
+.subject-group ul.accordion li ul.togglemenu li.active a{
+    background-color: #4eb0e7 ;
+    color: #fff ;
+}
+.subject-group ul.accordion li ul.togglemenu li a::before{
+    content: none ;
+}
+.subject-group ul.accordion li ul.togglemenu.open{
+    display: block ;
+}
+
+/* contentslist
+======================================================== */
+
+#contentslist .topbtngroup{
+    width: 100% ;
+    padding-top: 10px ;
+    margin-bottom: 10px ;
+}
+
+/* control btn group ====================================== */
+
+/* 新規登録 */
+#contentslist .topbtngroup .btn-newregist{
+    float: left ;
+    position: relative ;
+}
+#contentslist .topbtngroup .btn-newregist .link{
+    background-color: #4eb0e7 ;
+    display: block ;
+    border-radius: 20px ;
+    color: #fff ;
+    padding-top: 14px ;
+    padding-left: 15px ;
+    height: 40px ;
+    width: 120px ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+    text-align: center ;
+    position: relative ;
+}
+#contentslist .topbtngroup .btn-newregist .link .icon-add{
+    position: absolute ;
+    left: 10px ;
+    top: 10px ;
+    font-size: 20px ;
+    color: #3894c8 ;
+}
+#contentslist .topbtngroup .btn-newregist .link:hover,
+#contentslist .topbtngroup .btn-newregist .link.active{
+    background-color: #fff ;
+    color: #4eb0e7 ;
+}
+#contentslist .topbtngroup .btn-newregist .link.active::after{
+    position: absolute ;
+    content: "▲" ;
+    color: #2b547c ;
+    top: 40px ;
+    left: 20px ;
+    font-size: 18px ;
+}
+#contentslist .topbtngroup .btn-newregist .submenu{
+    background-color: #2b547c ;
+    border-radius: 5px ;
+    width: 200px ;
+    overflow: hidden ;
+    top: 50px ;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15) ;
+    z-index: 100 ;
+}
+#contentslist .topbtngroup .btn-newregist .submenu li{
+    width: 50% ;
+    float: left ;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) ;
+}
+#contentslist .topbtngroup .btn-newregist .submenu li:nth-child(odd){
+    border-right: 1px solid rgba(0, 0, 0, 0.1) ;
+}
+#contentslist .topbtngroup .btn-newregist .submenu li a,
+#contentslist .topbtngroup .btn-newregist .submenu li button{
+    width: 100% ;
+    height: 80px ;
+    padding: 45px 0 20px 0 ;
+    color: #fff ;
+    display: block ;
+    text-align: center ;
+    font-size: 1.3rem;
+    background-color: #2b547c ;
+    border: 0 ;
+    font-weight: 600 ;
+    position: relative ;
+}
+#contentslist .topbtngroup .btn-newregist .submenu li a:hover,
+#contentslist .topbtngroup .btn-newregist .submenu li button:hover{
+    background-color: rgba(0, 0, 0, 0.1) ;
+}
+#contentslist .topbtngroup .btn-newregist .submenu li a::before,
+#contentslist .topbtngroup .btn-newregist .submenu li button::before{
+    position: absolute ;
+    top: 23px ;
+    left: 50% ;
+    transform: translateX(-50%) ;
+    font-size: 1.3em ;
+    font-weight: normal ;
+    font-family: icomoon ;
+}
+
+/* TB・MP4 */
+#contentslist .topbtngroup .btn-newregist .submenu li.movie a::before,
+.btngroup-sortcontrol .item-sort .submenu li.movie a::before,
+#item-list .item.tb .in p.type::before{
+    color: #439adb ;
+    content: "\e908" ;
+}
+#item-list .item.MP4 .in p.type:before{
+    color: #5a63b6 ;
+    content: "\e908" ;
+}
+/* テスト */
+#contentslist .topbtngroup .btn-newregist .submenu li.test a::before,
+.btngroup-sortcontrol .item-sort .submenu li.test a::before,
+#item-list .item.test .in p.type:before{
+    color: #6fba41 ;
+    content: "\e909" ;
+}
+/* アンケート */
+#contentslist .topbtngroup .btn-newregist .submenu li.questionnaire a::before,
+.btngroup-sortcontrol .item-sort .submenu li.questionnaire a::before,
+#item-list .item.questionnaire .in p.type:before{
+    color: #e26775 ;
+    content: "\e907" ;
+}
+/* レポート */
+#contentslist .topbtngroup .btn-newregist .submenu li.report a::before,
+.btngroup-sortcontrol .item-sort .submenu li.report a::before,
+#item-list .item.report .in p.type:before{
+    color: #e6a03b ;
+    content: "\e907" ;
+}
+/* フォルダー */
+#contentslist .topbtngroup .btn-newregist .submenu li.folder button::before{
+    color: #f2dc40 ;
+    content: "\f07c" ;
+}
+
+
+/* itemcontrol=======================================*/
+
+#contentslist .topbtngroup .btngroup-sortcontrol{
+    float: right ;
+    width: 290px ;
+    padding-top: 5px ;
+}
+
+/* 移動 */
+.btngroup-sortcontrol .item-movement{
+    float: left ;
+}
+.item-movement p{
+    float: left ;
+    margin-right: 10px ;
+    padding-top: 10px ;
+}
+.item-movement ul{
+    float: left ;
+}
+.item-movement ul li{
+    float: left ;
+    width: 30px ;
+    height: 30px ;
+}
+.item-movement ul li button{
+    width: 30px ;
+    height: 30px ;
+    padding: 8px 0 ;
+    border: 0 ;
+    color: #fff ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+    font-size: 12px ;
+    font-weight: normal ;
+    position: relative ;
+}
+.item-movement ul li button::after{
+    position: absolute ;
+    background-color: rgba(43, 84, 124, 0.8) ;
+    color: #fff ;
+    padding: 5px ;
+    border-radius: 3px ;
+    font-size: 1.1rem ;
+    top: -22px ;
+    left: 50% ;
+    transform: translateX(-50%) ;
+    white-space: nowrap;
+    vertical-align: middle ;
+    z-index: 10 ;
+}
+/* 一番上 */
+.item-movement ul li:nth-child(1) button{
+    background-color: #ddd ;
+    border-radius: 3px 0 0 3px ;
+}
+.item-movement ul li:nth-child(1) button.active{
+    background-color: #73c5f4 ;
+}
+.item-movement ul li:nth-child(1) button:hover::after{
+    content: "一番上へ" ;
+}
+/* 上 */
+.item-movement ul li:nth-child(2) button{
+    background-color: #ccc ;
+}
+.item-movement ul li:nth-child(2) button.active{
+    background-color: #4eb0e7 ;
+}
+.item-movement ul li:nth-child(2) button:hover::after{
+    content: "上へ" ;
+}
+/* 下 */
+.item-movement ul li:nth-child(3) button{
+    background-color: #bbb ;
+}
+.item-movement ul li:nth-child(3) button.active{
+    background-color: #48a3d7 ;
+}
+.item-movement ul li:nth-child(3) button:hover::after{
+    content: "下へ" ;
+}
+/* 一番下 */
+.item-movement ul li:nth-child(4) button{
+    background-color: #aaa ;
+    border-radius: 0 3px 3px 0 ;
+}
+.item-movement ul li:nth-child(4) button.active{
+    background-color: #3894c8 ;
+}
+.item-movement ul li:nth-child(4) button:hover::after{
+    content: "一番下へ" ;
+}
+
+/* ソート */
+.btngroup-sortcontrol .item-sort{
+    float: right ;
+    position: relative ;
+}
+.btngroup-sortcontrol .item-sort a.link{
+    background-color: #2b547c ;
+    padding: 7px 10px ;
+    border-radius: 3px ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+    color: #fff ;
+    height: 30px ;
+    display: block ;
+}
+.btngroup-sortcontrol .item-sort .submenu{
+    background-color: #2b547c ;
+    border-radius: 5px ;
+    width: 120px;
+    right: 0;
+    top: 35px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15) ;
+    z-index: 2 ;
+}
+.btngroup-sortcontrol .item-sort .submenu li{
+    border-bottom: rgba(0, 0, 0, 0.07) solid 1px ;
+}
+.btngroup-sortcontrol .item-sort .submenu li a{
+    color: #fff ;
+    display: block ;
+    padding: 12px 15px 0 15px ;
+    height: 40px ;
+}
+.btngroup-sortcontrol .item-sort .submenu li a::before{
+    font-size: 1.2em ;
+    font-weight: normal ;
+    font-family: icomoon ;
+    margin-right: 5px ;
+}
+.btngroup-sortcontrol .item-sort .submenu li a:hover{
+    background-color: rgba(0, 0, 0, 0.07) ;
+}
+
+/* item list ============================================== */
+
+#item-list{
+    width: 100% ;
+}
+#item-list .item{
+    width: 100% ;
+    padding: 5px 0 ;
+}
+#item-list .item .in{
+    background-color: #fff ;
+    border-radius: 3px ;
+    width: 100% ;
+    padding: 11px 14px ;
+    border: #fff 1px solid ;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) ;
+    display: table ;
+    transition: all 0.2s ;
+    z-index: 1 ;
+}
+#item-list .item .in:hover{
+    cursor: pointer ;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3) ;
+    z-index: 2 ;
+    /*position: absolute ;*/
+}
+#item-list .item .in.focus,
+#item-list .item .in:focus{
+    border: #4eb0e7 1px solid ;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3) ;
+}
+/* checkbox */
+#item-list .item .in label.checkbox{
+    display: table-cell ;
+    width: 20px ;
+    padding-top: 3px ;
+}
+/* title */
+#item-list .item .in p.title{
+    display: table-cell ;
+    vertical-align: middle ;
+    padding-right: 10px ;
+}
+/* type */
+#item-list .item .in p.type{
+    display: table-cell ;
+    vertical-align: middle ;
+    width: 100px ;
+    color: #aaa ;
+}
+#item-list .item .in p.type::before{
+    font-family: icomoon ;
+    margin-right: 5px ;
+}
+/* btn group */
+#item-list .item .in ul.btngroup{
+    display: table-cell ;
+    vertical-align: middle ;
+    width: 120px ;
+}
+#item-list .item .in ul.btngroup li{
+    float: right ;
+    width: 25px ;
+    height: 22px ;
+    margin-left: 5px ;
+}
+#item-list .item .in ul.btngroup li a,
+#item-list .item .in ul.btngroup li button{
+    background-color: rgba(255, 255, 255, 0) ;
+    border: 0 ;
+    position: relative ;
+    height: 22px ;
+    display: block ;
+    transition: all 0.2s ;
+}
+/* アイコン設定 */
+#item-list .item .in ul.btngroup li a::before,
+#item-list .item .in ul.btngroup li button::before{
+    font-family: icomoon ;
+    font-size: 18px ;
+    color: #ccc ;
+    font-weight: normal ;
+}
+/* ツールチップ */
+#item-list .item .in ul.btngroup li a::after,
+#item-list .item .in ul.btngroup li button::after{
+    position: absolute ;
+    background-color: rgba(43, 84, 124, 0.8) ;
+    color: #fff ;
+    padding: 5px ;
+    border-radius: 3px ;
+    font-size: 1.1rem ;
+    top: -23px ;
+    left: 50% ;
+    transform: translateX(-50%) ;
+    white-space: nowrap;
+    vertical-align: middle ;
+}
+/* 再生 */
+/* #item-list .item .in ul.btngroup li.play button::before{
+    content: "\e917" ;
+} */
+#item-list .item .in ul.btngroup li.play button:hover::before{
+    color: #4eb0e7 ;
+}
+/*
+#item-list .item .in ul.btngroup li.play button:hover::after{
+    content: "再生" ;
+}*/
+/* 編集 */
+#item-list .item .in ul.btngroup li.edit a::before{
+    content: "\e907" ;
+}
+#item-list .item .in ul.btngroup li.edit a:hover::before{
+    color: #4eb0e7 ;
+}
+#item-list .item .in ul.btngroup li.edit a:hover::after{
+    content: "編集" ;
+}
+/* 削除 */
+#item-list .item .in ul.btngroup li.delete button::before{
+    content: "\e9ac" ;
+}
+#item-list .item .in ul.btngroup li.delete button:hover::before{
+    color: #e26775 ;
+}
+#item-list .item .in ul.btngroup li.delete button:hover::after{
+    content: "削除" ;
+}
+/* グラフ */
+#item-list .item .in ul.btngroup li.graph a::before{
+    content: "\e904" ;
+}
+#item-list .item .in ul.btngroup li.graph a:hover::before{
+    color: #5a63b6 ;
+}
+#item-list .item .in ul.btngroup li.graph a:hover::after{
+    content: "集計" ;
+}
+/* 複製 */
+#item-list .item .in ul.btngroup li.copy button::before{
+    content: "\f0c5" ;
+}
+#item-list .item .in ul.btngroup li.copy button:hover::before{
+    color: #e6a03b ;
+}
+#item-list .item .in ul.btngroup li.copy button:hover::after{
+    content: "複製" ;
+}
+
+/* folder============================ */
+
+#item-list .contents-folder {
+    padding: 10px ;
+    margin-left: -20px ;
+    margin-right: -20px ;
+}
+#item-list .contents-folder .item{
+    padding: 0 10px ;
+    background-color: #e4e4e4 ;
+}
+#item-list .contents-folder .item .in{
+    border-radius: 0 ;
+    padding: 13px ;
+    border-bottom: #e8e8e8 1px solid ;
+}
+#item-list .contents-folder .item .in:focus{
+    border: #4eb0e7 1px solid ;
+}
+#item-list .contents-folder .item:nth-child(2){
+    padding-top: 10px ;
+    border-radius: 8px 8px 0 0 ;
+}
+#item-list .contents-folder .item:last-child{
+    padding-bottom: 10px ;
+    border-radius: 0 0 8px 8px ;
+}
+#item-list .contents-folder .item:nth-child(2) .in{
+    border-radius: 5px 5px 0 0 ;
+}
+#item-list .contents-folder .item:last-child .in{
+    border-radius: 0 0 5px 5px ;
+    border-bottom: 0 ;
+}
+#item-list .contents-folder .folder-control{
+    background-color: rgba(0, 0, 0, 0) ;
+}
+/* Folder title */
+#item-list .contents-folder .folder-control .title{
+    background-color: #e4e4e4 ;
+    padding: 5px 10px 0 10px ;
+    float: left ;
+    border-radius: 5px 5px 0 0 ;
+    height: 25px ;
+}
+#item-list .contents-folder .folder-control .title::before{
+    content: "\f07c" ;
+    font-family: icomoon ;
+    color: #f2dc40 ;
+    margin-right: 5px ;
+    font-weight: normal ;
+    font-size: 15px; 
+}
+/* Folder btn group */
+#item-list .contents-folder .folder-control .btngroup{
+    float: right ;
+}
+#item-list .contents-folder .folder-control .btngroup li{
+    float: left ;
+}
+#item-list .contents-folder .folder-control .btngroup li button{
+    background-color: #2b547c ;
+    color: #fff ;
+    border: 0 ;
+    height: 25px ;
+    padding: 3px 10px 0px 10px ;
+    font-weight: 600 ;
+}
+#item-list .contents-folder .folder-control .btngroup li button:hover{
+    background-color: #4eb0e7 ;
+}
+#item-list .contents-folder .folder-control .btngroup li:first-child button{
+    border-radius: 5px 0 0 0 ;
+    border-right: rgba(255, 255, 255, 0.3) 1px solid ;
+}
+#item-list .contents-folder .folder-control .btngroup li:last-child button{
+    border-radius: 0 5px 0 0 ;
+    border-left: rgba(255, 255, 255, 0.3) 1px solid ;
+}
+#item-list .contents-folder .folder-control .btngroup li button::before{
+    font-family: icomoon ;
+    margin-right: 5px ;
+    font-weight: normal ;
+}
+/* folder 編集 */
+#item-list .contents-folder .folder-control .btngroup li.edit button::before{
+    content: "\e907" ;
+}
+/* folder 追加 */
+#item-list .contents-folder .folder-control .btngroup li.add button::before{
+    content: "\e700" ;
+}
+/* folder 保存 */
+#item-list .contents-folder .folder-control .btngroup li.save button{
+    background-color: #6fba41 ;
+}
+#item-list .contents-folder .folder-control .btngroup li.save button::before{
+    content: "\ea10" ;
+}
+/* folder 削除 */
+#item-list .contents-folder .folder-control .btngroup li.delete button::before{
+    content: "\e9ac" ;
+}
+
+/* 新規フォルダ */
+#item-list .contents-folder .item.no-item{
+    padding: 25px ;
+    border-radius: 8px ;
+    text-align: center ;
+    color: #bbb ;
+    font-size: 15px ;
+}
+
+/* modal(フォルダ名編集) ================================================================ */
+
+.modal.folder-edit .modal-dialog{
+    max-width: 400px ;
+}
+.modal.folder-edit .modal-dialog .modal-body{
+    padding: 20px ;
+}
+.modal.folder-edit .modal-dialog .modal-body .submit{
+    background-color: #4eb0e7 ;
+    color: #fff ;
+}
+.modal.folder-edit .modal-dialog .modal-body .submit:hover{
+    background-color: #fff ;
+    color: #4eb0e7 ;
+}
+
+
+/*==========================================================
+
+sheet=>
+movie-regist(動画授業登録),
+movie-edit(動画授業編集)
+
+============================================================= */
+
+#col-movie-control{
+    max-width: 1200px ;
+    width: 100% ;
+}
+
+/* contents-group=========================================== */
+
+#col-movie-control #control-box-contentsgroup{
+    width: 30% ;
+    float: left ;
+}
+#col-movie-control .h3{
+    margin-bottom: 0 ;
+}
+#col-movie-control .h3 h3{
+    padding: 10px ;
+    float: left ;
+    height: 30px ;
+    border-radius: 3px 3px 0 0 ;
+    background-color: #fff ;
+    font-size: 1.3rem ;
+    line-height: 1em ;
+    font-weight: 600 ;
+    margin-bottom: 0 ;
+}
+#col-movie-control #control-box-contentsgroup .body{
+    background-color: #fff ;
+    padding: 10px ;
+    width: 100% ;
+    border-radius: 0 0 0 5px ;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) ;
+    height: 550px ;
+    border-right: 1px #ddd solid ;
+    overflow-y: auto ;
+}
+.subject-group.setting ul.accordion li{
+    width: 100% ;
+    padding: 2px 0 ;
+}
+.subject-group.setting ul.accordion li button{
+    padding: 7px 13px 6px 23px ;
+    min-height: 27px ;
+    border-radius: 14px ;
+    display: inline-block ;
+    position: relative ;
+    -webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+    border: 0 ;
+    font-weight: 600 ;
+    background-color: rgba(0, 0, 0, 0) ;
+    text-align: left ;
+}
+.subject-group.setting ul.accordion li button::before{
+    position: absolute ;
+    left: 10px ;
+    top: 10px ;
+    content: "\e706" ;
+    font-family: icomoon ;
+    color: rgba(0, 0, 0, 0.2) ;
+    font-size: 0.7em ;
+    transition: all 0.2s ;
+}
+.subject-group.setting ul.accordion li.open button::before{
+    transform: rotate(90deg) ;
+}
+.subject-group.setting ul.accordion li button:hover{
+    background-color: rgba(0, 0, 0, 0.05) ;
+}
+.subject-group.setting ul.accordion li button:hover,
+.subject-group.setting ul.accordion li.open button{
+    color: #4eb0e7 ;
+}
+.subject-group.setting ul.accordion li ul.togglemenu{
+    display: none ;
+    padding-left: 15px ;
+}
+.subject-group.setting ul.accordion li ul.togglemenu li button{
+    display: inline-block ;
+    padding-left: 15px ;
+    background-color: rgba(0, 0, 0, 0.05) ;
+    color: #2b547c ;
+}
+.subject-group.setting ul.accordion li ul.togglemenu li button:hover{
+    background-color: #4eb0e7 ;
+    color: #fff ;
+}
+.subject-group.setting ul.accordion li ul.togglemenu li.active button{
+    background-color: #4eb0e7 ;
+    color: #fff ;
+}
+.subject-group.setting ul.accordion li ul.togglemenu li button::before{
+    content: none ;
+}
+.subject-group.setting ul.accordion li ul.togglemenu.open{
+    display: block ;
+}
+
+/* form-group=========================================== */
+
+#col-movie-control #control-box-formgroup{
+    width: 70% ;
+    float: left ;
+}
+
+#col-movie-control #control-box-formgroup .body{
+    padding: 25px ;
+    width: 100% ;
+    background-color: #fff ;
+    border-radius: 0 5px 5px 0 ;
+    height: 550px ;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) ;
+}
+#col-movie-control #control-box-formgroup .body .w-50{
+    width: 50% ;
+    float: left ;
+    padding: 15px ;
+}
+#col-movie-control #control-box-formgroup .movie-title{
+    
+}
+#col-movie-control #control-box-formgroup .xplanatory{
+    
+}
+
+/* large btn==================================================== */
+
+#col-mainbtn{
+    max-width: 1200px ;
+    width: 100% ;
+    padding-top: 20px ;
+}
+#col-mainbtn ul{
+    float: right ;
+}
+#col-mainbtn ul li{
+    float: left ;
+    padding-left: 10px ;
+}
+#col-mainbtn ul li button,
+#col-mainbtn ul li a{
+    padding: 13px ;
+    border-radius: 3px ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+    border: 0 ;
+    font-weight: 600 ;
+    display: block ;
+    height: 40px ;
+}
+#col-mainbtn ul li.save button{
+    background-color: #4eb0e7 ;
+    color: #fff ;
+    width: 80px ;
+    border: #4eb0e7 1px solid ;
+}
+#col-mainbtn ul li.back a{
+    background-color: #fff ;
+    color: #2b547c ;
+}

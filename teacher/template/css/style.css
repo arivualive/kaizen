@@ -1,0 +1,260 @@
+@charset "UTF-8";
+
+/* common=============================================================== */
+
+*{
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box ;
+}
+html, body {
+    height: 100%;
+}
+html{
+    font-size: 62.5% ;
+}
+body{
+    color: #697581 ;
+    line-height: 1 ;
+    font-family: YuGothic , 'Yu Gothic' , sans-serif ;
+    font-weight: 500 ;
+    font-size: 1.4rem ;
+}
+#wrap{
+    background-color: #f1f1f1 ;
+    min-width: 100% ;
+    min-height: 100% ;
+    padding-left: 210px ;
+    min-width: 1000px ;
+}
+
+/* side nav=============================================================== */
+
+#nav-fixed{
+    width: 210px ;
+    position: fixed ;
+    top: 0 ;
+    left: 0 ;
+    height: 100% ;
+    background-color: #3d9ec9 ;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) ;
+}
+
+/* h1=============================== */
+
+.brand a{
+    background-color: #fff ;
+    width: 100% ;
+    padding-top: 20px ;
+    height: 150px ;
+    display: block ;
+}
+.brand h1 .img_h1{
+    text-align: center ;
+    margin-bottom: 10px ;
+}
+.brand h1 p.authority{
+    background-color: #697c81 ;
+    padding: 5px ;
+    color: #fff ;
+    font-size: 14px ;
+    max-width: 150px ;
+    margin: 0 auto ;
+    text-align: center ;
+    border-radius: 3px ;
+    letter-spacing: 0.2em ;
+}
+
+/* scrol nav======================== */
+
+#scrolerea{
+    width: 100% ;
+    position: relative ;
+    overflow-y: auto ;
+    height: calc(100vh - 150px);
+}
+#scrolerea::-webkit-scrollbar {
+    width: 8px ;
+}
+#scrolerea::-webkit-scrollbar-track {
+    border-radius: 4px;
+}
+#scrolerea::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+}
+#mainnav ul.accordion{
+    margin-bottom: 0 ;
+}
+#mainnav ul.accordion li{
+    height: auto ;
+    overflow: hidden ;
+}
+#mainnav ul.accordion li a{
+    display: block ;
+    width: 100% ;
+    height: auto ;
+    padding-top: 17px ;
+    padding-bottom: 17px ;
+    padding-left: 15px ;
+    padding-right: 20px ;
+    transition: all 0.2s ;
+    color: #fff ;
+    font-weight: 600 ;
+    cursor: pointer ;
+    user-select: none ;
+    -moz-user-select: none ;
+    -webkit-user-select: none ;
+    -ms-user-select: none ;
+}
+#mainnav ul.accordion li a span{
+    margin-right: 10px ;
+}
+#mainnav ul.accordion li a:hover,
+#mainnav ul.accordion li.open a.togglebtn{
+    text-decoration: none ;
+    background-color: rgba(255, 255, 255, 0.2) ;
+}
+#mainnav ul.accordion a.togglebtn{
+	position: relative;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+#mainnav ul.accordion a.togglebtn::after{
+    position: absolute ;
+    right: 15px ;
+    top: 23px ;
+    content: "▼" ;
+    font-size: 1.0rem ;
+    color: rgba(255, 255, 255, 0.3) ;
+}
+#mainnav ul.accordion li ul.togglemenu{
+    background-color: rgba(0, 0, 0, 0.15) ;
+    display: none ;
+    box-shadow:inset 1px 4px 9px -6px rgba(0,0,0,0.8);
+}
+#mainnav ul.accordion li ul.togglemenu a{
+    display: block ;
+    font-size: 1.3rem ;
+    padding: 13px 10px ;
+    border-top: 1px solid rgba(0, 0, 0, 0.1) ;
+}
+#mainnav ul.accordion li ul.togglemenu a:hover{
+    background-color: rgba(0, 0, 0, 0.15) ;
+}
+
+/* header========================================================= */
+
+#header{
+    height: 60px ;
+    width: 100% ;
+    border-bottom: 1px #ddd solid ;
+}
+
+/* topicpath==================== */
+
+#topicpath ol{
+    padding-left: 20px ;
+    padding-right: 20px ;
+    float: left ;
+    list-style-type: none ;
+    height: 60px ;
+}
+#topicpath ol li{
+    float: left ;
+    padding-top: 20px ;
+    height: 60px ;
+    font-weight: 600 ;
+    margin-right: 20px ;
+}
+#topicpath ol li::after{
+    content: ">" ;
+    margin-left: 10px ;
+}
+#topicpath ol li:last-child::after{
+    content: none ;
+}
+#topicpath ol li.active{
+    border-bottom: #3d9ec9 5px solid ;
+}
+
+/* userinfo========================== */
+
+#userinfo{
+    float: right ;
+    height: 60px ;
+    padding: 5px ;
+    border-left: 1px #ddd solid ;
+    position: relative ;
+}
+#userinfo a.link{
+    display: block ;
+    height: 50px ;
+    padding: 5px 30px 0 5px ;
+    color: #697581 ;
+    transition: all 0.2s ;
+    position: relative ;
+}
+#userinfo a.link::after{
+    position: absolute ;
+    right: 15px ;
+    top: 20px ;
+    content: "▼" ;
+    color: rgba(0, 0, 0, 0.2) ;
+}
+#userinfo a.link:hover{
+    color: #3d9ec9 ;
+}
+#userinfo .erea-image{
+    float: left ;
+    width: 40px ;
+    height: 40px ;
+    border-radius: 20px ;
+    background-color: rgba(0, 0, 0, 0.1) ;
+}
+#userinfo .erea-name{
+    float: left ;
+    min-width: 100px ;
+    padding: 5px 10px ;
+}
+#userinfo .erea-name .authority{
+    font-size: 1.2rem ;
+    margin-bottom: 5px ;
+}
+#userinfo .erea-name .username{
+    font-size: 1.4rem ;
+    font-weight: 600 ;
+}
+#userinfo .button-dropdown{
+    position: relative;
+}
+#userinfo .submenu{
+    position: absolute ;
+    display: none ;
+    list-style-type: none ;
+    background-color: #fff ;
+    border-radius: 5px ;
+    left: 60px ;
+    padding: 10px ;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15) ;
+}
+#userinfo .submenu li a{
+    transition: all 0.2s ;
+    display: block ;
+    width: 100% ;
+    height: 30px ;
+    border-radius: 0 ;
+    color: #697581 ;
+    padding: 10px 15px ;
+}
+#userinfo .submenu li a:hover{
+    text-decoration: none ;
+    color: #3d9ec9 ;
+}
+
+/* main contents============================================- */
+
+#maincontents{
+    width: 100% ;
+}

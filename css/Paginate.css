@@ -1,0 +1,30 @@
+div#pagenation {
+   position: relative;
+   overflow: hidden;
+}
+div#pagenation ul {
+    position:relative;
+    left:50%;
+    float:left;
+    list-style: none;
+}
+div#pagenation li {
+    position:relative;
+    left:-50%;
+    float:left;
+}
+div#pagenation li a {
+    border:1px solid #CECECE;
+    margin: 0 3px;
+    padding:3px 7px;
+    display: block;
+    text-decoration:none;
+    color: #666666;
+    background: #fff;
+}
+div#pagenation li.active a,
+div#pagenation li a:hover{
+    border:solid 1px #666666;
+    color: #FFFFFF;
+    background: #3399FF;
+}

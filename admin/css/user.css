@@ -1,0 +1,510 @@
+@charset "UTF-8";
+
+/*==========================================================
+
+sheet=>
+contents-control(コンテンツ管理)
+
+============================================================= */
+
+
+/* column 
+============================================================= */
+
+#col-userscontrol{
+    width: 100% ;
+    max-width: 1400px ;
+    margin: 0 auto ;
+}
+#col-userscontrol #userlist{
+    width: 40% ;
+    padding-right: 20px ;
+    vertical-align: top ;
+	float: left ;
+}
+#col-userscontrol #controlerea{
+    float: left ;
+	width: 60% ;
+}
+
+/* userlist
+====================================================================*/
+
+/* table top============================================ */
+
+#userlist .table-top{
+    height: 35px ;
+    font-weight: bold ;
+}
+#userlist .table-top h3{
+    float: left ;
+    background-color: #fff ;
+    border-radius: 3px 3px 0 0 ;
+    padding: 10px ;
+    font-size: 1.3rem ;
+    font-weight: bold ;
+    margin-bottom: 0 ;
+    height: 35px ;
+}
+#userlist .table-top .control-erea{
+    float: right ;
+}
+.table-top p.number-desplay{
+    float: left ;
+    padding: 5px 10px 0 0 ;
+}
+.table-top p.number-desplay span.real{
+    font-size: 2.3rem ;
+}
+ul.btns-movement{
+    float: left ;
+    margin-top: -5px ;
+}
+ul.btns-movement li{
+    float: left ;
+    width: 30px ;
+    height: 30px ;
+}
+ul.btns-movement li button{
+    width: 30px ;
+    min-width: 30px ;
+    height: 30px ;
+    text-align: center ;
+    padding: 5px ; 
+    background-color: #4eb0e7 ;
+    border-radius: 0 ;
+    position: relative ;
+}
+ul.btns-movement li button::before{
+    font-family: icomoon ;
+    color: #fff ;
+    font-weight: normal ;
+}
+ul.btns-movement li button::after{
+    position: absolute ;
+    background-color: rgba(43, 84, 124, 0.8) ;
+    color: #fff ;
+    padding: 5px ;
+    border-radius: 3px ;
+    font-size: 1.1rem ;
+    top: -22px ;
+    left: 50% ;
+    transform: translateX(-50%) ;
+    white-space: nowrap;
+    vertical-align: middle ;
+    z-index: 10 ;
+}
+/* 一番上 */
+ul.btns-movement li:nth-child(1) button{
+    background-color: #ddd ;
+    border-radius: 3px 0 0 3px ;
+}
+ul.btns-movement li:nth-child(1) button::before{
+    content: "\e905" ;
+}
+ul.btns-movement li:nth-child(1) button.active{
+    background-color: #73c5f4 ;
+}
+ul.btns-movement li:nth-child(1) button:hover::after{
+    content: "一番上へ" ;
+}
+/* 上 */
+ul.btns-movement li:nth-child(2) button{
+    background-color: #ccc ;
+}
+ul.btns-movement li:nth-child(2) button::before{
+    content: "\e707" ;
+}
+ul.btns-movement li:nth-child(2) button.active{
+    background-color: #4eb0e7 ;
+}
+ul.btns-movement li:nth-child(2) button:hover::after{
+    content: "上へ" ;
+}
+/* 下 */
+ul.btns-movement li:nth-child(3) button{
+    background-color: #bbb ;
+}
+ul.btns-movement li:nth-child(3) button::before{
+    content: "\e704" ;
+}
+ul.btns-movement li:nth-child(3) button.active{
+    background-color: #48a3d7 ;
+}
+ul.btns-movement li:nth-child(3) button:hover::after{
+    content: "下へ" ;
+}
+/* 一番下 */
+ul.btns-movement li:nth-child(4) button{
+    background-color: #aaa ;
+    border-radius: 0 3px 3px 0 ;
+}
+ul.btns-movement li:nth-child(4) button::before{
+    content: "\e906" ;
+}
+ul.btns-movement li:nth-child(4) button.active{
+    background-color: #3894c8 ;
+}
+ul.btns-movement li:nth-child(4) button:hover::after{
+    content: "一番下へ" ;
+}
+
+p.btn-update{
+    margin-top: -5px ;
+    padding-left: 10px ;
+    float: left ;
+}
+p.btn-update button{
+    height: 30px ;
+    min-width: 70px ;
+    color: #fff ;
+    background-color: #f9bd40 ;
+    padding: 5px 0 ;
+    font-weight: bold ;
+}
+p.btn-update button::before{
+    font-family: icomoon ;
+    content: "\f021" ;
+    margin-right: 5px ;
+    font-weight: normal ;
+}
+
+/* body======================================================= */
+
+#userlist .body{
+    border-radius: 0 5px 5px 5px ;
+    background-color: #fff ;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) ;
+}
+
+/* table(sort)================================================== */
+
+table.sort{
+    width: 100% ;
+}
+table.sort th{
+    padding: 10px 5px 5px 5px ;
+    font-size: 1.3rem ;
+    line-height: 1em ;
+}
+table.sort th.id,
+table.sort td.id{
+    width: 80px ;
+    padding-left: 10px ;
+}
+table.sort th.name{
+    
+}
+table.sort th.lecture,
+table.sort td.lecture{
+    width: 60px ;
+}
+table.sort th.delete,
+table.sort td.delete{
+    width: 70px ;
+}
+table.sort td.lecture .t{
+    color: #318dd0 ;
+}
+table.sort td.lecture .f{
+    color: #e33b3b ;
+}
+table.sort td{
+    padding: 0 5px ;
+}
+table.sort td input,
+table.sort td select{
+    padding: 3px 5px ;
+    border: #ddd solid 1px;
+    border-radius: 3px;
+    font-size: 1.3rem ;
+    width: 100% ;
+}
+
+/* 新規登録 */
+table.sort tr.new-user:hover td{
+    background-color: #fff ;
+    color: #2b547c ;
+}
+table.sort tr.new-user td{
+    padding: 10px 10px ;
+}
+table.sort tr.new-user td p{
+    text-align: center ;
+    font-weight: bold ;
+    padding: 10px ;
+    border-radius: 3px ;
+    background-color: #f1f1f1 ;
+    box-shadow: 0px 2px 0px rgba(0,0,0,0.15) ;
+    transition: all 0.2s ;
+}
+table.sort tr.new-user td p::before{
+    content: "\e700" ;
+    color: #318dd0 ;
+    font-family: icomoon ;
+    margin-right: 5px ;
+    font-weight: normal ;
+}
+table.sort tr.new-user td p:hover{
+    background-color: #4eb0e7 ;
+    color: #fff ;
+    cursor: pointer ;
+}
+
+/* table(userlist)================================================ */
+
+.scrollerea.userlist{
+    max-height: 700px ;
+    overflow-y: auto ;
+}
+table.userlist{
+    width: 100% ;
+}
+table.userlist tr.f_id,
+table.userlist tr.f_name,
+table.userlist tr.f_lecture{
+    display:none;
+}
+table.userlist tr td{
+    padding: 8px 5px ;
+    font-size: 1.3rem ;
+    transition: all 0.3s ;
+}
+table.userlist tr:nth-child(odd) td{
+    background-color: #f5f5f5 ;
+}
+table.userlist tr:hover td,
+table.userlist tr.active td{
+    background-color: #4eb0e7 ;
+    color: #fff ;
+    cursor: pointer ;
+}
+table.userlist tr td.id{
+    width: 80px ;
+    padding-left: 10px ;
+}
+table.userlist tr td.lecture{
+    width: 50px ;
+}
+table.userlist tr td.lecture span::before{
+    font-family: icomoon ;
+}
+table.userlist tr td.lecture span.t::before{
+    content: "\e70a" ;
+    color: #318dd0 ;
+}
+table.userlist tr td.lecture span.f::before{
+    content: "\ea0f" ;
+    color: #e33b3b ;
+}
+table.userlist tr td.delete{
+    width: 70px ;
+}
+table.userlist tr td.delete button{
+    min-width: 50px ;
+    height: 20px ;
+    background-color: rgba(255, 255, 255, 0) ;
+    box-shadow: none ;
+    color: #ccc ;
+    padding: 3px 5px ;
+    border-radius: 10px ;
+}
+table.userlist tr td.delete button::before{
+    font-family: icomoon ;
+    content: "\e9ac" ;
+}
+table.userlist tr:hover td.delete button,
+table.userlist tr.active td.delete button{
+    color: #fff ;
+    background-color: rgba(0, 0, 0, 0.1) ;
+}
+table.userlist tr:hover td.delete button:hover,
+table.userlist tr.active td.delete button:hover{
+     background-color: rgba(0, 0, 0, 0.2) ;
+}
+
+
+/* tab
+===================================================================*/
+
+ul.nav-tabs{
+    border-bottom: 0 ;
+}
+ul.nav-tabs li{
+    margin-right: 5px ;
+}
+ul.nav-tabs li a.nav-link{
+    background-color: #2b547c ;
+    border: 0 ;
+    height: 35px ;
+    padding: 10px 15px 0 15px ;
+    color: #fff ;
+    font-weight: bold ;
+    border-radius: 3px 3px 0 0 ;
+}
+ul.nav-tabs li a.nav-link.active,
+ul.nav-tabs li a.nav-link:hover{
+    background-color: #fff ;
+    border: 0 ;
+    color: #2b547c ;
+}
+.tab-content{
+    padding: 20px ;
+    background-color: #fff ;
+    border-radius: 0 5px 5px 5px ;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) ;
+    min-width: 500px ;
+}
+.input-group.w-50{
+    width: 50% ;
+    max-width: 300px ;
+    float: left ;
+}
+.clearfix .input-group.w-50:first-child{
+    padding-right: 10px ;
+}
+.clearfix .input-group.w-50:last-child{
+    padding-left: 10px ;
+}
+.border{
+    padding: 0 !important ;
+    border: 0 !important ;
+    background-color: #fff !important ;
+    box-shadow: none !important ;
+}
+dl.input-group dd input[type="password"],
+dl.input-group dd input[type="text"]{
+    border: #ddd solid 1px ;
+    border-radius: 3px ;
+    padding: 5px ;
+    width: 100% ;
+    color: #2b547c ;
+    height: 30px ;
+}
+dl.input-group dd.set-btn input[type="password"],
+dl.input-group dd.set-btn input[type="text"]{
+    float: left ;
+    border-radius: 3px 0 0 3px ;
+    border-right: 0 ;
+    width: 140px ;
+}
+dl.input-group dd.set-btn input[name="hide_password"]{
+    display:none;
+}
+dl.input-group dd.set-btn button,
+dl.input-group dd.set-btn input[type="button"]{
+    float: left ;
+    background-color: #f1f1f1 ;
+    box-shadow: none ;
+    padding: 10px ;
+    border-radius: 0 3px 3px 0 ;
+    margin-left: 0 ;
+    height: 30px ;
+    min-width: 70px ;
+    color: #2b547c ;
+    font-weight: bold ;
+	border: 0 ;
+}
+dl.input-group dd.set-btn button::before,
+dl.input-group dd.set-btn input[type="button"]::before{
+    font-weight: normal ;
+    font-family: icomoon ;
+    content: "\f021" ;
+    margin-right: 3px ;
+}
+dl.input-group .checkbox{
+    padding-right: 15px ;
+}
+dl.input-group .checkbox .t::before{
+    font-family: icomoon ;
+    margin-right: 5px ;
+    content: "\e70a" ;
+    color: #318dd0 ;
+}
+dl.input-group .checkbox .f::before{
+    font-family: icomoon ;
+    margin-right: 5px ;
+    content: "\ea0f" ;
+    color: #e33b3b ;
+}
+dl.input-group form{
+	width: 100% ;
+}
+a.usergroup-acq{
+	background-color: #f1f1f1 ;
+}
+a.usergroup-acq::before{
+	font-family: icomoon ;
+	content: "\e911" ;
+	font-weight: normal ;
+	color: #e6a03b ;
+	margin-right: 3px ;
+}
+
+/* large btn==================================================== */
+
+.tab-content ul.btngroup{
+    text-align: center ;
+    width: 100% ;
+    padding: 10px ;
+}
+.tab-content ul.btngroup li{
+    padding-left: 10px ;
+    display: inline-block ;
+}
+.tab-content ul.btngroup li button,
+.tab-content ul.btngroup li a{
+    padding: 13px ;
+    border-radius: 3px ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+    border: 0 ;
+    font-weight: 600 ;
+    display: block ;
+    height: 40px ;
+}
+.tab-content ul.btngroup li form{
+	position: relative ;
+	padding: 13px ;
+	border-radius: 3px ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+    border: 0 ;
+    font-weight: 600 ;
+    display: block ;
+	color: #fff ;
+    height: 40px ;
+	min-width: 100px ;
+}
+.tab-content ul.btngroup li.save button,
+.tab-content ul.btngroup li.save form{
+    background-color: #4eb0e7 ;
+    color: #fff ;
+	border-radius: 3px ;
+}
+.tab-content ul.btngroup li.save form input{
+	position: absolute ;
+	top: 0 ;
+	left: 0 ;
+	width: 100% ;
+	height: 40px ;
+	background-color: rgba(0, 0, 0, 0) ;
+	border: 0 ;
+}
+.tab-content ul.btngroup li.back a{
+    background-color: #fff ;
+    color: #2b547c ;
+}
+
+/* 本番では削除=========================================== */
+
+/* ul.btns-movement, ユーザーの上下移動非表示 */
+/* table.sort tr:nth-child(2),  テーブルソート非表示 */
+.table-top p.number-desplay /* 表示人数非表示 */
+/* dl.input-group dd.set-btn button /* 自動生成ボタン非表示 */
+{
+    display: none ;
+}
+/* dl.input-group dd.set-btn input[type="text"]{
+	border-radius: 3px ;
+	width: 100% ;
+	border-right: 1px solid #ddd ;
+} */

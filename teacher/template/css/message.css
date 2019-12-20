@@ -1,0 +1,982 @@
+@charset "UTF-8";
+
+/* ============================================ 
+
+sheet 
+ => message-list(メッセージリスト)
+    message-detail(メッセージ詳細)
+    message-reply(メッセージ返信)
+    message-create(メッセージ作成)
+
+=============================================================== */
+
+
+/* ============================================
+
+message-list
+
+============================================ */
+
+.message-list{
+    
+}
+
+.message-list-title{
+    margin-bottom: 10px ;
+    padding: 10px 0 ;
+    font-weight: bold ;
+    border-bottom: rgba(0, 0, 0, 0.1) solid 1px ;
+}
+.message-list-title p.text{
+    float: left ;
+    margin: 0 ;
+    padding-top: 15px ;
+    font-size: 1.8rem ;
+}
+.btn-newmessage{
+    float: right ;
+}
+.btn-newmessage a{
+    padding: 15px 15px 15px 40px ;
+    border-radius: 5px ;
+    background-color: #5a6875 ;
+    color: #fff ;
+    display: block ;
+    position: relative
+}
+.btn-newmessage a::before{
+    position: absolute ;
+    content: "⊕" ; /* iconfontに変える */
+    top: 15px ;
+    left: 15px ;
+}
+/* 各アイコン説明======================= */
+.message-list-method{
+    width: 100% ;
+    padding: 10px 0 10px 40px ;
+    display: table ;
+    font-weight: bold ;
+}
+.message-list-method .title{
+    display: table-cell ;
+}
+.message-list-method .last-user{
+    display: table-cell ;
+    width: 110px ;
+}
+.message-list-method .last-day{
+    display: table-cell ;
+    width: 200px ;
+}
+.message-list-method .message-count{
+    display: table-cell ;
+    width: 90px ;
+}
+.message-list-method .btns{
+    display: table-cell ;
+    width: 130px ;
+}
+
+
+/* 各メッセージ================================- */
+
+.message-list-item{
+    padding: 5px 0 5px 20px ;
+    width: 100% ;
+}
+.message-list-item .in{
+    background-color: #fff ;
+    border-radius: 5px ;
+    padding: 10px ;
+    position: relative ;
+    display: table ;
+    width: 100% ;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15) ;
+}
+.message-list-item .in::before{
+    position: absolute ;
+    top: 5px ;
+    left: -20px ;
+    height: 40px ;
+    width: 40px ;
+    border-radius: 50% ;
+    color: #fff ;
+    text-align: center ;
+    padding-top: 10px ;
+    display: block ;
+    font-size: 2rem ;
+}
+
+/* 公開メッセージ */
+.message-list-item.type-public .in::before{
+    content: "□" ;
+    background-color: #48b1c7 ;
+    box-shadow: 0 0 5px #48b1c7 ;
+}
+/* 非公開メッセージ */
+.message-list-item.type-private .in::before{
+    content: "□" ;
+    background-color: #4c7dbb ;
+    box-shadow: 0 0 5px #4c7dbb ;
+}
+/* 非公開メッセージ */
+.message-list-item.type-notice .in::before{
+    content: "□" ;
+    background-color: #e6a03b ;
+    box-shadow: 0 0 5px #e6a03b ;
+}
+/* 削除済み */
+.message-list-item.deleted .in{
+    background-color: rgba(255, 255, 255, 0.5) ;
+    box-shadow: none ;
+    color: rgba(0, 0, 0, 0.3) ;
+}
+
+/* メッセージタイトル======= */
+.message-list-item .in .title{
+    display: table-cell ;
+    padding: 5px 5px 5px 20px ;
+    font-weight: bold ;
+    font-size: 1.5rem ;
+    vertical-align: middle ;
+    line-height: 1.3em ;
+}
+.message-list-item.new .in .title::before{
+    content: 'NEW' ;
+    color: #fff ;
+    background-color: #dc3545 ;
+    font-size: 1.1rem ;
+    height: 20px ;
+    border-radius: 10px ;
+    padding: 2px 5px ;
+    margin-right: 5px ;
+}
+/* 詳細情報 */
+.message-list-item .in .other-detail{
+    display: table-cell ;
+    width: 400px ;
+    padding: 10px 0 ;
+    vertical-align: middle ;
+}
+.message-list-item .in .other-detail p{
+    float: left ;
+    margin-bottom: 0 ;
+    padding: 0 10px ;
+}
+.message-list-item .in .other-detail p::before{
+    margin-right: 5px ;
+}
+/* 最終書込み者 */
+.message-list-item .in .other-detail p.last-user{
+    width: 110px ;
+}
+.message-list-item .in .other-detail p.last-user::before{
+    content: '□' ;
+}
+/* 最終送信日 */
+.message-list-item .in .other-detail p.last-day{
+    width: 200px ;
+}
+.message-list-item .in .other-detail p.last-day::before{
+    content: '□' ;
+}
+/* メッセージ数 */
+.message-list-item .in .other-detail p.message-count{
+    width: 90px ;
+}
+.message-list-item .in .other-detail p.message-count::before{
+    content: '□' ;
+}
+
+/* ボタングループ======================= */
+
+.message-list-item .in .btns{
+    display: table-cell ;
+    width: 120px ;
+    vertical-align: middle ;
+}
+.message-list-item .in .btns .detail,
+.message-list-item .in .btns .delete,
+.message-list-item .in .btns .deleted{
+    float: right ;
+    padding-left: 5px ;
+}
+/* 詳細ボタン */
+.message-list-item .in .btns .detail a{
+    padding-top: 7px ;
+    width: 70px ;
+    text-align: center ;
+    height: 30px ;
+    border-radius: 15px ;
+    font-weight: 600 ;
+    display: block ;
+    border: #61a5cc 1px solid ; /* brand color */
+    color: #61a5cc ; /* brand color */
+}
+.message-list-item .in .btns .detail a:hover{
+    background-color: #61a5cc ; /* brand color */
+    color: #fff ;
+}
+.message-list-item .in .btns .detail a::before{
+    content: 'Ⓘ' ;
+    margin-right: 3px ;
+    font-weight: normal ;
+}
+/* 削除ボタン */
+.message-list-item .in .btns .delete button{
+    padding-top: 8px ;
+    text-align: center ;
+    width: 30px ;
+    height: 30px ;
+    border-radius: 15px ;
+    border: #aaa 1px solid ;
+    color: #aaa ;
+    display: block ;
+    background-color: #fff ;
+    transition: all 0.2s ;
+}
+.message-list-item .in .btns .delete button:hover{
+    background-color: #ddd ;
+}
+.message-list-item .in .btns .delete button::before{
+    content: '□' ;
+    margin-right: 3px ;
+}
+/* 削除済み */
+.message-list-item.deleted .in .btns p.deleted{
+    color: #dc3545 ;
+    text-align: right ;
+    font-weight: 600 ;
+    padding-top: 10px ;
+}
+
+/* pager======================================================= */
+
+.pagination{
+    justify-content: center;
+    align-items: center;
+}
+.pagination .page-item{
+    padding: 5px ;
+}
+.pagination .page-item a{
+    font-weight: 600 ;
+    height: 40px ;
+    width: 40px ;
+    border-radius: 20px ;
+    border: 0 ;
+    text-align: center ;
+    padding-top: 12px ;
+    color: #5a6875 ;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) ;
+}
+.pagination .page-item.first .page-link,
+.pagination .page-item.last .page-link{
+    border-radius: 20px ;
+    width: 80px ;
+    background-color: #aaa ;
+    color: #fff ;
+}
+.pagination .page-item.active a,
+.pagination .page-item a:hover{
+    color: #fff ;
+    background-color: #61a5cc ; /* brand color */
+}
+.pagination .page-item.first .page-link:hover,
+.pagination .page-item.last .page-link:hover{
+    background-color: #5a6875 ;
+}
+
+@media (max-width: 991px){
+    .message-list-method{
+        display: none ;
+    }
+    .message-list-item .in .title{
+        width: 100% ;
+        display: block ;
+    }
+    .message-list-item .in .other-detail{
+        display: block ;
+        width: 80% ;
+        float: left ;
+        padding-left: 20px ;
+    }
+    .message-list-item .in .btns{
+        display: block ;
+        width: 20% ;
+        float: right ;
+    }
+}
+@media (max-width: 767px){
+    .message-list-item .in::before{
+        width: 35px ;
+        height: 35px ;
+    }
+    .message-list-item .in .title{
+        padding-left: 10px ;
+    }
+    .message-list-item .in .other-detail{
+        width: 100% ;
+        padding-left: 10px ;
+        margin-bottom: 10px; 
+    }
+    .message-list-item .in .btns{
+        width: 100% ;
+    }
+    .message-list-item .in .other-detail p.last-user,
+    .message-list-item .in .other-detail p.last-day,
+    .message-list-item .in .other-detail p.message-count{
+        width: auto ;
+        float: left ;
+    }
+    .message-list-item .in .btns .detail,
+    .message-list-item .in .btns .delete{
+        width: 100px ;
+    }
+    .message-list-item .in .btns .detail a,
+    .message-list-item .in .btns .delete a{
+        width: 100% ;
+    }
+    .message-list-item.deleted .in .btns p.deleted{
+        text-align: center ;
+    }
+    /* pager============================== */
+    .pagination .page-item{
+        padding: 3px; 
+    }
+    .pagination .page-item a{
+        width: 30px ;
+        height: 30px ;
+        padding-top: 10px ;
+    }
+    .pagination .page-item.first .page-link,
+    .pagination .page-item.last .page-link{
+        width: 30px ;
+    }
+    .pagination .page-item.first .page-link span,
+    .pagination .page-item.last .page-link span{
+        display: none ;
+    }
+}
+
+/* ============================================
+
+message-detail
+
+============================================ */
+
+
+.message-detail-title{
+    padding: 10px 0 ;
+}
+.message-detail-title p.text{
+    float: left ;
+    font-weight: bold ;
+    font-size: 1.8rem ;
+    padding-top: 15px ;
+}
+.message-detail-title ul.btns{
+    float: right ;
+}
+.message-detail-title ul.btns li{
+    float: left ;
+    padding-left: 10px ;
+}
+.message-detail-title ul.btns li a{
+    display: block ;
+    padding: 10px 15px ;
+    background-color: rgba(0, 0, 0, 0.05) ;
+    border-radius: 15px ;
+    height: 30px ;
+    font-weight: 600 ;
+}
+.message-detail-title ul.btns li a:hover{
+    background-color: rgba(0, 0, 0, 0.1) ;
+}
+
+
+/* head===================================== */
+
+.message-detail-box{
+    background-color: #fff ;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15) ;
+    border-radius: 10px ;
+}
+.message-detail-head{
+    width: 100% ;
+    padding: 20px 20px 20px 40px ;
+    font-weight: 600 ;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+    display: table ;
+    position: relative ;
+}
+.message-detail-head::before{
+    position: absolute ;
+    width: 50px ;
+    height: 50px ;
+    border-radius: 50% ;
+    color: #fff ;
+    font-size: 2.8rem ;
+    top: 10px ;
+    left: -15px ;
+    text-align: center ;
+    padding-top: 10px ;
+    font-weight: normal ;
+}
+.message-detail-head p.message-type{
+    font-size: 1.5rem ;
+    margin-bottom: 5px ;
+}
+.message-detail-head p.message-title{
+    font-size: 2rem ;
+}
+
+/* 公開メッセージ */
+.message-detail-head.type-public::before{
+    background-color: #48b1c7 ;
+    box-shadow: 0 0 5px #48b1c7 ;
+    content: "□" ;
+}
+.message-detail-head.type-public p.message-type{
+    color: #48b1c7 ;
+}
+/* 非公開メッセージ */
+.message-detail-head.type-private::before{
+    background-color: #4c7dbb ;
+    box-shadow: 0 0 5px #4c7dbb ;
+    content: "□" ;
+}
+.message-detail-head.type-private p.message-type{
+    color: #4c7dbb ;
+}
+/* お知らせ */
+.message-detail-head.type-notice::before{
+    background-color: #e6a03b ;
+    box-shadow: 0 0 5px #e6a03b ;
+    content: "□" ;
+}
+.message-detail-head.type-notice p.message-type{
+    color: #e6a03b ;
+}
+
+@media (max-width: 767px){
+    .message-detail-head::before{
+        width: 40px ;
+        height: 40px ;
+        left: -5px ;
+    }
+}
+
+/* body ============================================= */
+
+.message-detail-body{
+    width: 100% ;
+    display: table ;
+}
+.message-detail-body .otherinformation{
+    display: table-cell ;
+    width: 250px ;
+    padding: 20px ;
+    background-color: #f1f1f1 ;
+}
+.message-detail-body .otherinformation dl{
+    margin-bottom: 20px ;
+    font-weight: 600 ;
+}
+.message-detail-body .otherinformation dl dt{
+    margin-bottom: 5px ;
+    color: #61a5cc ; /* brand color */
+}
+.message-detail-body .otherinformation dl dd{
+    padding-left: 10px ;
+}
+.message-detail-body .talkerea{
+    display: table-cell ;
+}
+.message-detail-body .talkerea .btn-reply{
+    padding: 10px ;
+    border-bottom: #ddd solid 1px ;
+}
+.message-detail-body .talkerea .btn-reply a{
+    padding-top: 17px ;
+    display: block ;
+    max-width: 350px ;
+    height: 50px ;
+    margin: 0 auto ;
+    color: #fff ;
+    font-weight: 600 ;
+    font-size: 1.7rem ;
+    text-align: center ;
+    border-radius: 25px ; 
+    background-color: #61a5cc ; /* brand color */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) ;
+}
+.message-detail-body .talkerea .btn-reply a:hover{
+    color: #61a5cc ; /* brand color */
+    background-color: #fff ;
+}
+.thread-group .thread-item{
+    border-bottom: #ddd solid 1px ;
+    padding: 20px 15px 20px 60px ;
+}
+.thread-group .thread-item:last-child{
+    border: 0 ;
+}
+.thread-item .head{
+    font-weight: 600 ;
+    margin-bottom: 15px ;
+}
+.thread-item .username{
+    float: left ;
+    position: relative ;
+}
+.thread-item .username::before{
+    position: absolute ;
+    width: 40px ;
+    height: 40px ;
+    border-radius: 50% ;
+    padding-top: 10px ;
+    color: #fff ;
+    top: -10px ;
+    left: -50px ;
+    text-align: center ;
+    font-size: 2rem ;
+}
+/* 受講者 */
+.thread-item.student .username{
+    color: #52a1cf ;
+}
+.thread-item.student .username::before{
+    background-color: #52a1cf ;
+    box-shadow: 0 0 5px #52a1cf ;
+    content: "□" ;
+}
+/* 講師 */
+.thread-item.teacher .username{
+    color: #7cb94a ;
+}
+.thread-item.teacher .username::before{
+    background-color: #7cb94a ;
+    box-shadow: 0 0 5px #7cb94a ;
+    content: "□" ;
+}
+/* 管理者 */
+.thread-item.admin .username{
+    color: #e6a03b ;
+}
+.thread-item.admin .username::before{
+    background-color: #e6a03b ;
+    box-shadow: 0 0 5px #e6a03b ;
+    content: "□" ;
+}
+
+.thread-item .btn-delete{
+    float: right ;
+    padding-left: 10px ;
+}
+.thread-item .btn-delete button{
+    padding: 8px 15px ;
+    text-align: center ;
+    height: 30px ;
+    border-radius: 15px ;
+    display: block ;
+    margin-top: -10px ;
+    background-color: rgba(0, 0, 0, 0.05) ;
+    border: 0 ;
+    font-weight: 600 ;
+    color: #888 ;
+}
+.thread-group .thread-item .last-day{
+    float: right ;
+    color: #aaa ;
+}
+.thread-group .thread-item .writing{
+    margin-bottom: 15px ;
+    font-weight: 600 ;
+    line-height: 1.3em ;
+}
+
+/* sp toggle========================= */
+
+.navbar-expand-lg .navbar-toggler{
+    display: none !important ;
+}
+
+@media (min-width: 768px){
+    .navbar-expand-lg .navbar-collapse {
+        display: block !important ;
+    }
+}
+
+@media (max-width: 767px){
+    .message-detail-body{
+        display: block ;
+    }
+    .message-detail-body .otherinformation{
+        display: block ;
+        width: 100% ;
+        padding: 0 ;
+        background-color: #fff ;
+        padding: 15px ;
+        border-bottom: #ddd 1px solid ;
+    }
+    .message-detail-body .otherinformation .in{
+        background-color: #f1f1f1 ;
+        border-radius: 10px ;
+        margin-top: 10px ;
+    }
+    .message-detail-body .otherinformation dl{
+        padding: 15px ;
+        margin-bottom: 0 ;
+    }
+    .message-detail-body .talkerea .btn-reply a{
+        max-width: 100% ;
+        height: 40px ;
+        border-radius: 20px ;
+        padding: 15px ;
+    }
+    .message-detail-body .talkerea{
+        display: block ;
+    }
+    .thread-item .username::before{
+        width: 30px ;
+        height: 30px ;
+        padding-top: 7px ;
+        left: -35px ;
+    }
+    .thread-group .thread-item{
+        padding: 15px 10px 15px 40px ;
+    }
+    .thread-item .head{
+        position: relative ;
+        margin-bottom: 0 ;
+    }
+    .thread-group .thread-item .last-day,
+    .thread-item .username{
+        float: none ;
+        margin-bottom: 10px ;
+    }
+    .thread-item .btn-delete{
+        position: absolute ;
+        top: 0 ;
+        right: 0 ;
+    }
+    
+    /* sp toggle========================= */
+    .navbar-expand-lg .navbar-toggler{
+        position: relative ;
+        display: block !important ;
+        width: 100% ;
+        font-size: 14px ;
+        border: 0 ;
+        outline: none ;
+        font-weight: 600 ;
+        padding-top: 15px ;
+        height: 40px ;
+        text-align: center ;
+        border-radius: 20px ; 
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) ;
+        background-color: #f1f1f1 ;
+    }
+}
+
+
+/* 新規メッセージ==================== */
+
+.message-detail-head.newmessage::before{
+    background-color: #5a6875 ;
+    content: "\e904" ;
+    font-family: 'icomoon' ;
+}
+.message-detail-head.newmessage p{
+    font-size: 2rem ;
+    padding: 5px 0 ;
+}
+
+
+/* ============================================
+
+message-reply
+message-create
+
+============================================ */
+
+.message-create-body{
+    padding: 30px 0 ;
+}
+.message-create-body .item{
+    padding: 10px 20px ;
+    display: table ;
+    position: relative ;
+    width: 100% ;
+}
+.message-create-body .item::before{
+    position: absolute ;
+    height: 100% ;
+    top: 30px ;
+    left: 28px ;
+    border-left: dotted #ddd 5px ;
+    content: "" ;
+}
+.message-create-body .item:last-child::before{
+    content: none ;
+}
+
+/* item head======================= */
+
+.message-create-body .item .head{
+    padding-left: 30px ;
+    display: table-cell ;
+    width: 120px ;
+}
+.message-create-body .item .head p{
+    font-weight: 600 ;
+    font-size: 1.6rem ;
+    color: #61a5cc ; /* brand color */
+    position: relative ;
+}
+.message-create-body .item .head p::before{
+    position: absolute ;
+    left: -35px ;
+    top: -5px ;
+    width: 30px ;
+    height: 30px ;
+    background-color: #f1f1f1 ;
+    border-radius: 50% ;
+    text-align: center ;
+    padding-top: 10px ;
+}
+
+/*返信先*/
+.message-create-body #destination-user.item .head p::before{
+    content: "□" ;
+}
+/*内容作成*/
+.message-create-body #message-create.item .head p::before{
+    content: "□" ;
+}
+/*内容確認*/
+.message-create-body #last-check.item .head p::before{
+    content: "□" ;
+}
+
+/* item body================================== */
+
+.message-create-body .item .body{
+    display: table-cell ;
+}
+
+/* 宛先 ================= */
+
+#destination-user .select-category{
+    margin-bottom: 20px ;
+}
+#destination-user .select-category p.category{
+    font-weight: 600 ;
+    margin-bottom: 10px ;
+}
+#destination-user .select-category .select-group{
+    width: 33% ;
+    float: left ;
+    padding: 5px ;
+}
+#destination-user .select-category .select-group .in{
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15) ;
+    border-radius: 10px ;
+}
+#destination-user .select-category .select-group .in p.top{
+    background-color: #f1f1f1 ;
+    padding: 10px ;
+    width: 100% ;
+    border-radius: 10px 10px 0 0;
+}
+#destination-user .select-category .select-group ul{
+    max-height: 200px ;
+    overflow: auto ;
+}
+#destination-user .select-category .select-group ul label{
+    padding: 10px 10px 10px 30px ;
+    transition: all 0.2s ;
+    position: relative ;
+    width: 100% ;
+    margin-bottom: 0 ;
+}
+#destination-user .select-category .select-group ul label::after{
+    content: "" ;
+    clear: both ;
+    display: table ;
+}
+#destination-user .select-category .select-group ul label:hover{
+    background-color: #61a5cc ; /* brand color */
+    color: #fff ;
+    cursor: pointer ;
+}
+#destination-user .select-category .select-group ul label:last-child{
+    border-radius: 0 0 10px 10px ;
+}
+#destination-user .select-category .select-group ul label input{
+    position: absolute ;
+    left: 10px ;
+    top: 10px ;
+}
+
+/* 内容作成 */
+
+#message-create.item .input-category{
+    margin-bottom: 15px ;
+}
+ #message-create.item .input-category p.title{
+    font-weight: 600 ;
+    margin-bottom: 5px ;
+}
+#message-create.item .input-category .input-erea{
+    width: 100% ;
+}
+#message-create.item .input-category .input-erea input{
+    width: 100% ;
+    border-radius: 5px ;
+    border: 2px #eee solid ;
+    padding: 5px ;
+}
+.item #message-contents.input-category .input-erea input{
+    height: 150px ;
+}
+
+
+/*内容確認*/
+
+#last-check a{
+    display: block ;
+    text-align: center ;
+    color: #fff ;
+    width: 300px ;
+    padding-top: 18px ;
+    height: 50px ;
+    border-radius: 25px ;
+    background-color: #61a5cc ; /* brand color */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) ;
+    font-weight: 600 ;
+}
+
+#last-check a:hover{
+    color: #61a5cc ; /* brand color */
+    background-color: #fff ;
+}
+
+
+/* 内容確認modal==================================== */
+
+/* header */
+.modal.messagecheck .modal-dialog{
+    max-width: 600px ;
+}
+.modal.messagecheck .modal-content{
+    border-radius: 10px ;
+    border: 0 ;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) ;
+}
+.modal.messagecheck .modal-header{
+    background-color: #f1f1f1 ;
+    padding: 20px ;
+    border-radius: 10px 10px 0 0 ;
+}
+.modal.messagecheck .modal-header p.text{
+    font-weight: 600 ;
+    font-size: 1.5rem ;
+}
+.modal.messagecheck .modal-header .close{
+    width: 40px ;
+    height: 40px ;
+    border-radius: 50% ;
+    background-color: #5a6875 ;
+    color: #fff ;
+    font-weight: bold ;
+    opacity: 1 ;
+}
+
+/* body */
+.modal.messagecheck .modal-body dl{
+    margin-bottom: 20px ;
+}
+.modal.messagecheck .modal-body dl dt{
+    margin-bottom: 10px ;
+}
+.modal.messagecheck .modal-body dl.destination-user dd span{
+    padding: 5px ;
+    background-color: #f1f1f1 ;
+    padding: 5px ;
+    border-radius: 10px ;
+    margin-right: 5px ;
+}
+.modal.messagecheck .modal-body ul.btns{
+    max-width: 400px ;
+    margin: 0 auto ;
+}
+.modal.messagecheck .modal-body ul.btns li{
+    float: left ;
+    padding: 5px ;
+}
+.modal.messagecheck .modal-body ul.btns li button{
+    width: 100% ;
+    height: 40px ;
+    border-radius: 20px ;
+    text-align: center ;
+    border: 0 ;
+    font-weight: 600 ;
+    cursor: pointer ;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) ;
+}
+/* cancel */
+.modal.messagecheck .modal-body ul.btns li.cancel{
+    width: 40% ;
+}
+.modal.messagecheck .modal-body ul.btns li.cancel button{
+    background-color: #eee ;
+    color: #888 ;
+}
+
+/* submit */
+.modal.messagecheck .modal-body ul.btns li.submit{
+    width: 60% ;
+}
+.modal.messagecheck .modal-body ul.btns li.submit button{
+    background-color: #5a6875 ;
+    color: #fff ;
+}
+
+/* disabled */
+.modal.messagecheck .modal-body ul.btns li.submit.disabled button{
+    box-shadow: none ;
+    background-color: #eee ;
+}
+
+@media (max-width: 767px){
+    .message-create-body .item{
+        display: block ;
+    }
+    .message-create-body .item .head{
+        width: 100% ;
+        display: block ;
+        padding: 10px 10px 10px 30px ;
+        margin-bottom: 15px ;
+    }
+    .message-create-body .item .body{
+        width: 100% ;
+        display: block ;
+        padding-left: 30px ;
+    }
+    #destination-user .select-category .select-group{
+        width: 100% ;
+        float: none;
+    }
+    #destination-user .select-category .select-group ul{
+        max-height: 150px ;
+    }
+    #last-check.item .body{
+        padding-left: 0px ;
+    }
+    #last-check a{
+        width: 100% ;
+        margin: 0 auto ;
+    }
+}

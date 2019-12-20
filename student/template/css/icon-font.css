@@ -1,0 +1,149 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?x3wgkd');
+  src:  url('../fonts/icomoon.eot?x3wgkd#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?x3wgkd') format('truetype'),
+    url('../fonts/icomoon.woff?x3wgkd') format('woff'),
+    url('../fonts/icomoon.svg?x3wgkd#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-lock:before {
+  content: "\f023";
+}
+.icon-sign-out:before {
+  content: "\f08b";
+}
+.icon-sign-in:before {
+  content: "\f090";
+}
+.icon-add:before {
+  content: "\e700";
+}
+.icon-arrow-b:before {
+  content: "\e701";
+}
+.icon-arrow-l:before {
+  content: "\e702";
+}
+.icon-arrow-r:before {
+  content: "\e703";
+}
+.icon-arrow-solid-b:before {
+  content: "\e704";
+}
+.icon-arrow-solid-l:before {
+  content: "\e705";
+}
+.icon-arrow-solid-r:before {
+  content: "\e706";
+}
+.icon-arrow-solid-t:before {
+  content: "\e707";
+}
+.icon-arrow-t:before {
+  content: "\e708";
+}
+.icon-calendar:before {
+  content: "\e709";
+}
+.icon-circle:before {
+  content: "\e70a";
+}
+.icon-contents-draw:before {
+  content: "\e900";
+}
+.icon-contents-movie:before {
+  content: "\e901";
+}
+.icon-contents-test:before {
+  content: "\e902";
+}
+.icon-main-home:before {
+  content: "\e903";
+}
+.icon-main-message:before {
+  content: "\e904";
+}
+.icon-main-study:before {
+  content: "\e905";
+}
+.icon-user-student:before {
+  content: "\e906";
+}
+.icon-count:before {
+  content: "\e90e";
+}
+.icon-destination:before {
+  content: "\e90f";
+}
+.icon-graph:before {
+  content: "\e910";
+}
+.icon-group:before {
+  content: "\e911";
+}
+.icon-hatena:before {
+  content: "\e912";
+}
+.icon-information:before {
+  content: "\e913";
+}
+.icon-play:before {
+  content: "\e917";
+}
+.icon-text:before {
+  content: "\e918";
+}
+.icon-user:before {
+  content: "\e919";
+}
+.icon-user-admin:before {
+  content: "\e91a";
+}
+.icon-user-teacher:before {
+  content: "\e91c";
+}
+.icon-folder-open:before {
+  content: "\e930";
+}
+.icon-clock:before {
+  content: "\e94e";
+}
+.icon-bell:before {
+  content: "\e951";
+}
+.icon-stopwatch:before {
+  content: "\e952";
+}
+.icon-undo2:before {
+  content: "\e967";
+}
+.icon-bin:before {
+  content: "\e9ac";
+}
+.icon-cross:before {
+  content: "\ea0f";
+}
+.icon-checkmark:before {
+  content: "\ea10";
+}
+.icon-filter:before {
+  content: "\ea5b";
+}

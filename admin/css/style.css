@@ -1,0 +1,590 @@
+@charset "UTF-8";
+
+/* common=============================================================== */
+
+*{
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box ;
+}
+html, body {
+    height: 100%;
+}
+html{
+    font-size: 62.5% ;
+}
+body{
+    color: #697581 ;
+    line-height: 1 ;
+    font-family: YuGothic , 'Yu Gothic' , sans-serif ;
+    font-weight: 500 ;
+    font-size: 1.4rem ;
+}
+a,
+button,
+label{
+    transition: all 0.2s ;
+}
+a:hover,
+button:hover{
+    text-decoration: none ;
+    cursor: pointer ;
+}
+ul , li{
+    list-style-type: none ;
+    margin-bottom: 0 ;
+}
+p{
+    margin-bottom: 0 ;
+}
+#wrap{
+    background-color: #f1f1f1 ;
+    min-width: 100% ;
+    min-height: 100% ;
+    padding-left: 210px ;
+    min-width: 1000px ;
+    position: relative ;
+}
+
+/* side nav=============================================================== */
+
+#nav-fixed{
+    width: 210px ;
+    position: fixed ;
+    top: 0 ;
+    left: 0 ;
+    height: 100% ;
+    background-color: #49a1d3 ;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) ;
+    z-index: 100 ;
+}
+
+/* h1=============================== */
+
+.brand a{
+    background-color: #fff ;
+    width: 100% ;
+    padding-top: 20px ;
+    height: 150px ;
+    display: block ;
+}
+.brand h1 .img_h1{
+    text-align: center ;
+    margin-bottom: 10px ;
+}
+.brand h1 p.authority{
+    background-color: #697581 ;
+    padding: 5px ;
+    color: #fff ;
+    font-size: 14px ;
+    max-width: 150px ;
+    margin: 0 auto ;
+    text-align: center ;
+    border-radius: 3px ;
+    letter-spacing: 0.2em ;
+}
+
+/* scrol nav======================== */
+
+#scrolerea{
+    width: 100% ;
+    position: relative ;
+    overflow-y: auto ;
+    height: calc(100vh - 150px);
+}
+#scrolerea::-webkit-scrollbar {
+    width: 8px ;
+}
+#scrolerea::-webkit-scrollbar-track {
+    border-radius: 4px;
+}
+#scrolerea::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+}
+#mainnav ul.accordion{
+    margin-bottom: 0 ;
+}
+#mainnav ul.accordion li{
+    height: auto ;
+}
+#mainnav ul.accordion li a{
+    display: block ;
+    width: 100% ;
+    height: auto ;
+    padding-top: 17px ;
+    padding-bottom: 17px ;
+    padding-left: 15px ;
+    padding-right: 20px ;
+    transition: all 0.2s ;
+    color: #fff ;
+    font-weight: 600 ;
+    cursor: pointer ;
+    user-select: none ;
+    -moz-user-select: none ;
+    -webkit-user-select: none ;
+    -ms-user-select: none ;
+}
+#mainnav ul.accordion li a span{
+    margin-right: 10px ;
+}
+#mainnav ul.accordion li a:hover,
+#mainnav ul.accordion li.open a.togglebtn{
+    text-decoration: none ;
+    background-color: rgba(255, 255, 255, 0.2) ;
+}
+#mainnav ul.accordion a.togglebtn{
+	position: relative;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+#mainnav ul.accordion a.togglebtn::after{
+    position: absolute ;
+    right: 15px ;
+    top: 23px ;
+    content: "\e701" ;
+    font-family: icomoon ;
+    font-size: 1.0rem ;
+    color: rgba(255, 255, 255, 0.3) ;
+}
+#mainnav ul.accordion li ul.togglemenu{
+    background-color: rgba(0, 0, 0, 0.15) ;
+    display: none ;
+    box-shadow:inset 1px 4px 9px -6px rgba(0,0,0,0.8);
+}
+#mainnav ul.accordion li ul.togglemenu a{
+    display: block ;
+    font-size: 1.3rem ;
+    padding: 13px 10px ;
+}
+#mainnav ul.accordion li ul.togglemenu a:hover{
+    background-color: rgba(0, 0, 0, 0.15) ;
+}
+
+/* header========================================================= */
+
+#header{
+    height: 60px ;
+    width: 100% ;
+    border-bottom: #ddd 1px solid ;
+}
+
+/* topicpath==================== */
+
+#topicpath ol{
+    padding-left: 20px ;
+    padding-right: 20px ;
+    float: left ;
+    list-style-type: none ;
+    height: 60px ;
+    margin-bottom: 0 ;
+}
+#topicpath ol li{
+    float: left ;
+    height: 60px ;
+    font-weight: 600 ;
+    margin-right: 30px ;
+    position: relative ;
+}
+#topicpath ol li::after{
+    position: absolute ;
+    content: "\e706" ;
+    font-family: icomoon ;
+    right: -20px ;
+    top: 20px ;
+}
+#topicpath ol li a{
+    display: block ;
+    padding: 20px 10px 0 10px ;
+    height: 100% ;
+}
+#topicpath ol li:last-child::after{
+    content: none ;
+}
+#topicpath ol li.active a,
+#topicpath ol li a:hover{
+    border-bottom: #49a1d3 3px solid ;
+}
+
+/* userinfo========================== */
+
+#userinfo{
+    float: right ;
+    height: 60px ;
+    padding: 5px ;
+    border-left: 1px #ddd solid ;
+    position: relative ;
+}
+#userinfo a.link{
+    display: block ;
+    height: 50px ;
+    padding: 5px 30px 0 5px ;
+    color: #697581 ;
+    transition: all 0.2s ;
+    position: relative ;
+}
+#userinfo a.link::after{
+    position: absolute ;
+    right: 15px ;
+    top: 20px ;
+    content: "\e701" ;
+    font-family: icomoon ;
+    color: rgba(0, 0, 0, 0.2) ;
+}
+#userinfo a.link:hover{
+    color: #49a1d3;
+}
+#userinfo .erea-image{
+    float: left ;
+    width: 40px ;
+    height: 40px ;
+    border-radius: 20px ;
+    background-color: rgba(0, 0, 0, 0.1) ;
+}
+#userinfo .erea-name{
+    float: left ;
+    min-width: 100px ;
+    padding: 5px 10px ;
+}
+#userinfo .erea-name .authority{
+    font-size: 1.2rem ;
+    margin-bottom: 5px ;
+}
+#userinfo .erea-name .username{
+    font-size: 1.4rem ;
+    font-weight: 600 ;
+}
+#userinfo .button-dropdown{
+    position: relative;
+}
+#userinfo .submenu{
+    position: absolute ;
+    display: none ;
+    list-style-type: none ;
+    background-color: #fff ;
+    border-radius: 5px ;
+    left: 60px ;
+    padding: 10px ;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15) ;
+}
+#userinfo .submenu li a{
+    transition: all 0.2s ;
+    display: block ;
+    width: 100% ;
+    height: 30px ;
+    border-radius: 0 ;
+    color: #697581 ;
+    padding: 10px 15px ;
+}
+#userinfo .submenu li a:hover{
+    text-decoration: none ;
+    color: #3d9ec9 ;
+}
+
+/* main contents============================================- */
+
+#maincontents{
+    width: 100% ;
+    padding: 30px ;
+}
+#maincontents .h2{
+    margin-bottom: 20px ;
+}
+#maincontents .h2 h2{
+    font-weight: 600 ;
+    font-size: 2.8rem ;
+}
+.meincolumn{
+    margin-bottom: 20px ;
+}
+.box-w{
+    background-color: #fff ;
+    width: 100% ;
+    border-radius: 10px ;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15) ;
+    margin-bottom: 10px ;
+}
+.h3{
+    padding: 10px ;
+    border-bottom: #697581 2px solid ;
+    margin-bottom: 0 ;
+}
+.h3.navy{
+    background-color: #697581 ;
+    color: #fff ;
+}
+.h3 h3{
+    margin-bottom: 0 ;
+    font-weight: bold ;
+    float: left ;
+    line-height: 1.5em ;
+    font-size: 1.7rem ;
+}
+.h3 ul.btngroup{
+    float: right ;
+}
+.h3 p.table-info{
+    float: right ;
+    font-size: 0.8em ;
+    background-color: rgba(255, 255, 255, 0) ;
+    line-height: 1.8em ;
+}
+ul.btngroup{
+    text-align: center ;
+}
+ul.btngroup li{
+    display: inline-block ;
+    padding: 0 5px ;
+}
+
+
+/* btn */
+
+.btn{
+    padding: 5px ;
+    font-size: 1.3rem ;
+    font-weight: 600 ;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) ;
+    color: #697581 ;
+    border-radius: 3px ;
+    line-height: 1em ;
+}
+.btn.large{
+    padding: 10px 20px ;
+    border-radius: 5px ;
+}
+.btn.white{
+    background-color: #fff ;
+}
+.btn.blue{
+    background-color: #3d9ec9 ;
+    color: #fff ;
+}
+.btn.blue-b{
+    border: #3d9ec9 1px solid ;
+    color: #3d9ec9 ;
+    background-color: #fff ;
+}
+.btn.gray{
+    background-color: #eee ;
+}
+
+/* box-w body */
+.box-w .body-table{
+    padding: 0 ;
+}
+.box-w .body-table-sort{
+    padding-right: 20px ;
+    background-color: #697581 ;
+}
+.box-w .body-space{
+    padding: 10px ;
+}
+.box-w .row{
+    margin: 0 ;
+}
+
+/* table = default */
+.tbl-default{
+    width: 100% ;
+    font-size: 1.3rem ;
+}
+.tbl-default table{
+    overflow: hidden ;
+}
+.tbl-default tr{
+    
+}
+.tbl-default th,
+.tbl-default td{
+    padding: 10px 5px ;
+    font-weight: 600 ;
+    border: #eee 1px solid ;
+    height: 30px ;
+}
+.tbl-default th{
+    background-color: #f1f1f1 ;
+}
+.tbl-default.btn-cell{
+    position: relative ;
+}
+.tbl-default.btn-cell td{
+    padding: 0 ;
+}
+.tbl-default.btn-cell td button{
+    padding: 8px 5px ;
+    font-weight: 600 ;
+    width: 100% ;
+    border: 0 ;
+    background-color: rgba(255, 255, 255, 0) ;
+    color: #697581 ;
+    height: 30px ;
+}
+.tbl-default.btn-cell tr:hover button,
+.tbl-default.btn-cell td button:focus{
+    background-color: #eee ;
+    color: #3d9ec9 ;
+}
+
+.tbl-sort th{
+    padding: 10px 5px ;
+    color: #fff ;
+    border-left: rgba(255, 255, 255, 0.3) 1px solid ;
+}
+.tbl-sort td{
+    padding: 0 ;
+    padding: 3px ;
+    border-left: rgba(255, 255, 255, 0.3) 1px solid ;
+}
+.tbl-sort td input,
+.tbl-sort td select,
+.tbl-sort td select option{
+    border-radius: 3px ;
+    border: #ddd solid 1px ;
+    padding: 3px ;
+    width: 100% ;
+}
+
+.posi-r{
+    position: relative ;
+}
+.btngroup-tbl-sort{
+    position: absolute ;
+    right: -20px ;
+    top: 0 ;
+    z-index: 60 ;
+}
+.btngroup-tbl-sort ul li{
+    margin-bottom: 3px ;
+}
+.btngroup-tbl-sort ul li button{
+    width: 20px ;
+    height: 40px ;
+    border-radius: 0 3px 3px 0 ;
+    border: 0 ;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) ;
+    background-repeat: no-repeat ;
+    background-position: center ;
+}
+.btngroup-tbl-sort ul li button.sort-update{
+    background-image: url(../images/sort-update.png) ;
+    background-color: #ffbb4d ;
+}
+.btngroup-tbl-sort ul li button.sort-top{
+    background-image: url(../images/sort-top.png) ;
+    background-color: #58a72f ;
+}
+.btngroup-tbl-sort ul li button.sort-up{
+    background-image: url(../images/sort-up.png) ;
+    background-color: #78c352 ;
+}
+.btngroup-tbl-sort ul li button.sort-down{
+    background-image: url(../images/sort-down.png) ;
+    background-color: #78c352 ;
+}
+.btngroup-tbl-sort ul li button.sort-bottom{
+    background-image: url(../images/sort-bottom.png) ;
+    background-color: #58a72f ;
+}
+
+
+
+/*.col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12{
+    padding: 0 ;
+}*/
+
+
+ul.btngroup-radio{
+    width: 100% ;
+    padding: 10px 0 ;
+    text-align: center ;
+    font-size: 1.3rem ;
+}
+ul.btngroup-radio li{
+    padding: 5px ;
+    display: inline-block ;
+}
+ul.btngroup-radio li label{
+    padding-left: 5px ;
+}
+
+dl.inputgroup{
+    width: 100% ;
+    display: table;
+    margin-bottom: 15px ;
+    font-size: 1.3rem ;
+}
+dl.inputgroup dt{
+    width: 120px ;
+    display: table-cell ;
+    padding-right: 5px ;
+}
+dl.inputgroup dd{
+    display: table-cell ;
+}
+dl.inputgroup dd input[type="text"]{
+    border-radius: 3px ;
+    border: #ddd solid 1px ;
+    padding: 5px ;
+    margin-right: 5px ;
+}
+dl.inputgroup dd select,
+dl.inputgroup dd select option{
+    max-width: 100% ;
+    padding: 5px ;
+    border: #ddd solid 1px ;
+    border-radius: 3px ;
+    margin-right: 5px ;
+}
+
+.width-5{
+    width: 5% ;
+}
+.width-10{
+    width: 10% ;
+}
+.width-15{
+    width: 15% ;
+}
+.width-20{
+    width: 20% ;
+}
+.width-25{
+    width: 25% ;
+}
+.width-30{
+    width: 30% ;
+}
+
+.body-table.coursegroup{
+    overflow-y: auto ;
+    max-height: 250px ;
+}
+.body-table.user-id{
+    overflow-y: scroll;
+    max-height: 300px ;
+}
+.body-table.user-id{
+    border-radius: 0 0 10px 10px ;
+}
+.body-table.coursegroup{
+    overflow-y: auto ;
+    max-height: 300px ;
+}
+.body-table.user-id{
+    overflow-y: scroll;
+    max-height: 300px ;
+}
+.body-table.contentsgroup{
+    overflow-y: auto ;
+    max-height: 500px ;
+}
+.body-table.contentsgroup-sub{
+    overflow-y: auto ;
+    max-height: 220px ;
+}
+.body-table.contentslist{
+    overflow-y: auto ;
+    max-height: 500px ;
+}

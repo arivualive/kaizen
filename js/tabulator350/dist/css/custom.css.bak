@@ -1,0 +1,11 @@
+input{height:25px;}
+.tabulator{border-bottom:3px solid #25476a;font-size:1.3rem;}
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content{padding:5px;}
+.tabulator .tabulator-header .tabulator-col{background-color:#25476a;}
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable:hover{background-color:#4eb0e7;}
+.tabulator .tabulator-header{border-bottom: 2px solid #3fb449;}
+.tabulator .tabulator-footer{border-top:2px solid #3fb449;background-color:#25476a;}
+.tabulator .tabulator-footer .tabulator-page:not(.disabled):hover{background:#4eb0e7;}
+.tabulator .tabulator-row.tabulator-selected{background-color:#4eb0e7;}
+.tabulator .tabulator-row.tabulator-selectable:hover{background-color:#4eb0e7;}
+.tabulator .tabulator-row.tabulator-selected:hover{background-color:#999;}

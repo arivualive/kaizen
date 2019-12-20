@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ThinkBoard LMS 受講者</title>
+	<meta name="Author" content=""/>
+	<!-- viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- favicon -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="../css/icon-font.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/quiz.css">
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/script.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+    <!-- header -->
+    <div id="header-bar">
+        <div id="header">
+            <!-- left -->
+            <div class="header-left">
+                <!-- h1 -->
+                <div class="h1">
+                    <a href="#">
+                        <h1><img src="../images/logo.jpg" alt="ThinkBoard LMS"></h1>
+                    </a>
+                </div>
+                <!-- sub menu -->
+                <div class="header-submenu">
+                    <div class="btn-userinfomation dropdown">
+                        <a href="#" id="dropdownMenu-userinfo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <p class="erea-icon"><span class="icon-user-student"></span></p>
+                            <p class="erea-username">KJS 太郎</p> <!-- ここにユーザーの名前が入ります -->
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu-userinfo">
+                            <li class="PW">
+                                <a href="#">パスワード変更</a>
+                            </li>
+                            <li class="loguot">
+                                <a href="#">ログアウト</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-help">
+                        <a href="#"><span>ヘルプ</span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- right -->
+            <div class="header-right">
+                <nav class="nav-mainmenu">
+                    <ul>
+                        <li>
+                            <a href=""><span>TOP</span></a>
+                        </li>
+                        <li class="active">
+                            <a href=""><span>講義受講</span></a>
+                        </li>
+                        <li>
+                            <a href=""><span>メッセージ</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div id="container-maincontents" class="container-maincontents clearfix">
+        <div id="quiz">
+            
+            <!-- ページタイトル -->
+            <div class="quiz-top clearfix">
+                <p class="text">テスト結果</p>
+                <ul class="btns">
+                    <li><a>講義一覧へ戻る</a></li>
+                </ul>
+            </div>
+            
+            <!-- メインボックス -->
+            <div class="quiz-box">
+                
+                <!-- head -->
+                <div class="quiz-head">
+                    <div class="quiz-title">
+                        <p>ここにテストのタイトルが入ります</p>
+                    </div>
+                </div>
+                
+                <!-- body -->
+                <div class="quiz-body">
+                    <div class="quiz-body-result">
+                        <!-- テストの各受講回数 -->
+                        <div class="quiz-count-select navbar-expand-lg">
+                            <p class="head">他の受講回</p>
+                            <a class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span>他の受講回</span>
+                            </a>
+                            <ul class="scrol collapse navbar-collapse clearfix" id="navbarSupportedContent">
+                                <li class="active">
+                                    <a href="#">1回目<span class="fail">不合格</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">2回目<span class="success">合格</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">3回目<span class="fail">不合格</span></a>
+                                </li>
+                                <li>
+                                    <a href="#">4回目<span class="success">合格</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <!--点数-->
+                        <div class="quiz-detail-points">
+                            <p class="study-count">2回目</p>
+                            <p class="study-day">受験日時：2017-12-07 12:24</p>
+                            <ul class="box-l clearfix">
+                                <li>
+                                    <div class="in">
+                                        <p class="itemtitle">得点 / 合格点</p>
+                                        <p class="value"><big>80</big>点/70点</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="in">
+                                        <p class="itemtitle">合否</p>
+                                        <p class="value"><big>合格</big></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="in">
+                                        <p class="itemtitle">順位 / 受験者</p>
+                                        <p class="value"><big>100</big> / 100人</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="box-m clearfix">
+                                <li>
+                                    <div class="in">
+                                        <p class="itemtitle">平均点</p>
+                                        <p class="value">100点</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="in">
+                                        <p class="itemtitle">合格者</p>
+                                        <p class="value">100人</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="in">
+                                        <p class="itemtitle">偏差値</p>
+                                        <p class="value">測定不可</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="in">
+                                        <p class="itemtitle">標準偏差</p>
+                                        <p class="value">測定不可</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="box-m clearfix">
+                                <li>
+                                    <div class="in">
+                                        <p class="itemtitle">正解率</p>
+                                        <p class="value">80%</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="in">
+                                        <p class="itemtitle">全体の正解率</p>
+                                        <p class="value">50%</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="in">
+                                        <p class="itemtitle">解答時間</p>
+                                        <p class="value">5分 / 30</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="in">
+                                        <p class="itemtitle">全体の平均解答時間</p>
+                                        <p class="value">4.5分 / 30</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- 問題 -->
+            <div class="answer-group">
+                <!-- 各問題 -->
+                <div class="answer-listitem">
+                    <div class="head">
+                        <div class="head-top clearfix">
+                            <p class="number">問題1</p>
+                            <p class="result incorrect">不正解</p>
+                        </div>
+                        <div class="head-bottom">
+                            <p>ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。ここに問題文が入ります。</p>
+                        </div>
+                    </div>
+                    <div class="body">
+                        <div class="clearfix">
+                            <!-- 解答 -->
+                            <div class="answer-selected">
+                               <p class="type">単一選択形式</p>
+                               <table>
+                                    <tr>
+                                        <td></td>
+                                        <td class="correct">◯</td>
+                                        <td>解答その1解答その1解答その1解答その1</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="user-answer"><span>あなたの解答</span></td>
+                                        <td class="incorrect">×</td>
+                                        <td>解答その2解答その2解答その2</td>
+                                    </tr>
+                                   <tr>
+                                        <td></td>
+                                        <td class="incorrect">×</td>
+                                        <td>解答その3</td>
+                                    </tr>
+                                   <tr>
+                                        <td></td>
+                                        <td class="incorrect">×</td>
+                                        <td>解答その4解答その4解答その4解答その4解答その4</td>
+                                    </tr>
+                                   <tr>
+                                        <td></td>
+                                        <td>--</td>
+                                        <td>未解答</td>
+                                    </tr>
+                               </table>
+                            </div>
+                            <!-- グラフ -->
+                            <div class="graph">
+                                <p class="percent">全体の正解率<span>200%</span></p>
+                                <div class="graph-image"><img src="sample-graph.jpg"></div>
+                            </div>
+                        </div>
+                        <div class="commentary">
+                            <dl class="text">
+                                <dt>解説</dt>
+                                <dd>ここに解説が入ります。ここに解説が入ります。ここに解説が入ります。ここに解説が入ります。ここに解説が入ります。ここに解説が入ります。ここに解説が入ります。ここに解説が入ります。ここに解説が入ります。ここに解説が入ります。ここに解説が入ります。ここに解説が入ります。ここに解説が入ります。ここに解説が入ります。ここに解説が入ります。ここに解説が入ります。ここに解説が入ります。</dd>
+                            </dl>
+                            <dl class="movie">
+                                <dt>解説動画</dt>
+                                <dd><button><span class="contents-title">コンテンツ名</span><span class="subject-group">科目名>講義名</span></button></dd>
+                                <dd><button><span class="contents-title">コンテンツ名</span><span class="subject-group">科目名>講義名</span></button></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

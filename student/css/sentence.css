@@ -1,0 +1,247 @@
+@charset "UTF-8";
+
+/* =========================================================== 
+
+sheet 
+ => quiz-answer(テスト受講)
+    quiz-result(テストの詳細結果)
+
+=============================================================== */
+
+
+/* ============================================
+
+quiz 共通
+
+============================================ */
+
+.sentence-top{
+    padding: 10px 0 ;
+    font-weight: 600 ;
+}
+.sentence-top p.text{
+    float: left ;
+    margin: 0 ;
+    padding-top: 15px ;
+    font-size: 1.8rem ;
+}
+.sentence-top ul.btns{
+    float: right ;
+}
+.sentence-top ul.btns li a{
+    display: block;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    height: 30px;
+    font-weight: 600;
+}
+.sentence-box{
+    background-color: #fff ;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15) ;
+    border-radius: 10px ;
+}
+.sentence-head{
+    width: 100% ;
+    font-weight: 600 ;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+    position: relative ;
+    padding: 20px ;
+}
+.sentence-head::before{
+    position: absolute ;
+    width: 50px ;
+    height: 50px ;
+    border-radius: 50% ;
+    color: #fff ;
+    font-size: 2.8rem ;
+    top: 10px ;
+    left: -15px ;
+    text-align: center ;
+    padding-top: 10px ;
+    font-weight: normal ;
+    color: #fff ;
+    font-weight: normal ;
+}
+/*レポート*/
+.sentence-head.report::before{
+    content: "\e900";
+    font-family: 'icomoon' ;
+    background-color: #e6a03b ;
+}
+/*アンケート*/
+.sentence-head.questionnaire::before{
+    content: "\e900";
+    font-family: 'icomoon' ;
+    background-color: #e26775 ;
+}
+
+.sentence-head .sentence-title{
+    font-size: 2rem ;
+    line-height: 1.3em ;
+    padding: 5px 0 ;
+    padding-left: 20px ;
+}
+
+/* =================================================
+
+quiz-answer　テスト受講ページ
+
+================================================== */
+
+/* body================================ */
+
+.sentence-body{
+    padding: 20px ;
+    font-weight: 600 ;
+}
+.sentence-body .question{
+
+}
+.sentence-body .question .head{
+    margin-bottom: 15px ;
+}
+.sentence-body .question .head p.number{
+    float: left ;
+    padding: 10px ;
+    border-radius: 5px ;
+    background-color: #888 ;
+    color: #fff ;
+}
+.sentence-body .question .head p.any{
+    color: #e32d2d ;
+    padding: 10px ;
+    float: left ;
+}
+.sentence-body .question .title .text{
+    font-size: 1.6rem ;
+    line-height: 1.5em ;
+    margin-bottom: 20px ;
+}
+
+.sentence-body .answer{
+    width: 100% ;
+    margin-bottom: 30px ;
+}
+.sentence-body .answer form{
+    margin-bottom: 10px ;
+}
+/* texterea */
+.sentence-body .answer form textarea{
+    background-color: #f1f1f1 ;
+    border-radius: 10px ;
+    width: 100% ;
+    height: 200px ;
+    border: 0 ;
+    padding: 10px ;
+    line-height: 1.5em ;
+}
+/* ラジオボタン */
+.sentence-body .answer form label li{
+    margin-bottom: 10px ;
+}
+
+/* rangeslider */
+.sentence-body .answer .query_slidebar{
+    position: relative ;
+    max-width: 800px ;
+    margin: 0 auto ;
+    padding-top: 50px ;
+}
+.sentence-body .answer .query_slidebar .value-min,
+.sentence-body .answer .query_slidebar .value-max{
+    position: absolute ;
+    background-color: #f1f1f1 ;
+    padding: 10px ;
+    border-radius: 3px ;
+    top: 0 ;
+}
+.sentence-body .answer .query_slidebar .value-min{
+    left: 0px ;
+}
+.sentence-body .answer .query_slidebar .value-max{
+    right: 0px ;
+}
+.sentence-body .answer .query_slidebar output{
+    padding-top: 30px ;
+    width: 100% ;
+    text-align: center ;
+    font-size: 2rem ;
+    color: #aaa ;
+}
+.rangeslider--horizontal{
+    height: 10px ;
+}
+.rangeslider__fill{
+    background-color: #54acde ; /* brand color */
+}
+.rangeslider__handle{
+    background-color: rgba(0, 0, 0, 0.15) ;
+    box-shadow: none ;
+    border: 0 ;
+    background-image: none ;
+}
+.rangeslider__handle::after{
+    background-color: #54acde ; /* brand color */
+    background-image: none ;
+}
+.rangeslider--horizontal .rangeslider__handle{
+    top: -15px ;
+}
+
+/*前へ　次へ　ボタン*/
+
+.sentence-btns{
+    margin-bottom: 10px ;
+}
+.sentence-btns ul{
+    text-align: center ;
+}
+.sentence-btns ul li{
+    display: inline-block ;
+    padding: 5px ;
+}
+.sentence-btns ul li button{
+    padding: 15px 30px ;
+    border-radius: 5px ;
+    border: 0 ;
+    font-weight: 600 ;
+    box-shadow: 0 5px 0px #2b445c ;
+    background-color: #354e65 ;
+    color: #fff ;
+}
+.sentence-btns ul li.back button{
+    border-radius: 25px 5px 5px 25px ;
+}
+.sentence-btns ul li.next button{
+    border-radius: 5px 25px 25px 5px ;
+}
+
+
+@media (max-width: 767px){
+    /*common*/
+    .sentence-head::before{
+        height: 40px ;
+        width: 40px ;
+        left: -5px ;
+    }
+}
+
+
+/* =================================================
+
+スタート時間/終了画面
+
+================================================== */
+.sentence-start,
+.sentence-end{
+    padding: 70px 0 ;
+}
+.sentence-start p,
+.sentence-end p{
+    text-align: center ;
+    font-weight: 600 ;
+    font-size: 2.5rem ;
+    line-height: 1.3em ;
+}
+

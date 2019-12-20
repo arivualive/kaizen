@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ThinkBoard LMS 受講者</title>
+	<meta name="Author" content=""/>
+	<!-- viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- favicon -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="../css/icon-font.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/quiz.css">
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/script.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+    <!-- header -->
+    <div id="header-bar">
+        <div id="header">
+            <!-- left -->
+            <div class="header-left">
+                <!-- h1 -->
+                <div class="h1">
+                    <a href="#">
+                        <h1><img src="../images/logo.jpg" alt="ThinkBoard LMS"></h1>
+                    </a>
+                </div>
+                <!-- sub menu -->
+                <div class="header-submenu">
+                    <div class="btn-userinfomation dropdown">
+                        <a href="#" id="dropdownMenu-userinfo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <p class="erea-icon"><span class="icon-user-student"></span></p>
+                            <p class="erea-username">KJS 太郎</p> <!-- ここにユーザーの名前が入ります -->
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu-userinfo">
+                            <li class="PW">
+                                <a href="#">パスワード変更</a>
+                            </li>
+                            <li class="loguot">
+                                <a href="#">ログアウト</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-help">
+                        <a href="#"><span>ヘルプ</span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- right -->
+            <div class="header-right">
+                <nav class="nav-mainmenu">
+                    <ul>
+                        <li>
+                            <a href=""><span>TOP</span></a>
+                        </li>
+                        <li class="active">
+                            <a href=""><span>講義受講</span></a>
+                        </li>
+                        <li>
+                            <a href=""><span>メッセージ</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div id="container-maincontents" class="container-maincontents clearfix">
+        <div id="quiz-answer">
+            
+            <!-- ページタイトル -->
+            <div class="quiz-top clearfix">
+                <p class="text">テスト</p>
+                <ul class="btns">
+                    <li><a>講義一覧へ戻る</a></li>
+                </ul>
+            </div>
+            
+            <!-- メインボックス -->
+            <div class="quiz-box">
+                
+                <!-- head -->
+                <div class="quiz-head">
+                    <div class="quiz-title">
+                        <p>ここに受講中のテストのタイトルが入ります</p>
+                    </div>
+                    <div class="timelimit">
+                        <div class="in">
+                            <p class="text">制限時間</p>
+                            <p class="time">00:00:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- body -->
+                <div class="quiz-body">
+                    
+                    <!-- 問題リスト -->
+                    <div class="question-itemgroup navbar-expand-lg">
+                        <a class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span>全問題</span>
+                        </a>
+                        <ul class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
+                            <li>
+                                <button><span>問題</span>1</button>
+                            </li>
+                            <li>
+                                <button><span>問題</span>2</button>
+                            </li>
+                            <li>
+                                <button><span>問題</span>3</button>
+                            </li>
+                            <li>
+                                <button><span>問題</span>4</button>
+                            </li>
+                            <li>
+                                <button><span>問題</span>5</button>
+                            </li>
+                            <li>
+                                <button><span>問題</span>6</button>
+                            </li>
+                            <li>
+                                <button><span>問題</span>7</button>
+                            </li>
+                            <li>
+                                <button><span>問題</span>8</button>
+                            </li>
+                            <li>
+                                <button><span>問題</span>9</button>
+                            </li>
+                            <li>
+                                <button><span>問題</span>10</button>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 問題内容 -->
+                    <div class="question-main">
+                        <!-- スタート画面 -->
+                        <div class="question-start">
+                            <p>テストを開始します。</p>
+                        </div>
+                        <!-- 前へ　次へ -->
+                        <div class="answer-btns">
+                            <ul>
+                                <li><button>スタート</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

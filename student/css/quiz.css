@@ -1,0 +1,868 @@
+@charset "UTF-8";
+
+/* =========================================================== 
+
+sheet 
+ => quiz-answer(テスト受講)
+    quiz-result(テストの詳細結果)
+
+=============================================================== */
+
+
+/* ============================================
+
+quiz 共通
+
+============================================ */
+
+.quiz-top{
+    padding: 10px 0 ;
+    font-weight: 600 ;
+}
+.quiz-top p.text{
+    float: left ;
+    margin: 0 ;
+    padding-top: 15px ;
+    font-size: 1.8rem ;
+}
+.quiz-top ul.btns{
+    float: right ;
+}
+.quiz-top ul.btns li a{
+    display: block;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    height: 30px;
+    font-weight: 600;
+}
+.quiz-box{
+    background-color: #fff ;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15) ;
+    border-radius: 10px ;
+}
+.quiz-head{
+    width: 100% ;
+    font-weight: 600 ;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+    position: relative ;
+    padding: 20px ;
+}
+.quiz-head::before{
+    position: absolute ;
+    width: 50px ;
+    height: 50px ;
+    border-radius: 50% ;
+    color: #fff ;
+    font-size: 2.8rem ;
+    top: 10px ;
+    left: -15px ;
+    text-align: center ;
+    padding-top: 10px ;
+    font-weight: normal ;
+    background-color: #6fba41 ;
+    color: #fff ;
+    content: "\e902";
+    font-family: 'icomoon' ;
+}
+.quiz-head .quiz-title{
+    font-size: 2rem ;
+    line-height: 1.3em ;
+    padding: 5px 0 ;
+    padding-left: 20px ;
+	word-break: break-all ;
+	word-wrap: break-word ;
+}
+
+/* =================================================
+
+quiz-answer　テスト受講ページ
+
+================================================== */
+
+
+/* head ==========================================*/
+
+#quiz-answer .quiz-head{
+    display: table ;
+}
+#quiz-answer .quiz-head .quiz-title{
+    display: table-cell ;
+	word-break: break-all ;
+	word-wrap: break-word ;
+}
+#quiz-answer .quiz-head .quiz-title span.description{
+    font-size: 0.7em ;
+    color: #999 ;
+}
+#quiz-answer .quiz-head .timelimit{
+    display: table-cell ;
+    width: 180px ;
+}
+#quiz-answer .quiz-head .timelimit .in{
+    padding: 5px ;
+    background-color: #f1f1f1 ;
+    border-radius: 5px ;
+}
+#quiz-answer .quiz-head .timelimit .text,
+#quiz-answer .quiz-head .timelimit .time{
+    display: inline-block ;
+    padding: 0 5px ;
+}
+#quiz-answer .quiz-head .timelimit .text{
+    color: #bbb ;
+}
+#quiz-answer .quiz-head .timelimit .time{
+    font-size: 2.2rem ;
+}
+
+
+/* body======================================== */
+
+.quiz-body{
+    display: table ;
+    width: 100% ;
+}
+
+
+/*問題リスト================================ */
+
+.quiz-body .question-itemgroup{
+    display: table-cell ;
+    background-color: #eee ;
+    width: 100px ;
+    padding: 15px 0 ;
+}
+.question-itemgroup ul li{
+    position: relative ;
+    margin-bottom: 0 ;
+    transition: all 0.2s ;
+    padding: 2px 5px ;
+}
+.question-itemgroup ul li::before{
+    position: absolute ;
+    content: " " ;
+    top: 20px ;
+    left: 13px ;
+    height: 100% ;
+    border-left: rgba(0, 0, 0, 0.15) dotted 3px ;
+    z-index: 2 ;
+}
+.question-itemgroup ul li:last-child::before{
+    content: none ;
+}
+.question-itemgroup ul li button{
+    border: 0 ;
+    background-color: rgba(0, 0, 0, 0) ;
+    position: relative ;
+    padding: 15px 15px 15px 25px ;
+    width: 100% ;
+    text-align: left ;
+    font-weight: 600 ;
+    color: #888 ;
+    cursor: pointer ;
+    border-radius: 5px ;
+    pointer-events: none ;
+}
+.question-itemgroup ul li button::before{
+    position: absolute ;
+    top: 15px ;
+    left: 5px ;
+    content: " " ;
+    display: block ;
+    height: 10px ;
+    width: 10px ;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1) ;
+    border: 2px solid #fff ; 
+    background-color: #aaa ;
+    border-radius: 50% ;
+    z-index: 3 ;
+}
+/* 
+.question-itemgroup ul li button::after{
+    content: "★" ;
+    right: 15px ;
+    top: 12px ;
+    position: absolute ;
+    color: rgba(0, 0, 0, 0.1) ;
+    z-index: 100 ;
+    font-size: 1.8rem ;
+} */
+
+/*active*/
+.question-itemgroup ul li.active::after{
+    position: absolute ;
+    content: "◀" ;
+    font-size: 18px ;
+    right: -3px ;
+    top: 20px ;
+    color: #fff ;
+}
+.question-itemgroup ul li.active button{
+    color: #61a5cc ; /* brand color */
+}
+.question-itemgroup ul li.active button::before{
+    background-color: #61a5cc ; /* brand color */
+}
+/*hover*/
+.question-itemgroup ul li:hover button{
+    cursor: auto ;
+}
+/*check*/
+.question-itemgroup ul li.check button::after{
+    color: #f4d323 ;
+}
+
+
+/* メイン================================ */
+
+.quiz-body .question-main{
+    display: table-cell ;
+    padding: 15px ;
+}
+.quiz-body .question-contents{
+    padding: 15px 0 30px 0 ;
+    border-bottom: 1px #ddd solid ;
+}
+.quiz-body .question-contents .question-head{
+    margin-bottom: 20px ;
+}
+.quiz-body .question-contents .question-head::after{
+    clear: both ;
+    display: table ;
+    content: "" ;
+}
+/* 問題番号 */
+.quiz-body .question-contents .question-head p.number{
+    padding: 10px ;
+    background-color: #61a5cc ;
+    color: #fff ;
+    border-radius: 5px ;
+    float: left ;
+    font-weight: 600 ;
+    margin-right: 10px ;
+}
+/* 配点 */
+.quiz-body .question-contents .question-head p.points{
+    float: left ;
+    padding: 10px ;
+    font-weight: 600 ;
+}
+.quiz-body .question-contents .question-head p.points large{
+    font-size: 1.5em ;
+    color: #61a5cc ;
+}
+/* checkボタン */
+.quiz-body .question-contents .question-head .check{
+    float: right ;
+}
+.quiz-body .question-contents .question-head .check button{
+    padding: 10px ;
+    border: 0 ;
+    border-radius: 5px ;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) ;
+    color: rgba(0, 0, 0, 0.3) ;
+    font-weight: 600 ;
+}
+.quiz-body .question-contents .question-head .check.active button{
+    background-color: #f4d323 ;
+}
+
+/* 問題内容 */
+
+.quiz-body .question-contents .question-title .img{
+    width: 100% ;
+    max-width: 800px ;
+    max-height: 800px ;
+    text-align: center ;
+    margin: 0 auto 15px auto ;
+}
+.quiz-body .question-contents .question-title .img img{
+    border: 3px #eee solid ;
+    max-width: 100% ;
+}
+
+.quiz-body .question-contents .question-title .text{
+    font-size: 1.6rem ;
+    line-height: 1.5em ;
+    font-weight: 600 ;
+    margin-bottom: 15px ;
+	word-break: break-all ;
+	word-wrap: break-word ;
+}
+
+/*解答*/
+.question-main .answer-erea{
+    border-bottom: 1px #ddd solid ;
+    padding: 30px 0 ;
+}
+.question-main .answer-erea .answer-head{
+    width: 100% ;
+    margin-bottom: 15px ;
+}
+.question-main .answer-erea .answer-head p{
+    padding: 10px ;
+    background-color: #777 ;
+    color: #fff ;
+    border-radius: 5px ;
+    float: left ;
+    font-weight: 600 ;
+    margin-right: 10px ;
+}
+.question-main .answer-erea .answer-head span.type{
+    padding: 10px ;
+    font-weight: 600 ;
+    color: #999 ;
+    display: inline-block ;
+	word-break: break-all ;
+	word-wrap: break-word ;
+}
+.question-main .answer-erea .select ul li{
+    padding: 5px ;
+    width: 25% ;
+    float: left ;
+	word-break: break-all ;
+	word-wrap: break-word ;
+}
+.question-main .answer-erea .select ul li label{
+    padding: 10px ;
+    border-radius: 5px ;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) ;
+    font-weight: 600 ;
+    background-color: #f1f1f1 ;
+    width: 100% ;
+    border-radius: 5px ;
+}
+.question-main .answer-erea .select ul li label:hover{
+    background-color: #ddd ;
+    cursor: pointer ;
+}
+
+/*前へ　次へ　ボタン*/
+
+.question-main .answer-btns{
+    padding: 15px 0 ;
+    width: 100% ;
+}
+.question-main .answer-btns ul{
+    text-align: center ;
+}
+.question-main .answer-btns ul li{
+    display: inline-block ;
+    padding: 5px ;
+}
+.question-main .answer-btns ul li button{
+    padding: 15px ;
+    background-color: #eee ;
+    border-radius: 5px ;
+    height: 50px ;
+    border: 0 ;
+    font-weight: 600 ;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) ;
+    background-color: #6fba41 ;
+    color: #fff ;
+}
+.question-main .answer-btns ul li.back button{
+    border-radius: 25px 5px 5px 25px ;
+}
+.question-main .answer-btns ul li.next button{
+    border-radius: 5px 25px 25px 5px ;
+}
+
+/* sp toggle========================= */
+
+.navbar-expand-lg .navbar-toggler{
+    display: none !important ;
+}
+
+@media (min-width: 768px){
+    .navbar-expand-lg .navbar-collapse {
+        display: block !important ;
+    }
+} 
+
+@media (max-width: 991px){
+    .question-main .answer-erea .select ul li{
+        width: 50% ;
+    }
+}
+
+@media (max-width: 767px){
+    /*common*/
+    .quiz-head::before{
+        height: 40px ;
+        width: 40px ;
+        left: -5px ;
+    }
+    /*head===============*/
+    #quiz-answer .quiz-head{
+        display: block ;
+    }
+    #quiz-answer .quiz-head .quiz-title{
+        display: block ;
+        width: 100% ;
+    }
+    #quiz-answer .quiz-head .timelimit{
+        display: block ;
+        width: 100% ;
+        text-align: center ;
+    }
+    
+    /*body===============*/
+    .quiz-body{
+        display: block ;
+    }
+    .quiz-body .question-itemgroup{
+        display: block ;
+        width: 100% ;
+        background-color: #fff ;
+        border-bottom: 1px solid #ddd ;
+        padding: 15px ;
+    }
+    .quiz-body .question-itemgroup ul{
+        padding: 10px 0 ;
+    }
+    .question-itemgroup ul li{
+        padding: 5px ;
+        float: left ;
+        width: 25% ;
+    }
+    .question-itemgroup ul li button{
+        padding: 15px ;
+    }
+    .question-itemgroup ul li button::before{
+        content: none ;
+    }
+    .question-itemgroup ul li button::after{
+        position: static ;
+        padding-left: 10px ;
+    }
+    .question-itemgroup ul li button span{
+        display: none ;
+    }
+    .question-itemgroup ul li.active button{
+        background-color: #61a5cc ; /* brand color */
+        color: #fff ;
+    }
+    .question-itemgroup ul li.active::after{
+        content: none ;
+    }
+    .question-itemgroup ul li::before{
+        content: none ;
+    }
+    .question-itemgroup ul li button{
+        background-color: #eee ;
+    }
+    .quiz-body .question-main{
+        display: block ;
+        width: 100% ;
+    }
+    .question-main .answer-erea .select ul li{
+        float: none ;
+        width: 100% ;
+    }
+    
+    /* sp toggle========================= */
+    .navbar-expand-lg .navbar-toggler{
+        position: relative ;
+        display: block !important ;
+        width: 100% ;
+        font-size: 14px ;
+        border: 0 ;
+        outline: none ;
+        font-weight: 600 ;
+        padding-top: 15px ;
+        height: 40px ;
+        text-align: center ;
+        border-radius: 20px ;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) ;
+        background-color: #f1f1f1 ;
+    }
+}
+
+
+/* =================================================
+
+スタート時間/終了画面
+
+================================================== */
+.question-main .question-start,
+.question-main .question-end{
+    padding: 30px 0 ;
+}
+.question-main .question-start p,
+.question-main .question-end p{
+    text-align: center ;
+    font-weight: 600 ;
+    font-size: 2.5rem ;
+    line-height: 1.3em ;
+	word-break: break-all ;
+	word-wrap: break-word ;
+}
+
+
+/* =================================================
+
+quiz-result　テスト結果ページ
+
+================================================== */
+
+
+.quiz-body-result{
+    display: table ;
+    width: 100% ;
+}
+.quiz-body-result .quiz-count-select{
+    display: table-cell ;
+    padding: 20px ;
+}
+.quiz-body-result .quiz-detail-points{
+    display: table-cell ;
+    padding: 20px ;
+}
+.quiz-body-result .quiz-count-select{
+    width: 250px ;
+}
+
+/*受講回数*/
+.quiz-count-select{
+    font-weight: 600 ;
+    background-color: #eee ;
+}
+.quiz-count-select p.head{
+    margin-bottom: 10px ;
+}
+.quiz-count-select ul{
+    width: 100% ;
+    max-height: 300px ;
+    overflow: auto ;
+}
+.quiz-count-select ul li{
+    width: 100% ;
+    padding: 3px 0 ;
+}
+.quiz-count-select ul li a{
+    padding: 15px ;
+    display: block ;
+    width: 100% ;
+    color: #5a6875 ;
+    background-color: #fff ;
+    border-radius: 5px ;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) ;
+}
+.quiz-count-select ul li a span{
+    float: right ;
+    padding: 5px 10px ;
+    background-color: #f1f1f1 ;
+    border-radius: 15px ;
+    margin-top: -3px ;
+    font-size: 0.9em ;
+}
+.quiz-count-select ul li a span.success{
+    color: #439adb ;
+}
+.quiz-count-select ul li a span.fail{
+    color: #dc3545 ;
+}
+.quiz-count-select ul li.active a,
+.quiz-count-select ul li a:hover{
+    color: #fff ;
+    background-color: #61a5cc ; /* brand color */
+}
+
+/*得点一覧*/
+.quiz-detail-points p.study-count,
+.quiz-detail-points p.study-day{
+    margin-bottom: 15px ;
+    font-size: 1.6rem ;
+    font-weight: 600 ;
+}
+.quiz-detail-points ul.box-l,
+.quiz-detail-points ul.box-m{
+    width: 100% ;
+}
+.quiz-detail-points ul.box-l li .in,
+.quiz-detail-points ul.box-m li .in{
+    padding: 10px ;
+    border: #ddd 1px solid ;
+    font-weight: 600 ;
+}
+.quiz-detail-points ul.box-l li p.itemtitle,
+.quiz-detail-points ul.box-m li p.itemtitle{ 
+    color: #aaa ;
+    margin-bottom: 5px ;
+}
+.quiz-detail-points ul.box-l li p.value,
+.quiz-detail-points ul.box-m li p.value{
+    text-align: right ;
+}
+.quiz-detail-points ul.box-l li{
+    float: left ;
+    width: 33% ;
+    padding: 10px ;
+}
+.quiz-detail-points ul.box-l li p.value{
+    font-size: 2rem ;
+}
+.quiz-detail-points ul.box-l li p.value big{
+    font-size: 2.2em ;
+    color: #6fba41 ; /* brand color */
+}
+
+.quiz-detail-points ul.box-m li{
+    float: left ;
+    width: 25% ;
+    padding: 10px ;
+}
+.quiz-detail-points ul.box-m li p.value{
+    font-size: 2rem ;
+}
+@media (max-width: 767px){
+    .quiz-body-result,
+    .quiz-body-result .quiz-count-select,
+    .quiz-body-result .quiz-detail-points{
+        display: block ;
+        width: 100% ;
+    }
+    .quiz-body-result .quiz-count-select,
+    .quiz-body-result .quiz-detail-points{
+        padding: 15px ;
+    }
+    .quiz-body-result .quiz-count-select{
+        background-color: #fff ;
+        border-bottom: #ddd 1px solid ;
+    }
+    .quiz-count-select p.head{
+        display: none ;
+    }
+    .quiz-count-select ul li{
+        width: 50% ;
+        float: left ;
+    }
+    .quiz-detail-points ul.box-l li,
+    .quiz-detail-points ul.box-m li{
+        padding: 0 ;
+    }
+    .quiz-detail-points ul.box-l li{
+        width: 100% ;
+    }
+    .quiz-detail-points ul.box-m li{
+        width: 50% ;
+    }
+}
+
+/* 各問題============================================================= */
+
+.answer-group{
+    padding-top: 20px ;
+}
+.answer-listitem{
+    margin-bottom: 20px ;
+    background-color: #fff ;
+    border-radius: 10px ;
+    overflow: hidden ;
+}
+.answer-listitem .head{
+    border-bottom: 2px solid #ddd ;
+}
+.answer-listitem .head .head-top{
+    background-color: #5a6875 ;
+    padding: 15px ;
+    font-weight: 600 ;
+}
+
+/* 問題番号 */
+.answer-listitem .head .head-top p.number{
+    color: #fff ;
+    font-size: 1.6rem ;
+    float: left ;
+    padding: 5px ;
+}
+/* 合否 */
+.answer-listitem .head .head-top p.result{
+    background-color: #fff ;
+    padding: 5px ;
+    border-radius: 5px ;
+    color: #777 ;
+    float: right ;
+}
+.answer-listitem .head .head-top p.result::before{
+    font-family: 'icomoon' ;
+    margin-right: 5px ;
+}
+/* 不合格 */
+.answer-listitem .head .head-top p.result.incorrect{
+    color: #888 ;
+}
+.answer-listitem .head .head-top p.result.incorrect::before{
+    content: "\ea0f" ;
+}
+/* 合格 */
+.answer-listitem .head .head-top p.result.correct{
+    color: #888 ;
+}
+.answer-listitem .head .head-top p.result.correct::before{
+    content: "\e70a" ;
+}
+
+/* 問題内容 */
+.answer-listitem .head .head-bottom{
+    padding: 20px ;
+}
+.answer-listitem .head .head-bottom p{
+    line-height: 1.5em ;
+    font-weight: 600 ;
+	word-break: break-all ;
+	word-wrap: break-word ;
+}
+
+/* 解答エリア============== */
+.answer-listitem .body{
+    padding: 20px ;
+}
+
+/* 解答選択テーブル */
+.answer-listitem .body .answer-selected{
+    width: 65% ;
+    float: left ;
+    padding-right: 10px ;
+    margin-bottom: 15px ;
+}
+.answer-listitem .body .answer-selected p.type{
+    padding: 10px ;
+    background-color: #f1f1f1 ;
+    border-radius: 5px ;
+    font-weight: 600 ;
+}
+.answer-listitem .body .answer-selected table{
+    width: 100% ;
+}
+.answer-listitem .body .answer-selected table td{
+    font-weight: 600 ;
+    padding: 13px 0px ;
+    border-bottom: #eee solid 1px ;
+	word-break: break-all ;
+	word-wrap: break-word ;
+}
+/* あなたの回答 */
+.answer-listitem .body .answer-selected table td:nth-child(1){
+    text-align: center ;
+    width: 100px ;
+}
+.answer-listitem .body .answer-selected table td.user-answer span{
+    background-color: #6fba41 ;
+    border-radius: 5px ;
+    color: #fff ;
+    position: relative ;
+    padding: 5px ;
+    display: block ;
+}
+.answer-listitem .body .answer-selected table td.user-answer span::after{
+    content: "▶";
+    top: 6px ;
+    right: -10px ;
+    color: #6fba41 ;
+    position: absolute ;
+}
+
+/* 合否 */
+.answer-listitem .body .answer-selected table td:nth-child(2){
+    text-align: center ;
+    width: 50px ;
+}
+.answer-listitem .body .answer-selected table td.correct{
+    color: #dc3545 ;
+}
+.answer-listitem .body .answer-selected table td.incorrect{
+    color: #61a5cc ;
+}
+
+/* グラフ */
+.answer-listitem .body .graph{
+    padding: 15px ;
+    float: left ;
+    width: 35% ;
+    border: #eee 3px solid ;
+    border-radius: 5px ;
+    margin-bottom: 15px ;
+}
+.answer-listitem .body .graph p.percent{
+    font-weight: 600 ;
+    margin-bottom: 10px ;
+    border-bottom: #eee 3px solid ;
+    padding-bottom: 10px ;
+}
+.answer-listitem .body .graph p.percent span{
+    float: right ;
+    font-size: 1.4em ;
+}
+.answer-listitem .body .graph .graph-image{
+    text-align: center ;
+}
+.answer-listitem .body .commentary dl{
+    border: #eee 3px solid ;
+    border-radius: 5px ;
+    padding: 15px ;
+    margin-bottom: 10px ;
+}
+
+/* 解説 */
+.answer-listitem .body .commentary dl dt{
+    margin-bottom: 10px ;
+}
+.answer-listitem .body .commentary dl.text dd{
+    line-height: 1.5em ;
+	word-break: break-all ;
+	word-wrap: break-word ;
+}
+.answer-listitem .body .commentary dl.movie dd{
+    margin-bottom: 10px ;
+}
+.answer-listitem .body .commentary dl.movie dd button{
+    padding: 15px 40px ;
+    border-radius: 5px ;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) ;
+    border: 0 ;
+    width: 100% ;
+    background-color: #f1f1f1 ;
+    text-align: left ;
+    color: #5a6875 ;
+    font-weight: 600 ;
+    position: relative ;
+}
+.answer-listitem .body .commentary dl.movie dd button::before{
+    content: "\e901" ;
+    font-family: 'icomoon' ;
+    margin-right: 10px ;
+    color: #439adb ;
+    position: absolute ;
+    top: 15px ;
+    left: 15px ;
+}
+.answer-listitem .body .commentary dl.movie dd button::after{
+    content: "\e703" ;
+    font-family: 'icomoon' ;
+    color: rgba(0, 0, 0, 0.3) ;
+    float:  right ;
+    position: absolute ;
+    top: 15px ;
+    right: 15px ;
+}
+.answer-listitem .body .commentary dl.movie dd button span.contents-title{
+    margin-right: 10px ;
+}
+.answer-listitem .body .commentary dl.movie dd button span.subject-group::before{
+}
+
+
+@media (max-width: 767px){
+    .answer-listitem .body .answer-selected{
+        width: 100% ;
+    }
+    .answer-listitem .body .graph{
+        width: 100% ;
+    }
+    .answer-listitem .body .answer-selected table td:nth-child(1){
+        width: 80px ;
+    }
+}

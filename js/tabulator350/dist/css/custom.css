@@ -1,0 +1,11 @@
+input{height:25px;}
+.t{border-bottom:3px solid #25476a;font-size:1.3rem;}
+.t .t-header .t-col .t-col-content{padding:5px;}
+.t .t-header .t-col{background-color:#25476a;}
+.t .t-header .t-col.t-sortable:hover{background-color:#4eb0e7;}
+.t .t-header{border-bottom: 2px solid #3fb449;}
+.t .t-footer{border-top:2px solid #3fb449;background-color:#25476a;}
+.t .t-footer .t-page:not(.disabled):hover{background:#4eb0e7;}
+.t .tr.t-selected{background-color:#4eb0e7;}
+.t .tr.ts:hover{background-color:#4eb0e7;}
+.t .tr.t-selected:hover{background-color:#999;}

@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?gn1onz');
+  src:  url('../fonts/icomoon.eot?gn1onz#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?gn1onz') format('truetype'),
+    url('../fonts/icomoon.woff?gn1onz') format('woff'),
+    url('../fonts/icomoon.svg?gn1onz#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* コンテンツ＞レポート・アンケート */
+.icon-contents-draw:before {
+  content: "\e900";
+}
+/* コンテンツ＞動画授業 */
+.icon-contents-movie:before {
+  content: "\e901";
+}
+/* コンテンツ＞テスト */
+.icon-contents-test:before {
+  content: "\e902";
+}
+/* メインナビ＞HOME */
+.icon-main-home:before {
+  content: "\e903";
+}
+/* メインナビ＞メッセージ */
+.icon-main-message:before {
+  content: "\e904";
+}
+/* メインナビ＞講義受講 */
+.icon-main-study:before {
+  content: "\e905";
+}
+/* ユーザー＞生徒 */
+.icon-user-student:before {
+  content: "\e906";
+}

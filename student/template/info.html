@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ThinkBoard LMS 受講者</title>
+	<meta name="Author" content=""/>
+	<!-- viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- favicon -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="css/icon-font.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/top-information.css">
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+    <!-- header -->
+    <div id="header-bar">
+        <div id="header">
+            <!-- left -->
+            <div class="header-left">
+                <!-- h1 -->
+                <div class="h1">
+                    <a href="#">
+                        <h1><img src="images/logo.jpg" alt="ThinkBoard LMS"></h1>
+                    </a>
+                </div>
+                <!-- sub menu -->
+                <div class="header-submenu">
+                    <div class="btn-userinfomation dropdown">
+                        <a href="#" id="dropdownMenu-userinfo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <p class="erea-icon"><span class="icon-user-student"></span></p>
+                            <p class="erea-username">KJS 太郎</p> <!-- ここにユーザーの名前が入ります -->
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu-userinfo">
+                            <li class="PW">
+                                <a href="#">パスワード変更</a>
+                            </li>
+                            <li class="loguot">
+                                <a href="#">ログアウト</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-help">
+                        <a href="#"><span>ヘルプ</span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- right -->
+            <div class="header-right">
+                <nav class="nav-mainmenu">
+                    <ul>
+                        <li class="active">
+                            <a href=""><span>TOP</span></a>
+                        </li>
+                        <li>
+                            <a href=""><span>講義受講</span></a>
+                        </li>
+                        <li>
+                            <a href=""><span>メッセージ</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- main container -->
+    <div id="container-maincontents" class="container-maincontents">
+        <!-- information -->
+        <div id="top-information" class="top-information">
+            <div class="h2 clearfix">
+                <h2>インフォメーション</h2>
+                <div class="btn-notice">
+                    <a>お知らせ一覧へ</a>
+                </div>
+            </div>
+            <div class="information-listgroup scrol">
+                <div class="information-list new">
+                    <div class="head">
+                        <p class="day">2017.12.31</p>
+                        <p class="destination contents">コンテンツ</p>
+                    </div>
+                    <div class="text">ここにインフォメーションが入ります。ここにインフォメーションが入ります。ここにインフォメーションが入ります。ここにインフォメーションが入ります。ここにインフォメーションが入ります。ここにインフォメーションが入ります。</div>
+                </div>
+                <div class="information-list">
+                    <div class="head">
+                        <p class="day">2017.12.31</p>
+                        <p class="destination questionnaire">アンケート</p>
+                    </div>
+                    <div class="text">ここにインフォメーションが入ります。ここにインフォメーションが入ります。ここにインフォメーションが入ります。</div>
+                </div>
+                <div class="information-list">
+                    <div class="head">
+                        <p class="day">2017.12.31</p>
+                        <p class="destination report">レポート</p>
+                    </div>
+                    <div class="text">ここにインフォメーションが入ります。ここにインフォメーションが入ります。ここにインフォメーションが入ります。</div>
+                </div>
+                <div class="information-list">
+                    <div class="head">
+                        <p class="day">2017.12.31</p>
+                        <p class="destination test">テスト</p>
+                    </div>
+                    <div class="text">ここにインフォメーションが入ります。ここにインフォメーションが入ります。ここにインフォメーションが入ります。</div>
+                </div>
+                <div class="information-list">
+                    <div class="head">
+                        <p class="day">2017.12.31</p>
+                        <p class="destination message">メッセージ</p>
+                    </div>
+                    <div class="text">ここにインフォメーションが入ります。ここにインフォメーションが入ります。ここにインフォメーションが入ります。</div>
+                </div>
+                <div class="information-list">
+                    <div class="no-item">新着はありません</div>
+                </div>
+            </div>
+        </div>
+        <!-- btn group -->
+        <div id="top-mainmenubtngroup" class="top-mainmenubtngroup clearfix">
+            <div class="mainmenubtn study">
+                <div class="h3">
+                    <h3><img src="images/icon_mainmenu_study.png">講義を受講する</h3>
+                </div>
+                <p class="text">動画授業の視聴、テスト・アンケート・レポートの提出ができます。</p>
+                <a href="#">講義を受講する</a>
+            </div>
+            <div class="mainmenubtn message">
+                <div class="h3">
+                    <h3><img src="images/icon_mainmenu_message.png">メッセージを送る・見る</h3>
+                </div>
+                <p class="text">管理者・講師の先生とメッセージを交換できます。</p>
+                <a href="#">メッセージを見る・送る</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

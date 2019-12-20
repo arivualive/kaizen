@@ -1,0 +1,557 @@
+@charset "UTF-8";
+
+/* common=============================================================== */
+
+*{
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box ;
+}
+html, body {
+    height: 100%;
+}
+html{
+    font-size: 62.5% ;
+}
+body{
+    color: #5a6875 ;
+    line-height: 1 ;
+    font-family: YuGothic , 'Yu Gothic' , sans-serif , icomoon ,'icomoon' ;
+    font-weight: 500 ;
+    font-size: 1.4rem ;
+}
+a,
+button,
+label,
+input[type="submit"]{
+    transition: all 0.2s ;
+    color: #5a6875 ;
+}
+a:hover,
+button:hover,
+input[type="submit"]:hover{
+    text-decoration: none ;
+    cursor: pointer ;
+}
+ul , li{
+    list-style-type: none ;
+    margin-bottom: 0 ;
+}
+p{
+    margin-bottom: 0 ;
+}
+
+#wrap{
+    background-color: #f1f1f1 ;
+    min-width: 100% ;
+    min-height: 100% ;
+}
+
+@media (max-width: 767px){
+    html{
+        font-size: 50% ;
+    }
+    a,
+    button{
+        user-select: none ;
+        -moz-user-select: none ;
+        -webkit-user-select: none ;
+    }
+}
+
+/* header =================================================================== */
+
+#header-bar{   
+    background-color: #54acde ; /* brand color */
+    height: 100px ;
+    width: 100% ;
+}
+#header{
+    max-width: 1140px ;
+    margin: 0 auto ;
+}
+#header::after{
+    display: table ;
+    content: "" ;
+    clear: both ;
+}
+
+/* header left ================================================= */
+
+.header-left{
+    float: left ;
+    height: 100px ;
+    font-weight: 600 ;
+}
+.h1{
+    background-color: #fff ;
+    height: 100% ;
+    float: left ;
+    margin-bottom: 0 ;
+}
+.h1 a{
+    width: 100% ;
+    height: 100% ;
+    padding: 10px ;
+    max-width: 220px ;
+    display: table ;
+    table-layout: fixed;
+}
+.h1 a h1{
+    display: table-cell ;
+    vertical-align: middle ;
+}
+.h1 a h1 img{
+    max-width: 100% ;
+    max-height: 80px ;
+}
+.header-submenu{
+    float: left ;
+    padding: 25px 10px 0 10px ;
+}
+.btn-userinfomation{
+    float: left ;
+    padding-left: 5px ;
+}
+.btn-userinfomation a{
+    height: 50px ;
+    border-radius: 25px ;
+    background-color: rgba( 0, 0, 0, 0.08) ;
+    display: block ;
+    padding: 5px ;
+    color: #fff ;
+}
+.btn-userinfomation .erea-icon{
+    float: left ;
+    height: 40px ;
+    width: 40px ;
+    border-radius: 50% ;
+    background-color: rgba( 0, 0, 0, 0.10) ;
+    text-align: center ;
+    padding-top: 10px ;
+    font-size: 2.5rem ;
+}
+.btn-userinfomation a .erea-username{
+    float: left ;
+    padding: 15px 30px 0 5px ;
+    position: relative ;
+    max-width: 180px ;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden ;
+}
+.btn-userinfomation a .erea-username::after{
+    position: absolute ;
+    content: "\e701" ;
+    font-family: 'icomoon' ;
+    top: 15px ;
+    right: 10px ;
+    font-size: 0.8em ;
+    opacity: 0.5 ;
+}
+.btn-userinfomation a:hover{
+    background-color: rgba(255, 255, 255, 0.1) ;
+}
+.btn-userinfomation .dropdown-menu{
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2) ;
+    border: 0 ;
+    border-radius: 5px ;
+    margin-left: 40px ;
+    margin-top: -5px ;
+    width: 150px ;
+    padding: 0 ;
+    overflow: hidden ;
+}
+.btn-userinfomation .dropdown-menu a{
+    color: #5a6875 ;
+    height: auto ;
+    border-radius: 0px ;
+    font-size: 1.3rem ;
+    background-color: #fff ;
+    transition: all 0.2s ;
+    padding: 10px ;
+}
+.btn-userinfomation .dropdown-menu li a::before{
+    margin-right: 5px ;
+    font-weight: normal ;
+}
+/* pw */
+.btn-userinfomation .dropdown-menu li.PW a::before{
+    content: "\f023" ;
+    font-family: icomoon ;
+}
+/* logout */
+.btn-userinfomation .dropdown-menu li.loguot a::before{
+    content: "\f08b" ;
+    font-family: icomoon ;
+}
+
+.btn-userinfomation .dropdown-menu a:hover{
+    background-color: rgba( 0, 0, 0, 0.07) ;
+}
+.btn-help{
+    float: left ;
+    padding-left: 5px ;
+}
+.btn-help a{
+    display: block ;
+    padding: 20px 10px ;
+    height: 50px ;
+    color: rgba(255, 255, 255, 0.7) ;
+}
+.btn-help a::before{
+    content: "\e912" ;
+    font-family: 'icomoon' ;
+    display: block ;
+    float: left ;
+    border-radius: 50% ;
+    margin-right: 5px ;
+    margin-top: -5px ;
+    font-size: 2.3rem ;
+    font-weight: normal ;
+}
+.btn-help a:hover{
+    color: #fff ;
+}
+
+/* header right ================================================= */
+
+.header-right{
+    float: right ;
+    height: 100px ;
+    background-color: #54acde ; /* brand color */
+}
+.nav-mainmenu ul li{
+    float: left ;
+    height: 100px ;
+    border-left:  rgba(255, 255, 255, 0.3) 1px solid ;
+    min-width: 100px ;
+}
+.nav-mainmenu ul li:last-child{
+    border-right: rgba(255, 255, 255, 0.3) 1px solid ;
+}
+.nav-mainmenu ul li a{
+    color: #fff ;
+    padding: 60px 20px 0 20px ;
+    text-align: center ;
+    height: 100% ;
+    display: block ;
+    position: relative ;
+    font-weight: 600 ;
+}
+.nav-mainmenu ul li a:hover,
+.nav-mainmenu ul li a:focus,
+.nav-mainmenu ul li.active a{
+    background-color: rgba(0, 0, 0, 0.08) ;
+}
+.nav-mainmenu ul li a:hover::before,
+.nav-mainmenu ul li.active a::before{
+    color: #fff ;
+}
+.nav-mainmenu ul li.active a::after{
+    position: absolute ;
+    content: "▲" ;
+    left: 0 ;
+    bottom: -10px ;
+    display: block ;
+    width: 100% ;
+    font-size: 2.5rem ;
+    color: #f1f1f1 ;
+}
+/* icon指定 */
+.nav-mainmenu ul li a:before{
+    position: absolute ;
+    top: 20px ;
+    left: 0 ;
+    display: block ;
+    width: 100% ;
+    font-family: 'icomoon';
+    font-size: 3.2rem ;
+    font-weight: normal ;
+    color: rgba( 0, 0, 0, 0.13) ;
+    transition: all 0.2s ;
+}
+/* ホーム */
+.nav-mainmenu ul li:nth-child(1) a::before{
+    content: "\e903";
+}
+/* 講義受講 */
+.nav-mainmenu ul li:nth-child(2) a::before{
+    content: "\e905";
+}
+/* メッセージ */
+.nav-mainmenu ul li:nth-child(3) a::before{
+    content: "\e904";
+}
+@media (max-width: 1000px){
+    .nav-mainmenu ul li{
+        min-width: 70px ;
+    }
+    .nav-mainmenu ul li a{
+        padding: 60px 10px 0 10px ;
+    }
+}
+@media (max-width: 767px){
+    #header-bar{
+        height: auto ;
+        height: 130px ;
+    }
+    .header-left{
+        width: 100% ;
+        background-color: #fff ;
+        height: 70px ;
+    }
+    .h1{
+        width: 40% ;
+    }
+    .h1 a h1 img{
+        max-width: 100% ;
+        max-height: 50px ;
+    }
+    .header-submenu{
+        float: right ;
+        padding: 15px 5px 0 5px ;
+        max-width: 60% ;
+    }
+    .btn-userinfomation a{
+        background-color: #54acde ; /* brand color */
+        height: 40px ;
+        border-radius: 20px ;
+        display: block ;
+        padding: 5px ;
+        color: #fff ;
+    }
+    .btn-userinfomation a:hover{
+        background-color: #54acde ; /* brand color */
+    }
+    .btn-userinfomation a .erea-icon{
+        display: none ;
+    }
+    .btn-userinfomation a .erea-username{
+        padding-top: 10px ;
+        padding-right: 30px ;
+    }
+    .btn-userinfomation a .erea-username::after{
+        top: 10px ;
+    }
+    .btn-userinfomation .dropdown-menu{
+        margin-left: 0 ;
+        width: 120px ;
+    }
+    .btn-help a{
+        display: block ;
+        padding: 15px 5px ;
+        color: #354e65 ;
+        height: 40px ;
+    }
+    .btn-help a::before{
+        font-size: 3rem ;
+    }
+    .btn-help a span{
+        display: none ;
+    }
+    .header-right{
+        float: left ;
+        width: 100% ;
+        height: 60px ;
+    }
+    .nav-mainmenu ul li{
+        width: 33% ;
+        border: none ;
+        height: 60px ;
+    }
+    .nav-mainmenu ul li:last-child{
+        width: 34% ;
+        border: none; 
+    }
+    .nav-mainmenu ul li a span{
+        display: none ;
+    }
+    .nav-mainmenu ul li a:before{
+        top: 15px ;
+    }
+}
+
+/* main============================================================== */
+
+.container-maincontents{
+    max-width: 1140px ;
+    width: 100% ;
+    margin: 0 auto ;
+    padding: 30px 10px ;
+}
+
+.scrol::-webkit-scrollbar {
+    width: 8px ;
+}
+.scrol::-webkit-scrollbar-track {
+    border-radius: 4px;
+}
+.scrol::-webkit-scrollbar-thumb {
+    background-color: #54acde ; /* brand color */
+    border-radius: 4px;
+}
+
+/* modal================================================================ */
+
+.modal-backdrop.show{
+    opacity: 0.15 ;
+}
+
+/* 関連付けmodal=========================================================== */
+
+/* body.modal-open .modal.contents-continuity,
+body.modal-open .modal-backdrop{
+	display: block ;
+	opacity: 1 ;
+}
+body.modal-open .modal.contents-continuity .modal-dialog{
+	transform: translate(0, 0) ;
+} */
+.modal.contents-continuity .modal-dialog{
+    max-width: 380px ;
+	margin-top: 50px ;
+	margin-left: auto ;
+	margin-right: auto ;
+}
+.modal.contents-continuity .modal-content{
+    border-radius: 10px ;
+    border: 0 ;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) ;
+}
+.modal.contents-continuity .modal-header{
+    background-color: #f1f1f1 ;
+    padding: 20px ;
+    border-radius: 10px 10px 0 0 ;
+}
+.modal.contents-continuity .modal-header p.text{
+    font-weight: 600 ;
+    font-size: 1.5rem ;
+	width: 100% ;
+	text-align: center ;
+	line-height: 1.5em ;
+}
+.modal.contents-continuity .modal-header p.text span.finish{
+	padding: 5px ;
+	background-color: #fff ;
+	width: 100% ;
+	font-size: 1.2rem ;
+	margin-top: 5px ;
+	margin-bottom: 5px ;
+	border-radius: 5px ;
+	display: block ;
+}
+.modal.contents-continuity .modal-header p.text span.finish span.type{
+	color: #aaa ;
+	margin-right: 10px ;
+}
+.modal.contents-continuity .modal-header p.text span.finish span.type::before{
+	font-family: icomoon ;
+	margin-right: 3px ;
+}
+.modal.contents-continuity .modal-header p.text span.finish span.type.movie::before{
+	content: "\e901" ;
+	color: #439adb ;
+}
+.modal.contents-continuity .modal-header p.text span.finish span.type.questionnaire::before{
+	content: "\e900" ;
+	color: #e26775 ;
+}
+.modal.contents-continuity .modal-header p.text span.finish span.type.report:before{
+	content: "\e900" ;
+	color: #e6a03b ;
+}
+.modal.contents-continuity .modal-header p.text span.finish span.type.quiz::before{
+	content: "\e902" ;
+	color: #6fba41 ;
+}
+.modal.contents-continuity .modal-header .close{
+    width: 40px ;
+    height: 40px ;
+    border-radius: 50% ;
+    background-color: #5a6875 ;
+    color: #fff ;
+    font-weight: bold ;
+    opacity: 1 ;
+    font-size: 2.3rem ;
+    padding: 0 ;
+    text-align: center ;
+	margin-top: -40px ;
+	margin-right: -40px ;
+}
+
+/* body */
+.modal.contents-continuity .modal-body{
+	padding: 30px 20px ;
+}
+.modal.contents-continuity .modal-body p.type{
+	text-align: center ;
+	font-weight: bold ;
+	font-size: 1.4rem ;
+	margin-bottom: 15px ;
+	color: #aaa ;
+}
+.modal.contents-continuity .modal-body p.type::before{
+	font-family: icomoon ;
+	margin-right: 5px ;
+	font-weight: normal ;
+}
+.modal.contents-continuity .modal-body p.type.tb::before{
+	content: "\e901" ;
+	color: #439adb ;
+}
+.modal.contents-continuity .modal-body p.type.mp4::before{
+	content: "\e901" ;
+	color: #5a63b6 ;
+}
+.modal.contents-continuity .modal-body p.type.test::before{
+	content: "\e902" ;
+	color: #6fba41 ;
+}
+.modal.contents-continuity .modal-body p.type.questionnaire::before{
+	content: "\e900" ;
+	color: #e26775 ;
+}
+.modal.contents-continuity .modal-body p.type.report::before{
+	content: "\e900" ;
+	color: #e6a03b ;
+}
+.modal.contents-continuity .modal-body p.title{
+	text-align: center ;
+	font-size: 1.8rem ;
+	font-weight: bold ;
+	margin-bottom: 20px ;
+}
+.modal.contents-continuity .modal-body ul.btns{
+	width: 100% ;
+}
+.modal.contents-continuity .modal-body ul.btns li{
+	width: 100% ;
+	margin-bottom: 10px ;
+	text-align: center ;
+}
+.modal.contents-continuity .modal-body ul.btns li button{
+	min-width: 150px ;
+	padding: 13px ;
+	border-radius: 3px ;
+	margin: 0 auto ;
+	display: block ;
+	border: 0 ;
+	font-weight: bold ;
+	box-shadow: 0px 1px 2px rgba( 0, 0, 0, 0.3) ;
+}
+.modal.contents-continuity .modal-body ul.btns li button.ok{
+	background-color: #54acde ;
+	color: #fff ;
+}
+.modal.contents-continuity .modal-body ul.btns li button.cancel{
+	background-color: #f1f1f1 ;
+	color: #aaa ;
+}
+.modal.contents-continuity .modal-body ul.btns li button.score{
+	background-color: #6fba41 ;
+	color: #fff ;
+}
+
+@media (max-width: 767px){
+}

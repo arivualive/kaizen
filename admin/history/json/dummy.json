@@ -1,0 +1,47 @@
+{
+  "table_create" : [
+    {
+      "title" : "",
+      "columnVertAlign" : "bottom",
+      "columns" : [
+        {
+          "title" : "動画",
+          "field" : "scr0",
+          "align" : "center",
+          "min-width" : 90,
+          "width" : 130
+        },
+        {
+          "title" : "テスト",
+          "field" : "sqzr0",
+          "align" : "center",
+          "min-width" : 90,
+          "width" : 130
+        },
+        {
+          "title" : "アンケート",
+          "field" : "sqer0",
+          "align" : "center",
+          "min-width" : 130,
+          "width" : 180
+        },
+        {
+          "title" : "レポート",
+          "align" : "center",
+          "field" : "srer0",
+          "min-width" : 90,
+          "width" : 150
+        }
+      ]
+    }
+  ],
+  "csv_header" : [
+    "動画",
+    "テスト",
+    "アンケート",
+    "レポート"
+  ],
+  "attribute" : null,
+  "update_time" : "なし",
+  "student_data" : null
+}

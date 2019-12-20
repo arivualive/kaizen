@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+/* sheet
+   => login
+=============================================================== */
+
+#login{
+    background-color: #eee ; /* brand color */
+    min-height: 100% ;
+}
+
+/* head================================= */
+
+#login .head{
+    background-color: #fff ;
+    padding-top: 30px ;
+    padding-bottom: 20px ;
+}
+#login .head .in{
+    padding: 15px ;
+    max-width: 350px ;
+    margin: 0 auto ;
+    text-align: center ;
+}
+#login .head .in .h1{
+    float: none ;
+    width: 100% ;
+    margin-bottom: 15px ;
+}
+#login .head .in .h1 h1 img{
+    max-width: 250px ;
+    display: block ;
+    margin: 0 auto ;
+}
+#login .head .in p.h1_btm{
+    font-size: 1.5rem ;
+    margin-bottom: 10px ;
+}
+#login .head .in p.authority{
+    padding-top: 7px ;
+    height: 30px ;
+    max-width: 200px ;
+    margin: 0 auto ;
+    background-color: #f1f1f1 ;
+    border-radius: 15px ;
+    font-size: 1.5rem ;
+    font-weight: 600 ;
+    letter-spacing: 0.5em ;
+}
+
+/* main================================== */
+
+#login .main{
+    padding-top: 20px ;
+}
+#login .main .in{
+    padding: 15px ;
+    max-width: 350px ;
+    margin: 0 auto ;
+    position: relative ;
+}
+#login .main .in form{
+    width: 100% ;
+}
+#login .main .in form dl{
+    width: 100% ;
+    margin-bottom: 20px ;
+}
+#login .main .in form dl dt{
+    margin-bottom: 5px ;
+}
+#login .main .in form dl dd{
+    width: 100% ;
+}
+#login .main .in form dl dd input{
+    width: 100% ;
+    background-color: rgba(0, 0, 0, 0.05) ;
+    border: 0 ;
+    border-radius: 5px ;
+    padding: 7px ;
+}
+#login .main .in p.submit{
+    width: 100% ;
+    padding: 10px 0 ;
+}
+#login .main .in p.submit input{
+    display: block ;
+    padding: 10px ;
+    background-color: #54acde ; /* brand color */
+    border: 0 ;
+    border-radius: 23px ;
+    height: 46px ;
+    width: 100% ;
+    max-width: 200px ;
+    margin: 0 auto ;
+    color: #fff ;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15) ;
+}
+#login .main .in p.submit input:hover{
+    background-color: #fff ;
+    color: #54acde ; /* brand color */
+}
+#login .main .in p.submit input:active{
+    outline: 0 ;
+}
+
+/* logout */
+
+#login .main.logout{
+    text-align: center ;
+}
+#login .main.logout p{
+    margin-bottom: 20px ;
+}
+#login .main.logout p.link_loginpage a{
+    display: block ;
+    padding-top: 15px ;
+    background-color: #fff ;
+    border-radius: 23px ;
+    height: 46px ;
+    width: 100% ;
+    max-width: 200px ;
+    margin: 0 auto ;
+    color: #aaa ;
+}
+#login .main.logout p.link_loginpage a:hover{
+    color: #54acde ; /* brand color */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15) ;
+}

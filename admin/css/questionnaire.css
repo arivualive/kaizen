@@ -1,0 +1,856 @@
+@charset "UTF-8";
+
+/*==========================================================
+
+sheet=>
+questionnaire-regist(アンケート登録)
+
+============================================================= */
+
+
+#col-questionnaire-control{
+    width: 100% ;
+    max-width: 1200px ;
+    margin-left: auto ;
+    margin-right: auto ;
+    margin-bottom: 30px ;
+}
+
+/* contents-group=========================================== */
+
+#col-questionnaire-control #control-box-contentsgroup{
+    width: 30% ;
+    float: left ;
+    margin-bottom: 30px ;
+}
+#col-questionnaire-control .h3{
+    margin-bottom: 0 ;
+}
+#col-questionnaire-control .h3 h3{
+    padding: 10px ;
+    float: left ;
+    height: 30px ;
+    border-radius: 3px 3px 0 0 ;
+    background-color: #fff ;
+    font-size: 1.3rem ;
+    line-height: 1em ;
+    font-weight: 600 ;
+    margin-bottom: 0 ;
+}
+#col-questionnaire-control #control-box-contentsgroup .body{
+    background-color: #fff ;
+    padding: 10px ;
+    width: 100% ;
+    border-radius: 0 0 0 5px ;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) ;
+    height: 500px ;
+    border-right: 1px #ddd solid ;
+    overflow-y: auto ;
+}
+
+/* form-group=========================================== */
+
+#col-questionnaire-control #control-box-formgroup{
+    width: 70% ;
+    float: left ;
+}
+
+#col-questionnaire-control #control-box-formgroup .body{
+    padding: 25px ;
+    width: 100% ;
+    background-color: #fff ;
+    border-radius: 0 5px 5px 5px ;
+    min-height: 530px ;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) ;
+}
+#col-questionnaire-control #control-box-formgroup .body .w-50{
+    width: 50% ;
+    float: left ;
+    padding: 15px ;
+}
+
+/* 各質問=============================================================== */
+
+#question{
+    width: 100% ;
+    max-width: 1200px ;
+    margin-left: auto ;
+    margin-right: auto ;
+}
+.each-question{
+    display: table ;
+    margin-bottom: 30px ;
+    width: 100% ;
+}
+
+/* 問題番号==================================== */
+
+.each-question .number-erea{
+    display: table-cell ;
+    vertical-align: top ;
+    width: 100px ;
+}
+.each-question .number-erea .in{
+    border-radius: 5px 0px 0px 5px ;
+    overflow: hidden ;
+    background-color: #fff ;
+    box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.1) ;
+}
+.each-question .number-erea p.number{
+    background-color: #f1f1f1 ;
+    margin: 5px 0 5px 5px;
+    border-radius: 3px ;
+    width: 100% ;
+    padding: 10px 0 ;
+    text-align: center ;
+}
+.each-question .number-erea p.number span:first-child{
+    width: 100% ;
+    display: block ;
+}
+.each-question .number-erea p.number span:last-child{
+    margin-top: 5px ;
+    color: #fff ;
+    padding-top: 5PX ;
+    height: 26px ;
+    min-width: 26px ;
+    border-radius: 13px ;
+    background-color: #4eb0e7 ;
+    display: inline-block ;
+    font-size: 1.5rem ;
+	font-weight: bold ;
+}
+.each-question .number-erea ul.btns li{
+    float: left ;
+}
+.each-question .number-erea ul.btns li button{
+    color: #fff ;
+    font-weight: normal ;
+    text-align: center;
+    border: 0  ;
+    padding: 10px 0 ;
+    height: 30px ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+}
+.each-question .number-erea ul.btns li button::before{
+    font-family: icomoon ;
+}
+/* 上 */
+.each-question .number-erea ul.btns li.top button{
+    background-color: #ccc ;
+    width: 30px ;
+}
+.each-question .number-erea ul.btns li.top button::before{
+    content: "\e707" ;
+}
+.each-question .number-erea ul.btns li.top button.active{
+    background-color: #73c5f4 ;
+}
+/* 下 */
+.each-question .number-erea ul.btns li.bottom button{
+    background-color: #ccc ;
+    width: 30px ;
+}
+.each-question .number-erea ul.btns li.bottom button.active{
+    background-color: #4eb0e7 ;
+}
+.each-question .number-erea ul.btns li.bottom button::before{
+    content: "\e704" ;
+}
+/* 消去 */
+.each-question .number-erea ul.btns li.delete button{
+    background-color: #2b547c ;
+    width: 40px ;
+}
+.each-question .number-erea ul.btns li.delete button::before{
+    content: "\e9ac" ;
+}
+
+/* 各質問情報=============================================== */
+
+.each-question .info-erea{
+    display: table-cell ;
+    vertical-align: top ;
+}
+.each-question .info-erea .in{
+    background-color: #fff ;
+    border-radius: 0 5px 5px 5px ;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) ;
+}
+.each-question .info-erea.create .in{
+    padding: 25px ;
+}
+dl.input-group.type-questionnaire select{
+    width: 200px ;
+    float: left ;
+}
+dl.input-group p.any-required{
+    float: left ;
+    padding-left: 20px ;
+    padding-top: 10px ;
+}
+dl.input-group p.any-required .icon{
+    float: left ;
+}
+dl.input-group.value-answer{
+    float: left ;
+    width: auto ;
+}
+dl.input-group.value-answer input[type="text"].label{
+    width: 200px ;
+    float: left ;
+    margin-right: 15px ;
+}
+dl.input-group.value-answer input[type="number"]{
+    width: 50px ;
+    float: left ;
+    margin-right: 15px ;
+}
+dl.input-group.value-answer p{
+    float: left ;
+    margin-right: 15px ;
+    padding-top: 10px ;
+}
+dl.input-group.step{
+    float: left ;
+    width: auto ;
+}
+dl.input-group.step input[type="number"]{
+    width: 100px ;
+}
+dl.input-group.select-answer{
+	display: block ;
+	width: 100% ;
+}
+dl.input-group.select-answer dt{
+    width: 100% ;
+}
+dl.input-group.select-answer dd.item{
+}
+dl.input-group.select-answer dd.item input[type="text"]{
+    width: 90% ;
+    height: 30px ;
+}
+dl.input-group.select-answer dd.item button{
+    width: 10% ;
+    background-color: #2b547c ;
+    color: #fff ;
+    text-align: center ;
+    padding: 10px ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+    margin-left: 0 ;
+    border-radius: 0 3px 3px 0 ;
+    height: 30px ;
+}
+dl.input-group.select-answer dd.add button{
+    width: 100% ;
+    border-radius: 5px ;
+    padding: 8px ;
+    background-color: #fff ;
+    border: #ccc 2px dashed ;
+    box-shadow: none ;
+	float: none ;
+	margin-left: 0 ;
+	font-weight: bold ;
+}
+dl.input-group.select-answer dd.add button::before{
+    content: "\e700" ;
+    font-family: icomoon ;
+    margin-right: 5px ;
+    color: #4eb0e7 ;
+	font-weight: normal ;
+}
+dl.input-group.select-answer dd.add button:hover{
+    background-color: #fff ;
+    border-color: #4eb0e7 ;
+}
+
+/* 新規質問=================================== */
+
+.btn-newquestion{
+    width: 100% ;
+    max-width: 1200px ;
+    margin-left: auto ;
+    margin-right: auto ;
+    margin-bottom: 30px ;
+    padding-left: 100px ;
+}
+.btn-newquestion button{
+    width: 100% ;
+    border-radius: 5px ;
+    padding: 18px ;
+    background-color: #f1f1f1 ;
+    border: #ccc 2px dashed ;
+	font-weight: bold ;
+}
+.btn-newquestion button::before{
+    content: "\e700" ;
+    font-family: icomoon ;
+    margin-right: 5px ;
+    color: #4eb0e7 ;
+	font-weight: normal ;
+}
+.btn-newquestion button:hover{
+    background-color: #fff ;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2) ;
+    border-color: #4eb0e7 ;
+}
+p.error-message{
+	width: 400px ;
+	margin: 0 auto 20px auto ;
+	text-align: center ;
+	line-height: 2em ;
+	padding-left: 100px ;
+}
+p.error-message span.icon::before{
+	content: "!" ;
+	background-color: #eb3131 ;
+	line-height: 1 ;
+	color: #fff ;
+	height: 15px ;
+	width: 15px ;
+	display: inline-block ;
+	border-radius: 50% ;
+	padding-top: 1px ;
+	margin-right: 5px ;
+	text-align: center ;
+	font-weight: bold ;
+}
+
+/* large btn=========================================================== */
+
+#col-mainbtn{
+    width: 100% ;
+    max-width: 1200px ;
+    margin-left: auto ;
+    margin-right: auto ;
+    margin-bottom: 30px ;
+    padding-left: 100px ;
+}
+#col-mainbtn ul{
+    width: 100% ;
+    text-align: center ;
+}
+#col-mainbtn ul li{
+    padding: 0 5px ;
+    display: inline-block ;
+}
+#col-mainbtn ul li button,
+#col-mainbtn ul li a{
+    padding: 13px ;
+    border-radius: 3px ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+    border: 0 ;
+    font-weight: 600 ;
+    display: block ;
+    height: 40px ;
+}
+#col-mainbtn ul li.save button{
+    background-color: #4eb0e7 ;
+    color: #fff ;
+    min-width: 100px ;
+}
+#col-mainbtn ul li.reedit button{
+    background-color: #aaa ;
+    color: #fff ;
+}
+#col-mainbtn ul li.back a{
+    background-color: #fff ;
+    color: #2b547c ;
+}
+
+
+/*==========================================================
+
+sheet=>
+questionnaire-regist-check(アンケート登録 確認画面)
+
+============================================================= */
+
+
+/* maininfo================================================= */
+
+#box-questionnaire-maininfo{
+    display: table ;
+    background-color: #fff ;
+    border-radius: 5px ;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) ;
+    padding: 25px ;
+    width: 100% ;
+    max-width: 1200px ;
+    margin-left: auto ;
+    margin-right: auto ;
+    margin-bottom: 30px ;
+}
+#box-questionnaire-maininfo .col-contentsgroup-check{
+    display: table-cell ;
+    width: 300px ;
+    vertical-align: top ;
+    padding-right: 15px ;
+}
+#box-questionnaire-maininfo .col-maininfo-check{
+    display: table-cell ;
+    vertical-align: top ;
+    padding-left: 15px ;
+}
+
+/* 確認文言================= */
+
+.text-check{
+    width: 100% ;
+    margin-bottom: 10px ;
+}
+.text-check p{
+    background-color: #f5b123 ;
+    width: 430px ;
+    padding: 18px ;
+    border-radius: 5px ;
+    color: #fff ;
+    margin: 0 auto ;
+    text-align: center ;
+    position: relative ;
+}
+.text-check p::after{
+    position: absolute ;
+    content: "▼" ;
+    font-size: 30px ;
+    bottom: -20px ;
+    left: 50% ;
+    color: #f5b123 ;
+    transform: translateX(-50%) ;
+}
+
+/* 公開範囲================= */
+
+.col-contentsgroup-check dl{
+    width: 100% ;
+    border: #f1f1f1 2px solid ;
+    border-radius: 3px ;
+    margin-top: 20px ;
+    margin-bottom: 0 ;
+}
+.col-contentsgroup-check dl dt{
+    margin-top: -25px ;
+    margin-left: -2px ;
+}
+.col-contentsgroup-check dl dt p{
+    background-color: #f1f1f1 ;
+    padding: 5px ;
+    border-radius: 3px 3px 0 0 ;
+    height: 25px ;
+    float: left ;
+}
+.col-contentsgroup-check dl dd{
+    border-bottom: #ddd 1px solid ;
+    padding: 10px 0 ;
+    margin: 0 15px ;
+}
+.col-contentsgroup-check dl dd:last-child{
+    border: 0 ;
+}
+.col-contentsgroup-check dl dd span{
+    width: 100% ;
+    display: block ;
+    padding: 5px 0;
+}
+.col-contentsgroup-check dl dd span:nth-child(2){
+    padding-left: 25px ;
+    position: relative ;
+}
+.col-contentsgroup-check dl dd span:nth-child(2)::before{
+    position: absolute ;
+    content: "∟" ;
+    color: #ccc ;
+    left: 5px ;
+    top: 5px ;
+}
+
+/* テーブル=================== */
+
+table.questionnaire-maininfo{
+    width: 100% ;
+}
+table.questionnaire-maininfo tr{
+    border-bottom: #ddd 1px solid ;
+}
+table.questionnaire-maininfo tr:last-child{
+    border: 0 ;
+}
+table.questionnaire-maininfo tr th,
+table.questionnaire-maininfo tr td{
+    padding: 10px 0 ;
+}
+table.questionnaire-maininfo tr th{
+    color: #aaa ;
+    width: 150px ;
+    vertical-align: top ;
+}
+table.questionnaire-maininfo tr td{
+    padding-left: 5px ;
+}
+table.questionnaire-maininfo tr td span.error{
+    color: #eb3131 ;
+}
+
+/* 各問題============================================================== */
+
+.each-question .info-erea.check .in{
+    padding: 20px 25px ;
+}
+table.each-info{
+    width: 100% ;
+}
+table.each-info tr{
+    border-bottom: #ddd 1px solid ;
+}
+table.each-info tr:last-child{
+    border: 0 ;
+}
+table.each-info tr th,
+table.each-info tr td{
+    padding: 10px 0 ;
+}
+table.each-info tr th{
+    color: #aaa ;
+    width: 150px ;
+    vertical-align: top ;
+}
+table.each-info tr td{
+    padding-left: 5px ;
+}
+table.each-info tr td span.error{
+    color: #eb3131 ;
+}
+/* 任意・必須 */
+table.each-info tr.any-required td span.passive{
+    color: #aaa ;
+    padding: 3px 10px ;
+    margin-top: -5px ;
+    display: inline-block ;
+}
+table.each-info tr.any-required td span.active{
+    height: 20px ;
+    border-radius: 12px ;
+    background-color: #4eb0e7 ;
+    color: #fff ;
+    padding: 3px 10px ;
+    margin-top: -5px ;
+    display: inline-block ;
+}
+/* 選択項目 */
+table.each-info tr.slect-answer td{
+    padding: 10px 0 ;
+}
+table.each-info tr.slect-answer td span.slect-answer{
+    padding: 3px 10px ;
+    margin: 5px ;
+    display: inline-block ;
+    height: 20px ;
+    border-radius: 12px ;
+    background-color: #f1f1f1 ;
+}
+/* 数値入力 */
+table.each-info tr.value-answer td{
+    padding: 10px 0 ;
+}
+table.each-info tr.value-answer td span.label{
+    margin: 5px ;
+    display: inline-block ;
+}
+table.each-info tr.value-answer td span.value{
+    padding: 3px 10px ;
+    display: inline-block ;
+    height: 20px ;
+    border-radius: 12px ;
+    background-color: #f1f1f1 ;
+    color: #4eb0e7 ;
+}
+
+/*==========================================================
+
+sheet=>
+questionnaire-report(アンケート分析)
+
+============================================================= */
+
+#box-questionnaire-importantinfo{
+    display: table ;
+    padding: 10px 0 10px 10px ;
+    width: 100% ;
+    max-width: 1200px ;
+    margin-left: auto ;
+    margin-right: auto ;
+    margin-bottom: 10px ;
+}
+#box-questionnaire-importantinfo dl{
+    display: table-cell ;
+    vertical-align: middle ;
+    padding-right: 10px ;
+}
+#box-questionnaire-importantinfo dl dt{
+    color: #aaa ;
+    margin-bottom: 10px ;
+}
+#box-questionnaire-importantinfo dl dd{
+    margin-bottom: 0 ;
+    font-weight: bold ;
+}
+/* タイトル */
+#box-questionnaire-importantinfo dl.title dd{
+    font-size: 2.2rem ;
+    line-height: 1.3em ;
+}
+/* 質問数 */
+#box-questionnaire-importantinfo dl.number-question{
+    width: 70px ;
+    padding-right: 10px ;
+}
+#box-questionnaire-importantinfo dl.number-question dd span{
+    font-size: 2.3rem ;
+}
+/* 回答者数 */
+#box-questionnaire-importantinfo dl.number-user{
+    width: 80px ;
+}
+#box-questionnaire-importantinfo dl.number-user dd span{
+    font-size: 2.3rem ;
+    color: #f5b123 ;
+    padding-right: 5px ;
+    font-weight: bold ;
+}
+/* button */
+#box-questionnaire-importantinfo dl.btns{
+    width: 250px ;
+    vertical-align: middle ;
+    padding-right: 0 ;
+}
+#box-questionnaire-importantinfo dl.btns dd{
+	margin-left: 5px ;
+	float: left ;
+}
+#box-questionnaire-importantinfo dl.btns button,
+#box-questionnaire-importantinfo dl.btns a,
+#box-questionnaire-importantinfo dl.btns form{
+    border-radius: 3px ;
+    padding: 5px 0 ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+    border: 0;
+    float: left ;
+    display: block ;
+    text-align: center ;
+    font-weight: bold ;
+    height: 30px ;
+    vertical-align: top ;
+}
+#box-questionnaire-importantinfo dl.btns form{
+    border-radius: 3px ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+    border: 0;
+    float: left ;
+    display: block ;
+    text-align: center ;
+    font-weight: bold ;
+    height: 35px ;
+    vertical-align: top ;
+    position: relative ;
+    padding-top: 10px ;
+}
+#box-questionnaire-importantinfo dl.btns form input{
+    border-radius: 3px ;
+    box-shadow: none ;
+    border: 0;
+    display: block ;
+    text-align: center ;
+    font-weight: bold ;
+    height: 30px ;
+    width: 100% ;
+    vertical-align: top ;
+    z-index: 5 ;
+    background-color: rgba(0, 0, 0, 0) ;
+    position: absolute ;
+    top: 0 ;
+}
+#box-questionnaire-importantinfo dl.btns button::before,
+#box-questionnaire-importantinfo dl.btns a::before,
+#box-questionnaire-importantinfo dl.btns form::before{
+    font-family: icomoon ;
+    font-weight: normal ;
+}
+#box-questionnaire-importantinfo dl.btns a.edit{
+    background-color: #fff ;
+    width: 70px ;
+    margin-right: 10px ;
+}
+#box-questionnaire-importantinfo dl.btns a.edit::before{
+    content: "\e90c" ;
+}
+#box-questionnaire-importantinfo dl.btns form.csv{
+    background-color: #4eb0e7 ;
+    color: #fff ;
+    width: 120px ;
+    height: 45px;
+}
+#box-questionnaire-importantinfo dl.btns form.csv::before{
+    content: "\e918" ;
+}
+
+/* 各質問================================== */
+
+.each-question .info-erea.report{
+    position: relative ;
+    border-radius: 0 5px 5px 5px ;
+}
+.each-question .info-erea.report .in{
+    background-color: #fff ;
+    border-radius: 0 5px 0 0 ;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) ;
+    padding: 20px 25px ;
+}
+table.each-info tr.number-user td span{
+    color: #f5b123 ;
+    font-size: 1.3em ;
+    margin-right: 5px ;
+    font-weight: 600 ;
+}
+
+/* 自由回答 */
+.question-report{
+    width: 100% ;
+    border-top: #ddd 1px solid ;
+    background-color: #fff ;
+    border-radius: 0 0 5px 5px ;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) ;
+}
+.question-report.free-word .w-100{
+    padding: 25px ;
+}
+.question-report.free-word table{
+    width: 100% ;
+}
+.question-report.free-word table tr{
+    border-top: #ddd 1px solid ;
+}
+.question-report.free-word table tr:last-child{
+    border-bottom: #ddd 1px solid ;
+}
+.question-report.free-word table tr th,
+.question-report.free-word table tr td{
+    padding: 7px 5px ;
+    transition: all 0.2s ;
+}
+.question-report.free-word table tr th{
+    background-color: #2b547c ;
+    color: #fff ;
+}
+.question-report.free-word table tr th:nth-child(1){
+    width: 50px ;
+}
+.question-report.free-word table tr th:nth-child(2){
+    width: 70px ;
+}
+.question-report.free-word table tr th:nth-child(3){
+    width: 150px ;
+}
+.question-report.free-word table tr th:nth-child(4){
+
+}
+.question-report.free-word table tr th:nth-child(5){
+    width: 60px ;
+}
+.question-report.free-word table tr:hover td{
+    background-color: #f1f1f1 ;
+}
+.question-report.free-word table tr td:nth-child(1){
+    color: #4eb0e7 ;
+    font-weight: bolder ;
+}
+.question-report.free-word table tr td:nth-child(4){
+    line-height: 1.3em ;
+}
+.question-report.free-word table tr td:nth-child(5) button{
+    border: 0 ;
+    color: #aaa ;
+    border-radius: 3px ;
+    height: 20px ;
+    width: 50px ;
+    background-color: #4eb0e7 ;
+    color: #fff ;
+	font-size: 1.1rem ;
+}
+.question-report.free-word table tr td:nth-child(5) button:hover{
+    background-color: #318dd0 ;
+    color: #fff ;
+}
+
+/* 数値回答・選択形式 */
+.question-report.graph{
+}
+.question-report.graph .w-50{
+    width: 50% ;
+    padding: 25px ;
+    vertical-align: middle ;
+    float: left ;
+}
+.question-report.graph table.select{
+    width: 100% ;
+}
+.question-report.graph table.select tr{
+    border-top: #ddd 1px solid ;
+}
+.question-report.graph table.selectr tr:last-child{
+    border-bottom: #ddd 1px solid ;
+}
+.question-report.graph table.select th,
+.question-report.graph table.select td{
+    padding: 7px 5px ;
+}
+.question-report.graph table.select th{
+    background-color: #2b547c ;
+    color: #fff ;
+}
+.question-report.graph table.select.answer th:last-child{
+    width: 60px ;
+}
+.question-report.graph table.select.value th:last-child{
+    width: 50% ;
+}
+/* Toggle */
+.navbar-toggler{
+    display: block ;
+    width: 150px ;
+    height: 30px ;
+    border: #fff 3px solid ;
+    border-radius: 15px ;
+    background-color: #4eb0e7 ;
+    color: #fff ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.15) ;
+    position: absolute ;
+    bottom: -15px ;
+    right: 20px ;
+    font-weight: bold ;
+}
+.navbar-toggler::before{
+    content: "\e707" ;
+    font-family: icomoon ;
+    background-color: rgba(0, 0, 0, 0.2) ;
+    height: 16px ;
+    width: 16px ;
+    display: inline-block ;
+    border-radius: 50% ;
+    color: #fff ;
+    padding-top: 3px ;
+    font-size: 1.1rem ;
+    text-align: center ;
+    margin-right: 5px ;
+    font-weight: normal ;
+}
+.navbar-toggler:hover{
+    background-color: #f1f1f1 ;
+    color: #2b547c ;
+}
+.navbar-toggler:hover::before{
+    background-color:  #4eb0e7 ;
+}
+.navbar-toggler.collapsed::before{
+    content: "\e704" ;
+}

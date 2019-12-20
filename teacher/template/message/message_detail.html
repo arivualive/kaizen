@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ThinkBoard LMS 受講者</title>
+	<meta name="Author" content=""/>
+	<!-- viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- favicon -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="../css/icon-font.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/message.css">
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/script.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+    <!-- header -->
+    <div id="header-bar">
+        <div id="header">
+            <!-- left -->
+            <div class="header-left">
+                <!-- h1 -->
+                <div class="h1">
+                    <a href="#">
+                        <h1><img src="../images/logo.jpg" alt="ThinkBoard LMS"></h1>
+                    </a>
+                </div>
+                <!-- sub menu -->
+                <div class="header-submenu">
+                    <div class="btn-userinfomation dropdown">
+                        <a href="#" id="dropdownMenu-userinfo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <p class="erea-icon"><span class="icon-user-student"></span></p>
+                            <p class="erea-username">KJS 太郎</p> <!-- ここにユーザーの名前が入ります -->
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu-userinfo">
+                            <li class="PW">
+                                <a href="#">パスワード変更</a>
+                            </li>
+                            <li class="loguot">
+                                <a href="#">ログアウト</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-help">
+                        <a href="#"><span>ヘルプ</span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- right -->
+            <div class="header-right">
+                <nav class="nav-mainmenu">
+                    <ul>
+                        <li>
+                            <a href=""><span>TOP</span></a>
+                        </li>
+                        <li>
+                            <a href=""><span>講義受講</span></a>
+                        </li>
+                        <li class="active">
+                            <a href=""><span>メッセージ</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div id="container-maincontents" class="container-maincontents clearfix">
+        <div id="message-detail">
+            <!-- page title -->
+            <div class="message-detail-title clearfix">
+                <p class="text">メッセージ詳細</p>
+                <ul class="btns">
+                    <li><a>一覧へ戻る</a></li>
+                    
+                </ul>
+            </div>
+            <div class="message-detail-box">
+                <!-- head -->
+                <div class="message-detail-head type-public"><!-- 公開(public)or非公開(private) -->
+                    <p class="message-type">公開メッセージ</p>
+                    <p class="message-title">ここにメッセージタイトルが入ります</p>
+                </div>
+                
+                <!-- body -->
+                <div class="message-detail-body">
+                    <div class="otherinformation navbar-expand-lg">
+                        <a class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span>詳細情報</span>
+                        </a>
+                        <div class="collapse navbar-collapse in" id="navbarSupportedContent">
+                            <!-- メッセージ作成者 -->
+                            <dl class="created-user">
+                                <dt>作成者</dt>
+                                <dd>窪薗かな</dd>
+                            </dl>
+                            <!-- メッセージ作成日 -->
+                            <dl class="created-date">
+                                <dt>作成日</dt>
+                                <dd>2017-12-31 12:34:56</dd>
+                            </dl>
+                            <!-- メッセージ公開範囲(受講者名orコース・ユニット名)　※公開メッセージの場合のみ表示 -->
+                            <dl class="open-range">
+                                <dt>公開範囲</dt>
+                                <dd>受講者その1さん</dd>
+                                <dd>受講者その2さん</dd>
+                                <dd>受講者その3さん</dd>
+                                <dd>受講者その4さん</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="talkerea">
+                        <div class="btn-reply">
+                            <a href="#">返信する</a>
+                        </div>
+                        <div class="thread-group">
+                            
+                            <!-- 書き込み：受講者(student) -->
+                            <div class="thread-item student">
+                                <div class="head clearfix">
+                                    <!-- 書込み者名 -->
+                                    <p class="username">あなたさん</p>
+                                    <!-- 削除ボタン -->
+                                    <p class="btn-delete">
+                                        <button>削除</button>
+                                    </p>
+                                    <!-- 書込み日 -->
+                                    <p class="last-day">2017-12-31 12:34:56</p>
+                                </div>
+                                <div class="writing">ここに書き込みが入ります。ここに書き込みが入ります。ここに書き込みが入ります。ここに書き込みが入ります。ここに書き込みが入ります。</div>
+                                <!-- 返信先 -->
+                                <div class="destination">講師さん</div>
+                            </div>
+                            
+                            <!-- 書き込み：講師(teacher) -->
+                            <div class="thread-item teacher">
+                                <div class="head clearfix">
+                                    <p class="username">講師さん</p>
+                                    <p class="last-day">2017-12-31 12:34:56</p>
+                                </div>
+                                <div class="writing">ここに書き込みが入ります。ここに書き込みが入ります。ここに書き込みが入ります。ここに書き込みが入ります。ここに書き込みが入ります。</div>
+                                <div class="destination">受講者さん</div>
+                            </div>
+                            
+                            <!-- 書き込み：管理者(admnin) -->
+                            <div class="thread-item admin">
+                                <div class="head clearfix">
+                                    <p class="username">管理者さん</p>
+                                    <p class="last-day">2017-12-31 12:34:56</p>
+                                </div>
+                                <div class="writing">ここに書き込みが入ります。ここに書き込みが入ります。ここに書き込みが入ります。ここに書き込みが入ります。ここに書き込みが入ります。</div>
+                                <div class="destination">受講者さん</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

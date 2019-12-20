@@ -1,0 +1,63 @@
+/* @import url('https://fonts.googleapis.com/css?family=Roboto+Mono'); */
+/* @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro'); */
+@import url('items/robotamono.min.css');
+@import url('items/sourcecodepro.min.css');
+body,button{font-family:'游ゴシック体',YuGothic,'游ゴシック Medium','Yu Gothic Medium','YuGothic M','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,sans-serif;font-weight:normal}
+body{margin:8px;font-size:14px;color:#333;-webkit-text-size-adjust:100%}
+button{font-weight:initial;min-width:initial;height:initial;box-shadow:initial}
+button{margin:0px;padding:9px 16px;font-size:14px;color:#fff;line-height:1;background:#a92b1a;border:2px solid transparent;border-radius:4px}
+button:hover{background:#b7472a;border-color:#c75033}
+button:focus{outline:0px;border:2px solid transparent;box-shadow:0px 0px 0px 4px rgba(199,80,51,0.5)}
+.border{padding:1px 0px;box-shadow:0px 0px 4px silver}
+.none{user-select:none;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none}
+/* 識別文字入力用 */
+input[type='text'],select{font-family:'Roboto Mono',YuGothic,'Yu Gothic Medium','YuGothic M','Hiragino Kaku Gothic Pro',Meiryo;margin:2px 0px;padding:0px 0px 0px 3px;cursor:pointer}
+input[type='text']{font-size:16px;text-indent:4px;height:32px;outline:0px;border:solid 2px #217346;border-radius:4px}
+input[name='string']:focus:valid{color:#2b579a;border:solid 2px #2b579a}
+input[name='string']:focus:invalid{color:#b7472a;border:solid 2px #b7472a}
+select{font-size:14px}
+option{height:20px}
+.line2{border:solid 1px #217346}
+.border2{padding:6px;border:solid 2px #217346;border-radius:6px;overflow:hidden}
+.button2{background:#0e5c2f}
+.button2:hover{background:#217346;border-color:#3f8159}
+.button2:focus{box-shadow:0px 0px 0px 4px rgba(14,92,47,0.5)}
+.box{margin-bottom:14px;vertical-align:top;display:inline-block}
+.true{font-weight:bold;color:#2b579a}
+.false{font-weight:bold;color:#b7472a}
+@media(max-width:414px){input[name='string']{width:calc(100% - 7px)}select{width:100%}.border2{font-size:13px}.box{margin-bottom:13px}}
+/* 表示形式切替用 */
+select[name='csvfile']{font-size:16px;height:36px}
+input[type='radio'],input[type='checkbox']{font-size:16px;vertical-align:-1px}
+.radio{height:38px;vertical-align:middle;display:table-cell}
+.item{white-space:nowrap}
+.margin{margin:0px 2px}
+.line3{border:solid 1px #2b579a}
+.border3{padding:6px;border:solid 2px #2b579a;border-radius:6px}
+.button3{background:#124078}
+.button3:hover{background:#2b579a;border-color:#3c65a4}
+.button3:focus{box-shadow:0px 0px 0px 4px rgba(60,101,164,0.5)}
+@media(max-width:414px){.border3{font-size:13px}}
+/* 結果参照用 */
+font{font-size:12px;color:#b7472a;white-space:nowrap}
+pre,.box{font-family:'Roboto Mono',YuGothic,'Yu Gothic Medium','YuGothic M','Hiragino Kaku Gothic Pro',Meiryo}
+pre{margin:0px;padding:6px;min-width:100px;line-height:1;background:#fff6f6;border:1px solid #ccc;border-radius:4px;white-space:pre-wrap}
+.box2{margin-bottom:22px}
+@media(max-width:414px){font{font-size:11px}pre{font-size:13px}}
+/* ソースコード表示用 */
+pre:focus{outline:0px}
+code,li{font-family:'Source Code Pro',YuGothic,'Yu Gothic Medium','YuGothic M','Hiragino Kaku Gothic Pro',Meiryo;font-size:12px;line-height:1.4;white-space:pre-wrap;tab-size:2;-moz-tab-size:2}
+input[name='source']:checked + .panel{height:auto;padding-top:8px}
+.agent{font-family:'Roboto Mono';font-size:10px;display:inline-block}
+.panel{overflow:hidden;height:0px;transition:.8s ease}
+.border4{padding:4px 6px;border:solid 2px #80397b;border-radius:6px}
+.button4{margin:2px 0px;background:#6c2f68}
+.button4:hover{background:#80397b;border-color:#9e5499}
+.button4:focus{box-shadow:0px 0px 0px 4px rgba(158,84,153,0.5)}
+.button5{margin:2px 0px;background:#912c2f}
+.button5:hover{background:#a4373a;border-color:#c54c51}
+.button5:focus{box-shadow:0px 0px 0px 4px rgba(197,76,81,0.5)}
+@media(max-width:414px){code,li{font-size:11px;line-height:1.25}.panel{font-size:12px}}
+/* QRコード＆ショートURL表示用 */
+.qrcode{vertical-align:text-bottom}
+.short{font-family:'Source Code Pro';font-size:14px}

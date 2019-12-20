@@ -1,0 +1,388 @@
+@charset "UTF-8";
+
+/* common=============================================================== */
+
+*{
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box ;
+}
+html, body {
+    height: 100%;
+}
+html{
+    font-size: 62.5% ;
+}
+body{
+    color: #5a6875 ;
+    line-height: 1 ;
+    font-family: YuGothic , 'Yu Gothic' , sans-serif , icomoon ,'icomoon' ;
+    font-weight: 500 ;
+    font-size: 1.4rem ;
+}
+a,
+button,
+label,
+input[type="submit"]{
+    transition: all 0.2s ;
+    color: #5a6875 ;
+}
+a:hover,
+button:hover,
+input[type="submit"]:hover{
+    text-decoration: none ;
+    cursor: pointer ;
+}
+ul , li{
+    list-style-type: none ;
+    margin-bottom: 0 ;
+}
+p{
+    margin-bottom: 0 ;
+}
+
+#wrap{
+    background-color: #f1f1f1 ;
+    min-width: 100% ;
+    min-height: 100% ;
+}
+
+@media (max-width: 767px){
+    html{
+        font-size: 50% ;
+    }
+}
+
+/* header =================================================================== */
+
+#header-bar{   
+    background-color: #54acde ; /* brand color */
+    height: 100px ;
+    width: 100% ;
+}
+#header{
+    max-width: 1140px ;
+    margin: 0 auto ;
+}
+#header::after{
+    display: table ;
+    content: "" ;
+    clear: both ;
+}
+
+/* header left ================================================= */
+
+.header-left{
+    float: left ;
+    height: 100px ;
+    font-weight: 600 ;
+}
+.h1{
+    background-color: #fff ;
+    height: 100% ;
+    float: left ;
+    margin-bottom: 0 ;
+}
+.h1 a{
+    width: 100% ;
+    height: 100% ;
+    padding: 10px ;
+    max-width: 220px ;
+    display: table ;
+    table-layout: fixed;
+}
+.h1 a h1{
+    display: table-cell ;
+    vertical-align: middle ;
+}
+.h1 a h1 img{
+    max-width: 100% ;
+    max-height: 80px ;
+}
+.header-submenu{
+    float: left ;
+    padding: 25px 10px 0 10px ;
+}
+.btn-userinfomation{
+    float: left ;
+    padding-left: 5px ;
+}
+.btn-userinfomation a{
+    height: 50px ;
+    border-radius: 25px ;
+    background-color: rgba( 0, 0, 0, 0.08) ;
+    display: block ;
+    padding: 5px ;
+    color: #fff ;
+}
+.btn-userinfomation .erea-icon{
+    float: left ;
+    height: 40px ;
+    width: 40px ;
+    border-radius: 50% ;
+    background-color: rgba( 0, 0, 0, 0.10) ;
+    text-align: center ;
+    padding-top: 10px ;
+    font-size: 2.5rem ;
+}
+.btn-userinfomation a .erea-username{
+    float: left ;
+    padding: 15px 30px 0 5px ;
+    position: relative ;
+    max-width: 180px ;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden ;
+}
+.btn-userinfomation a .erea-username::after{
+    position: absolute ;
+    content: "\e701" ;
+    font-family: 'icomoon' ;
+    top: 15px ;
+    right: 10px ;
+    font-size: 0.8em ;
+    opacity: 0.5 ;
+}
+.btn-userinfomation a:hover{
+    background-color: rgba(255, 255, 255, 0.1) ;
+}
+.btn-userinfomation .dropdown-menu{
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2) ;
+    border: 0 ;
+    border-radius: 5px ;
+    padding: 10px ;
+    margin-left: 40px ;
+    margin-top: -5px ;
+    width: 150px ;
+}
+.btn-userinfomation .dropdown-menu a{
+    color: #5a6875 ;
+    padding: 10px ;
+    height: auto ;
+    border-radius: 3px ;
+    font-size: 1.3rem ;
+    background-color: #fff ;
+    margin-bottom: 5px ;
+    transition: all 0.2s ;
+}
+.btn-userinfomation .dropdown-menu li a::before{
+    margin-right: 5px ;
+    font-weight: normal ;
+}
+/* pw */
+.btn-userinfomation .dropdown-menu li.PW a::before{
+    content: "\f023" ;
+    font-family: icomoon ;
+}
+/* logout */
+.btn-userinfomation .dropdown-menu li.loguot a::before{
+    content: "\f08b" ;
+    font-family: icomoon ;
+}
+
+.btn-userinfomation .dropdown-menu a:hover{
+    background-color: rgba( 0, 0, 0, 0.07) ;
+}
+.btn-help{
+    float: left ;
+    padding-left: 5px ;
+    display: none ; /* 後でとる */
+}
+.btn-help a{
+    display: block ;
+    padding: 20px 10px ;
+    height: 50px ;
+    color: rgba(255, 255, 255, 0.7) ;
+}
+.btn-help a::before{
+    content: "\e912" ;
+    font-family: 'icomoon' ;
+    display: block ;
+    float: left ;
+    border-radius: 50% ;
+    margin-right: 5px ;
+    margin-top: -5px ;
+    font-size: 2.3rem ;
+    font-weight: normal ;
+}
+.btn-help a:hover{
+    color: #fff ;
+}
+
+/* header right ================================================= */
+
+.header-right{
+    float: right ;
+    height: 100px ;
+    background-color: #54acde ; /* brand color */
+}
+.nav-mainmenu ul li{
+    float: left ;
+    height: 100px ;
+    border-left:  rgba(255, 255, 255, 0.3) 1px solid ;
+    min-width: 100px ;
+}
+.nav-mainmenu ul li:last-child{
+    border-right: rgba(255, 255, 255, 0.3) 1px solid ;
+}
+.nav-mainmenu ul li a{
+    color: #fff ;
+    padding: 60px 20px 0 20px ;
+    text-align: center ;
+    height: 100% ;
+    display: block ;
+    position: relative ;
+    font-weight: 600 ;
+}
+.nav-mainmenu ul li a:hover,
+.nav-mainmenu ul li a:focus,
+.nav-mainmenu ul li.active a{
+    background-color: rgba(0, 0, 0, 0.08) ;
+}
+.nav-mainmenu ul li a:hover::before,
+.nav-mainmenu ul li.active a::before{
+    color: #fff ;
+}
+.nav-mainmenu ul li.active a::after{
+    position: absolute ;
+    content: "▲" ;
+    left: 0 ;
+    bottom: -10px ;
+    display: block ;
+    width: 100% ;
+    font-size: 2.5rem ;
+    color: #f1f1f1 ;
+}
+/* icon指定 */
+.nav-mainmenu ul li a:before{
+    position: absolute ;
+    top: 20px ;
+    left: 0 ;
+    display: block ;
+    width: 100% ;
+    font-family: 'icomoon';
+    font-size: 3.2rem ;
+    font-weight: normal ;
+    color: rgba( 0, 0, 0, 0.13) ;
+    transition: all 0.2s ;
+}
+/* ホーム */
+.nav-mainmenu ul li:nth-child(1) a::before{
+    content: "\e903";
+}
+/* 講義受講 */
+.nav-mainmenu ul li:nth-child(2) a::before{
+    content: "\e905";
+}
+/* メッセージ */
+.nav-mainmenu ul li:nth-child(3) a::before{
+    content: "\e904";
+}
+@media (max-width: 1000px){
+    .nav-mainmenu ul li{
+        min-width: 70px ;
+    }
+    .nav-mainmenu ul li a{
+        padding: 60px 10px 0 10px ;
+    }
+}
+@media (max-width: 767px){
+    #header-bar{
+        height: auto ;
+        height: 140px ;
+    }
+    .header-left{
+        width: 100% ;
+        background-color: #fff ;
+        height: 70px ;
+    }
+    .h1{
+        width: 40% ;
+    }
+    .h1 a h1 img{
+        max-width: 100% ;
+        max-height: 50px ;
+    }
+    .header-submenu{
+        float: right ;
+        padding: 15px 5px 0 5px ;
+        max-width: 60% ;
+    }
+    .btn-userinfomation a{
+        background-color: #54acde ; /* brand color */
+        height: 40px ;
+        border-radius: 20px ;
+        display: block ;
+        padding: 5px ;
+        color: #fff ;
+    }
+    .btn-userinfomation a:hover{
+        background-color: #54acde ; /* brand color */
+    }
+    .btn-userinfomation a .erea-icon{
+        display: none ;
+    }
+    .btn-userinfomation a .erea-username{
+        padding-top: 10px ;
+        padding-right: 30px ;
+    }
+    .btn-userinfomation a .erea-username::after{
+        top: 10px ;
+    }
+    .btn-userinfomation .dropdown-menu{
+        margin-left: 0 ;
+        width: 120px ;
+    }
+    .btn-help a{
+        display: block ;
+        padding: 15px 5px ;
+        color: #354e65 ;
+        height: 40px ;
+    }
+    .btn-help a::before{
+        font-size: 3rem ;
+    }
+    .btn-help a span{
+        display: none ;
+    }
+    .header-right{
+        float: left ;
+        width: 100% ;
+        height: 70px ;
+    }
+    .nav-mainmenu ul li{
+        width: 33% ;
+        border: none ;
+        height: 70px ;
+    }
+    .nav-mainmenu ul li:last-child{
+        width: 34% ;
+        border: none; 
+    }
+    .nav-mainmenu ul li a span{
+        display: none ;
+    }
+    .nav-mainmenu ul li a:before{
+        top: 20px ;
+    }
+}
+
+/* main============================================================== */
+
+.container-maincontents{
+    max-width: 1140px ;
+    width: 100% ;
+    margin: 0 auto ;
+    padding: 30px 10px ;
+}
+
+.scrol::-webkit-scrollbar {
+    width: 8px ;
+}
+.scrol::-webkit-scrollbar-track {
+    border-radius: 4px;
+}
+.scrol::-webkit-scrollbar-thumb {
+    background-color: #54acde ; /* brand color */
+    border-radius: 4px;
+}

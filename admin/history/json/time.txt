@@ -1,0 +1,38 @@
+¬1.CP TOT|1-0x2000|6:40:19|2‰ñ|21‰ñ|2,048KB|17.845•b
+@2.General|1-0x4000|6:50:12|2‰ñ|7‰ñ|2,048KB|10.389•b
+@3.Education|1-0x8000|7:00:06|2‰ñ|7‰ñ|2,048KB|3.825•b@@@ÅV
+@4.Clinical skill|1-0x10000|6:30:05|2‰ñ|7‰ñ|2,048KB|3.779•b
+@5.Health and sports|4-0x8000|12:10:02|17‰ñ|2‰ñ|2,048KB|0.045•b
+@6.Health sociology|5-0x40000000|12:20:01|17‰ñ|2‰ñ|2,048KB|0.042•b
+@7.psychology|6-0x1|6:10:01|17‰ñ|30‰ñ|2,048KB|0.051•b
+@8.Science of life phenomena|6-0x2|6:20:01|17‰ñ|30‰ñ|2,048KB|0.178•b
+@9.Sentence expression|6-0x4|6:30:02|17‰ñ|30‰ñ|2,048KB|0.172•b
+@10.Sociology|6-0x400|6:40:01|17‰ñ|30‰ñ|2,048KB|0.052•b
+¬11.Specialized basic field|4-0x200|6:50:01|17‰ñ|210‰ñ|2,048KB|0.332•b
+@12.Nutritional metabolism I|4-0x400|7:00:02|17‰ñ|30‰ñ|2,048KB|0.122•b
+@13.Nutritional metabolism II|6-0x8|7:10:02|17‰ñ|30‰ñ|2,048KB|0.056•b
+@14.Introduction to form and function|6-0x10|7:20:01|17‰ñ|30‰ñ|2,048KB|0.052•b
+@15.Morphology / Functions I|6-0x20|7:30:01|17‰ñ|30‰ñ|2,048KB|0.052•b
+@16.Morphology / Functions II|6-0x40|7:40:03|17‰ñ|30‰ñ|2,048KB|0.049•b
+@17.Health behavior theory|6-0x80|7:50:01|17‰ñ|30‰ñ|2,048KB|0.053•b
+@18.Microbiology|6-0x100|8:00:01|17‰ñ|30‰ñ|2,048KB|0.063•b
+¬19.Specialized field I|4-0x800|8:10:03|17‰ñ|150‰ñ|2,048KB|0.181•b
+@20.Introduction to Basic Nursing I|4-0x1000|8:20:01|17‰ñ|30‰ñ|2,048KB|0.052•b
+@21.Basic nursing support theory I|4-0x10000|8:30:02|17‰ñ|30‰ñ|2,048KB|0.056•b
+@22.Basic nursing support theory II|4-0x20000|8:40:01|17‰ñ|30‰ñ|2,048KB|0.052•b
+@23.Basic nursing support theory III|4-0x40000|8:50:01|17‰ñ|30‰ñ|2,048KB|0.055•b
+@24.Health assessment|6-0x200|9:00:02|17‰ñ|30‰ñ|2,048KB|0.051•b
+¬25.Specialized field II|4-0x80000|9:10:01|17‰ñ|150‰ñ|2,048KB|0.195•b
+@26.Introduction to pediatric nursing|4-0x100000|9:20:01|17‰ñ|30‰ñ|2,048KB|0.052•b
+@27.Psychiatric Nursing Overview|4-0x200000|9:30:02|17‰ñ|30‰ñ|2,048KB|0.053•b
+@28.Introduction to Adult Nursing|4-0x400000|9:40:01|17‰ñ|30‰ñ|2,048KB|0.05•b
+@29.An overview of maternal nursing|4-0x800000|9:50:01|17‰ñ|30‰ñ|2,048KB|0.056•b
+@30.Geriatric Nursing Overview|5-0x1|10:00:01|17‰ñ|30‰ñ|2,048KB|0.057•b
+¬31.yCheckzKJS‚P|1-0x2000|10:10:26|17‰ñ|120‰ñ|4,096KB|24.905•b
+@32.Content hierarchy‚Q|‚P|1-0x4000|10:20:31|17‰ñ|30‰ñ|2,048KB|29.447•b
+@33.Content hierarchy‚Q|‚Q|1-0x8000|10:30:13|17‰ñ|30‰ñ|2,048KB|11.64•b
+@34.Content hierarchy‚Q|‚R|1-0x10000|10:40:02|17‰ñ|30‰ñ|2,048KB|0.422•b
+@35.Content heirarchy 2 - 4|6-0x4000|10:50:01|17‰ñ|30‰ñ|2,048KB|0.16•b
+¬36.PHYSICS|6-0x800|11:00:01|17‰ñ|60‰ñ|2,048KB|0.096•b
+@37.Classical|6-0x1000|11:10:02|17‰ñ|30‰ñ|2,048KB|0.052•b
+@38.quantum|6-0x2000|11:20:01|17‰ñ|30‰ñ|2,048KB|0.053•b

@@ -465,7 +465,8 @@ for($current = count($csvMenu); $current >= 1; $current --) {
                 $unlockedLesson = [];
                 for($i=0;$i<count($finsishedLesson);$i++)
                 {
-                    array_push($unlockedLesson,$csvTree[2][$csvRowC[$finsishedLesson[$i]]][array_search($finsishedLesson[$i],$csvTree[2][$csvRowC[$finsishedLesson[$i]]])+1]);
+                    if(isset($csvTree[2][$csvRowC[$finsishedLesson[$i]]][array_search($finsishedLesson[$i],$csvTree[2][$csvRowC[$finsishedLesson[$i]]])+1]))
+                        array_push($unlockedLesson,$csvTree[2][$csvRowC[$finsishedLesson[$i]]][array_search($finsishedLesson[$i],$csvTree[2][$csvRowC[$finsishedLesson[$i]]])+1]);
                 }
                 $LS = $csvTree[2][$key][0];
                 if($LS == $line || in_array($line,$unlockedLesson))

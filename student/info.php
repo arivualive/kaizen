@@ -239,7 +239,7 @@ if(isset($sort['register_datetime'])) {
                     <h3><img src="images/chart.png">BBS, Chat and Report</h3>
                 </div>
                 <p class="text">You can watch video lessons and submit quiz questionnaires.</p>
-                <a href="https://kintone.cybozu.co.jp/">BBS, Chat and Report</a>
+                <a href="https://procon-academy.cybozu.com">BBS, Chat and Report</a>
             </div>
             <div class="mainmenubtn message">
                 <div class="h3">

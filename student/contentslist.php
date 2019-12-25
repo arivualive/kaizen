@@ -52,6 +52,25 @@ list($string, $check) = array_to_string((array)$subject_section_id);
 $bit_classroom = $string;
 
 //------CSV読込部分 ここまで------
+
+/* For unlocking Lessons */
+function get_Show_cat_Result()
+{
+    include('../news/includes/config.php');
+    $sqlQuery = "SELECT t2.bit_classroom FROM (SELECT ceil(COUNT(school_id)/2) AS CONT_RESULT,bit_classroom FROM tbl_contents AS a   GROUP BY a.bit_classroom) t1 INNER JOIN (SELECT b.bit_classroom ,COUNT(a.school_contents_id) AS A1 FROM log_contents_history_student AS a INNER JOIN tbl_contents AS b WHERE a.school_contents_id=b.contents_id AND a.student_id=".$GLOBALS['student_id']." GROUP BY b.bit_classroom) t2 where t1.bit_classroom=t2.bit_classroom AND t2.A1>=t1.CONT_RESULT";
+    $sql = mysqli_query($con,$sqlQuery);
+    $finsishedLesson = [];
+    while ($row = mysqli_fetch_assoc($sql)) 
+    {
+        $resultvalue= explode("-", $row['bit_classroom']);
+        $csvvalue= count($resultvalue)."-0x".$resultvalue[count($resultvalue)-1];
+        array_push($finsishedLesson,$csvvalue);
+ 
+    }
+    return $finsishedLesson;
+}
+/* For unlocking Lessons */
+
 $studentInfo = new StudentContentsListModel($student_id, $school_id, $bit_classroom, $curl);
 
 //debug($studentInfo);
@@ -400,14 +419,17 @@ list($csvTreeU,,, $csvRowDU) = load_csv($csvpath . 'users.csv', 0);
 for($current = count($csvTreeU); $current >= 1; $current--) {
 	foreach($csvTreeU[$current] as $value) {
 		foreach($value as $line) {
-			$temp = explode('-', $line);
+           
+            $temp = explode('-', $line);
+            // var_export($line);
 			if($check[$temp[0]][log(hexdec($temp[1]), 2)]) {
+                // var_export($line);
 				$selectU .= $csvRowDU[$line] . '（' . $line . '）' . "\n";
 			}
 		}
 	}
 }
-// var_export($lines);
+
 foreach($lines as $line) {
 	$item = explode(',', $line);
 	$item[3] = str_replace('{c}', ',', $item[3]);
@@ -419,53 +441,52 @@ foreach($lines as $line) {
 	}
 }
 
-
 for($current = count($csvMenu); $current >= 1; $current --) {
 	foreach($csvMenu[$current] as $key => $value) {
-        
-		${'menu' . $current}[$key] .= '<ul  class="'; //Full wise disabled
+		${'menu' . $current}[$key] .= '<ul  class="';
 		${'menu' . $current}[$key] .= ($current == 1) ? 'accordion' : 'togglemenu';
 		if($key == $csvParent[$_GET['bid']]) { ${'menu' . $current}[$key] .= ' open'; }
 		${'menu' . $current}[$key] .= '">' . "\n";
-		foreach($value as $line) {
+        foreach($value as $line) 
+        {
 			if($csvMenu[$current + 1][$line]) {
-              
 				if(${'menu' . ($current + 1)}[$line] != '<ul class="togglemenu">' . "\n" . '</ul>' . "\n") { //空項目を無視
-					${'menu' . $current}[$key] .= '<li   ';  //category wise disabled
+					${'menu' . $current}[$key] .= '<li   '; 
 					if($line == $csvParent[$_GET['bid']]) {
 						${'menu' . $current}[$key] .= ' class="open"';
                         $subject_genre_name = $csvName[$line];
                     }
-                    // var_export($csvName[$line]);  Category Name
 					${'menu' . $current}[$key] .= '>' . "\n" .'<a class="togglebtn">' . $csvName[$line] . '</a>' . "\n";
 					${'menu' . $current}[$key] .= ${'menu' . ($current + 1)}[$line] . '</li>' . "\n"; //子項目を挿入
 				}
-			}else {  
-                if(search_multi($csvpath . 'contents.csv', $line, $csvTreeU, $selectU)) { //CSV照合
-                   
-                    ${'menu' . $current}[$key] .= '<li  ';  //lesson wise disabled
-                    
-					if($line == $_GET['bid']) {
-						${'menu' . $current}[$key] .= ' class="active"';
-                        $subject_section_name = $csvName[$line];
-                        // var_export($subject_section_name);
+            }else 
+            {  
+                $finsishedLesson = get_Show_cat_Result();
+                $unlockedLesson = [];
+                for($i=0;$i<count($finsishedLesson);$i++)
+                {
+                    array_push($unlockedLesson,$csvTree[2][$csvRowC[$finsishedLesson[$i]]][array_search($finsishedLesson[$i],$csvTree[2][$csvRowC[$finsishedLesson[$i]]])+1]);
+                }
+                $LS = $csvTree[2][$key][0];
+                if($LS == $line || in_array($line,$unlockedLesson))
+                {
+                    if(search_multi($csvpath . 'contents.csv', $line, $csvTreeU, $selectU)) //CSV照合
+                    { 
+                        ${'menu' . $current}[$key] .= '<li  ';  
+                        if($line == $_GET['bid'] ) 
+                        {
+						    ${'menu' . $current}[$key] .= ' class="active"';
+                            $subject_section_name = $csvName[$line];
+                        }
+                     ${'menu' . $current}[$key] .= '><a href="' . $_SERVER['SCRIPT_NAME'] . '?bid=' . $line . '" >' . $csvName[$line] . '</a></li>' . "\n";
                     }
-                    // var_dump($subject_section_name);
-                    // var_export( $csvName[$line]);
-                   
-                    ${'menu' . $current}[$key] .= '><a id="myLink" href="' . $_SERVER['SCRIPT_NAME'] . '?bid=' . $line . '" >' . $csvName[$line] . '</a></li>' . "\n";
-                    
-                    
-				}
-			}
-		}
+                }
+            }
+        }
 		${'menu' . $current}[$key] .= '</ul>' . "\n";
 	}
 }
-// echo $menu1[''];
-
-include("contentslist_category.php");
-
+echo $menu1[''];
 ?>
 
                     </ul>
